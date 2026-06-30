@@ -7,6 +7,7 @@ export const site = {
   availability: 'Available for selective product builds and senior engineering partnerships.',
   nav: [
     { label: 'Experience', href: '/experience' },
+    { label: 'Projects', href: '/experience#personal-projects' },
     { label: 'Services', href: '/#services' },
     { label: 'Writing', href: '/writing' },
     { label: 'Contact', href: '/#contact' },

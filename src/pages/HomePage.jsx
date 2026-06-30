@@ -5,6 +5,7 @@ import { Button } from '../components/Button.jsx'
 import { ExperienceSection } from '../components/ExperienceSection.jsx'
 import { Footer } from '../components/Footer.jsx'
 import { HeroWorkbench } from '../components/HeroWorkbench.jsx'
+import { PersonalProjectCard } from '../components/PersonalProjectCard.jsx'
 import { Seo } from '../components/Seo.jsx'
 import { personalProjects } from '../data/experience.js'
 import { posts } from '../data/posts.js'
@@ -31,7 +32,7 @@ export function HomePage() {
             product systems for founders and teams.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button href="/work">View work</Button>
+            <Button href="/experience">View experience</Button>
             <Button href="/#contact" variant="secondary">
               Start a project
             </Button>
@@ -52,41 +53,20 @@ export function HomePage() {
             </div>
             <Link
               className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-teal"
-              to="/experience"
+              to="/experience#personal-projects"
             >
-              View all experience <ArrowRight size={16} />
+              View all projects <ArrowRight size={16} />
             </Link>
           </div>
-          <div className="mt-12 divide-y divide-line border-y border-line">
+          <div className="mt-12">
             {personalProjects.length ? (
-              personalProjects.map((project) => (
-                <a
-                  className="group grid gap-6 py-8 transition hover:bg-mist/60 md:grid-cols-[0.9fr_1.3fr_0.7fr]"
-                  href={project.href}
-                  key={project.title}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <div>
-                    <p className="text-sm font-semibold text-coral">{project.type}</p>
-                    <h3 className="mt-2 font-display text-2xl font-semibold">
-                      {project.title}
-                    </h3>
-                  </div>
-                  <p className="max-w-2xl text-base leading-7 text-slate">
-                    {project.summary}
-                  </p>
-                  <div className="flex items-center justify-between gap-4 text-sm font-semibold text-ink md:justify-end">
-                    <span>{project.year}</span>
-                    <ArrowRight
-                      className="transition group-hover:translate-x-1"
-                      size={18}
-                    />
-                  </div>
-                </a>
-              ))
+              <div className="grid gap-5 md:grid-cols-3">
+                {personalProjects.map((project) => (
+                  <PersonalProjectCard featured key={project.title} project={project} />
+                ))}
+              </div>
             ) : (
-              <div className="py-8">
+              <div className="rounded-md border border-dashed border-line bg-mist p-6">
                 <p className="max-w-2xl text-base leading-7 text-slate">
                   Personal project list is ready. Add iOS apps and open-source
                   projects to <span className="font-semibold text-ink">personalProjects</span>{' '}

@@ -1,6 +1,6 @@
-import { ArrowUpRight } from 'lucide-react'
 import { ExperienceCard } from '../components/ExperienceSection.jsx'
 import { Footer } from '../components/Footer.jsx'
+import { PersonalProjectCard } from '../components/PersonalProjectCard.jsx'
 import { Seo } from '../components/Seo.jsx'
 import { experience, personalProjects } from '../data/experience.js'
 
@@ -13,7 +13,7 @@ export function ExperiencePage() {
         path="/experience"
       />
 
-      <section className="section-shell grid gap-12 py-16 sm:py-20 lg:grid-cols-[0.42fr_0.58fr] lg:items-start">
+      <section className="section-shell grid gap-12 py-16 sm:py-20 lg:grid-cols-[0.38fr_0.62fr] lg:items-start">
         <aside className="lg:sticky lg:top-28">
           <p className="section-label">Experience</p>
           <h1 className="mt-5 max-w-xl font-display text-5xl font-semibold leading-tight tracking-[-0.03em] sm:text-6xl">
@@ -25,26 +25,44 @@ export function ExperiencePage() {
             energy, and web application systems.
           </p>
 
-          <div className="mt-10 grid gap-4 border-y border-line py-6">
-            <div>
+          <div className="mt-10 grid grid-cols-2 gap-4 border-y border-line py-6">
+            <a className="group rounded-md p-3 transition hover:bg-mist" href="#timeline">
               <p className="font-display text-4xl font-semibold">{experience.length}</p>
               <p className="mt-1 text-sm font-semibold text-slate">
                 Experience entries
               </p>
-            </div>
-            <div>
+            </a>
+            <a
+              className="group rounded-md p-3 transition hover:bg-mist"
+              href="#personal-projects"
+            >
               <p className="font-display text-4xl font-semibold">
                 {personalProjects.length}
               </p>
               <p className="mt-1 text-sm font-semibold text-slate">
                 Personal projects
               </p>
-            </div>
+            </a>
           </div>
+
+          <nav className="mt-6 grid gap-2 text-sm font-semibold">
+            <a
+              className="focus-ring rounded-md border border-line bg-white px-4 py-3 text-ink transition hover:border-ink"
+              href="#timeline"
+            >
+              Experience timeline
+            </a>
+            <a
+              className="focus-ring rounded-md border border-line bg-white px-4 py-3 text-ink transition hover:border-ink"
+              href="#personal-projects"
+            >
+              Personal projects
+            </a>
+          </nav>
         </aside>
 
         <div className="grid gap-12">
-          <section>
+          <section id="timeline" className="scroll-mt-28">
             <div className="mb-6 flex items-end justify-between gap-4">
               <div>
                 <p className="section-label">Timeline</p>
@@ -60,7 +78,7 @@ export function ExperiencePage() {
             </div>
           </section>
 
-          <section>
+          <section id="personal-projects" className="scroll-mt-28">
             <p className="section-label">Personal projects</p>
             <h2 className="mt-3 font-display text-3xl font-semibold">
               iOS apps and open-source work
@@ -68,49 +86,7 @@ export function ExperiencePage() {
             <div className="mt-6 grid gap-5">
               {personalProjects.length ? (
                 personalProjects.map((project) => (
-                  <article
-                    className="rounded-md border border-line bg-mist p-6 md:p-8"
-                    key={project.title}
-                  >
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <p className="text-sm font-semibold text-coral">
-                          {project.type}
-                        </p>
-                        <h3 className="mt-2 font-display text-2xl font-semibold">
-                          {project.title}
-                        </h3>
-                      </div>
-                      <p className="text-sm font-semibold text-teal">{project.year}</p>
-                    </div>
-                    <p className="mt-5 text-base leading-7 text-slate">
-                      {project.summary}
-                    </p>
-                    {project.impact ? (
-                      <p className="mt-4 font-semibold text-ink">{project.impact}</p>
-                    ) : null}
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {project.stack.map((item) => (
-                        <span
-                          className="rounded-md border border-line bg-white px-3 py-1.5 text-xs font-semibold text-slate"
-                          key={item}
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                    {project.href ? (
-                      <a
-                        className="focus-ring mt-6 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-teal"
-                        href={project.href}
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        View project
-                        <ArrowUpRight size={16} />
-                      </a>
-                    ) : null}
-                  </article>
+                  <PersonalProjectCard key={project.title} project={project} />
                 ))
               ) : (
                 <div className="rounded-md border border-dashed border-line bg-mist p-6 md:p-8">
