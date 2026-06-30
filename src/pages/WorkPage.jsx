@@ -1,5 +1,5 @@
-import { ArrowUpRight } from 'lucide-react'
 import { Footer } from '../components/Footer.jsx'
+import { PersonalProjectCard } from '../components/PersonalProjectCard.jsx'
 import { Seo } from '../components/Seo.jsx'
 import { personalProjects } from '../data/experience.js'
 
@@ -21,38 +21,7 @@ export function WorkPage() {
         <div className="grid gap-6">
           {personalProjects.length ? (
             personalProjects.map((project) => (
-            <article
-              className="grid gap-8 rounded-md border border-line bg-white p-6 shadow-line md:grid-cols-[0.7fr_1fr] md:p-8"
-              key={project.title}
-            >
-              <div>
-                <p className="text-sm font-semibold text-coral">{project.type}</p>
-                <h2 className="mt-3 font-display text-3xl font-semibold">
-                  {project.title}
-                </h2>
-                <p className="mt-2 text-sm font-semibold text-slate">{project.year}</p>
-              </div>
-              <div>
-                <p className="text-lg leading-8 text-slate">{project.summary}</p>
-                <p className="mt-5 font-semibold text-ink">{project.impact}</p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.stack.map((item) => (
-                    <span
-                      className="rounded-md border border-line bg-mist px-3 py-2 text-sm font-semibold text-slate"
-                      key={item}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  className="focus-ring mt-7 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-teal"
-                  href="mailto:hello@awaisjamil.com"
-                >
-                  Discuss similar work <ArrowUpRight size={16} />
-                </a>
-              </div>
-            </article>
+              <PersonalProjectCard key={project.title} project={project} />
             ))
           ) : (
             <div className="rounded-md border border-dashed border-line bg-mist p-6 md:p-8">
