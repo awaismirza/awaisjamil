@@ -2,7 +2,8 @@ import { motion } from 'framer-motion'
 import { ArrowRight, BriefcaseBusiness, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { experience } from '../data/experience.js'
-import { AnimateIn, staggerContainer, staggerItem } from './AnimateIn.jsx'
+import { AnimateIn } from './AnimateIn.jsx'
+import { staggerContainer, staggerItem } from '../lib/animation.js'
 
 export function ExperienceCard({ item, compact = false }) {
   return (
