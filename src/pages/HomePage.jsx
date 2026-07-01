@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Code2, Layers3, PenLine } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/Button.jsx'
@@ -8,15 +8,21 @@ import { staggerContainer, staggerItem } from '../lib/animation.js'
 import { ExperienceSection } from '../components/ExperienceSection.jsx'
 import { Footer } from '../components/Footer.jsx'
 import { HeroWorkbench } from '../components/HeroWorkbench.jsx'
-import { PersonalProjectCard } from '../components/PersonalProjectCard.jsx'
+import { ProjectCard } from '../components/ProjectCard.jsx'
 import { Seo } from '../components/Seo.jsx'
-import { personalProjects } from '../data/experience.js'
+import { projects } from '../data/projects.js'
 import { posts } from '../data/posts.js'
-import { processSteps, services } from '../data/site.js'
+import { services } from '../data/services.js'
 
-const iconMap = [Layers3, Code2, PenLine, CheckCircle2]
+const PREVIEW_PROJECT_COUNT = 3
+const PREVIEW_SERVICE_COUNT = 4
+const PREVIEW_POST_COUNT = 3
 
 export function HomePage() {
+  const previewProjects = projects.filter((p) => p.href && p.href !== '#').slice(0, PREVIEW_PROJECT_COUNT)
+  const previewServices = services.slice(0, PREVIEW_SERVICE_COUNT)
+  const previewPosts = posts.slice(0, PREVIEW_POST_COUNT)
+
   return (
     <>
       <Seo />
@@ -56,7 +62,7 @@ export function HomePage() {
             transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
           >
             <Button href="/experience">View experience</Button>
-            <Button href="/#contact" variant="secondary">
+            <Button href="/contact" variant="secondary">
               Start a project
             </Button>
           </motion.div>
@@ -64,10 +70,10 @@ export function HomePage() {
         <HeroWorkbench />
       </section>
 
-      {/* Experience */}
+      {/* Experience preview */}
       <ExperienceSection />
 
-      {/* Personal Projects */}
+      {/* Projects preview */}
       <section id="projects" className="bg-white py-16 sm:py-20">
         <div className="section-shell">
           <AnimateIn className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
@@ -80,106 +86,72 @@ export function HomePage() {
             </div>
             <Link
               className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-teal"
-              to="/experience#personal-projects"
+              to="/projects"
             >
               View all projects <ArrowRight size={16} />
             </Link>
           </AnimateIn>
 
           <div className="mt-12">
-            {personalProjects.length ? (
-              <motion.div
-                className="grid gap-5 md:grid-cols-3"
-                initial="hidden"
-                variants={staggerContainer}
-                viewport={{ once: true, margin: '-60px' }}
-                whileInView="show"
-              >
-                {personalProjects.map((project) => (
-                  <motion.div className="h-full" key={project.title} variants={staggerItem}>
-                    <PersonalProjectCard featured project={project} />
-                  </motion.div>
-                ))}
-              </motion.div>
-            ) : (
-              <div className="rounded-md border border-dashed border-line bg-mist p-6">
-                <p className="max-w-2xl text-base leading-7 text-slate">
-                  Personal project list is ready. Add iOS apps and open-source
-                  projects to <span className="font-semibold text-ink">personalProjects</span>{' '}
-                  in <span className="font-semibold text-ink">experience.js</span>.
-                </p>
-              </div>
-            )}
+            <motion.div
+              className="grid gap-5 md:grid-cols-3"
+              initial="hidden"
+              variants={staggerContainer}
+              viewport={{ once: true, margin: '-60px' }}
+              whileInView="show"
+            >
+              {previewProjects.map((project) => (
+                <motion.div className="h-full" key={project.title} variants={staggerItem}>
+                  <ProjectCard project={project} />
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services preview */}
       <section id="services" className="bg-mist py-16 sm:py-20">
         <div className="section-shell">
-          <AnimateIn>
-            <p className="section-label">Services</p>
+          <AnimateIn className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+            <div>
+              <p className="section-label">Services</p>
+              <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
+                Software development services for products people can actually use.
+              </h2>
+            </div>
+            <Link
+              className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-teal"
+              to="/services"
+            >
+              View all services <ArrowRight size={16} />
+            </Link>
           </AnimateIn>
+
           <motion.div
-            className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4"
+            className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4"
             initial="hidden"
             variants={staggerContainer}
             viewport={{ once: true, margin: '-60px' }}
             whileInView="show"
           >
-            {services.map((service, index) => {
-              const Icon = iconMap[index]
-              return (
-                <motion.div
-                  className="rounded-md border border-line bg-white p-6 shadow-line"
-                  key={service.title}
-                  variants={staggerItem}
-                >
-                  <Icon className="text-teal" size={24} strokeWidth={2} />
-                  <h3 className="mt-8 font-display text-xl font-semibold">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate">{service.summary}</p>
-                </motion.div>
-              )
-            })}
+            {previewServices.map((service) => (
+              <motion.div
+                className="rounded-md border border-line bg-white p-6 shadow-line"
+                key={service.title}
+                variants={staggerItem}
+              >
+                <h3 className="font-display text-lg font-semibold leading-snug">
+                  {service.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate">{service.summary}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="section-shell grid gap-12 lg:grid-cols-[0.8fr_1fr]">
-          <AnimateIn>
-            <p className="section-label">Process</p>
-            <h2 className="mt-4 font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
-              Small enough to ship. Strong enough to trust.
-            </h2>
-          </AnimateIn>
-          <motion.ol
-            className="grid gap-5"
-            initial="hidden"
-            variants={staggerContainer}
-            viewport={{ once: true, margin: '-60px' }}
-            whileInView="show"
-          >
-            {processSteps.map((step, index) => (
-              <motion.li
-                className="grid grid-cols-[3rem_1fr] gap-5 border-b border-line pb-5"
-                key={step}
-                variants={staggerItem}
-              >
-                <span className="font-display text-3xl font-semibold text-coral">
-                  0{index + 1}
-                </span>
-                <p className="text-lg leading-8 text-slate">{step}</p>
-              </motion.li>
-            ))}
-          </motion.ol>
-        </div>
-      </section>
-
-      {/* Writing */}
+      {/* Writing preview */}
       <section id="writing" className="border-t border-line bg-white py-16 sm:py-20">
         <div className="section-shell grid gap-10 lg:grid-cols-[0.75fr_1fr]">
           <AnimateIn>
@@ -187,6 +159,12 @@ export function HomePage() {
             <h2 className="mt-4 font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
               Notes on product quality, speed, and software craft.
             </h2>
+            <Link
+              className="focus-ring mt-8 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-teal"
+              to="/writing"
+            >
+              Read all articles <ArrowRight size={16} />
+            </Link>
           </AnimateIn>
           <motion.div
             className="grid gap-4"
@@ -195,21 +173,21 @@ export function HomePage() {
             viewport={{ once: true, margin: '-60px' }}
             whileInView="show"
           >
-            {posts.map((post) => (
+            {previewPosts.map((post) => (
               <motion.div key={post.id} variants={staggerItem}>
                 <Link
                   className="group block rounded-md border border-line bg-mist p-6 transition hover:border-ink hover:bg-white"
                   to="/writing"
                 >
                   <p className="text-sm font-semibold text-coral">{post.date}</p>
-                  <h3 className="mt-3 flex items-center justify-between gap-4 font-display text-2xl font-semibold">
+                  <h3 className="mt-3 flex items-center justify-between gap-4 font-display text-xl font-semibold">
                     {post.title}
                     <ArrowRight
                       className="shrink-0 transition group-hover:translate-x-1"
                       size={18}
                     />
                   </h3>
-                  <p className="mt-3 text-slate">{post.description}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate">{post.description}</p>
                 </Link>
               </motion.div>
             ))}
