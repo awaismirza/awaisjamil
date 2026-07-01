@@ -5,6 +5,11 @@ export const site = {
   role: 'Senior Software Engineer, Web & Mobile App Developer, Product-Focused Builder',
   email: 'hello@awaisjamil.com',
   availability: 'Available for selective product builds and senior engineering partnerships.',
+  socials: [
+    { label: 'YouTube', href: 'https://youtube.com/@awaisjamil', platform: 'youtube' },
+    { label: 'GitHub', href: 'https://github.com/awaismirza', platform: 'github' },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/awaisjamil', platform: 'linkedin' },
+  ],
   nav: [
     { label: 'Experience', href: '/experience' },
     { label: 'Projects', href: '/experience#personal-projects' },
