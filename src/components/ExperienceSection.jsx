@@ -1,6 +1,8 @@
+import { motion } from 'framer-motion'
 import { ArrowRight, BriefcaseBusiness, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { experience } from '../data/experience.js'
+import { AnimateIn, staggerContainer, staggerItem } from './AnimateIn.jsx'
 
 export function ExperienceCard({ item, compact = false }) {
   return (
@@ -56,7 +58,7 @@ export function ExperienceSection({ limit = 4 }) {
   return (
     <section id="experience" className="border-y border-line bg-white py-16 sm:py-20">
       <div className="section-shell">
-        <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        <AnimateIn className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
           <div>
             <p className="section-label">Experience</p>
             <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
@@ -70,13 +72,21 @@ export function ExperienceSection({ limit = 4 }) {
           >
             View all experience <ArrowRight size={16} />
           </Link>
-        </div>
+        </AnimateIn>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
+        <motion.div
+          className="mt-12 grid gap-5 md:grid-cols-2"
+          initial="hidden"
+          variants={staggerContainer}
+          viewport={{ once: true, margin: '-60px' }}
+          whileInView="show"
+        >
           {visibleExperience.map((item) => (
-            <ExperienceCard item={item} key={`${item.company}-${item.role}`} />
+            <motion.div key={`${item.company}-${item.role}`} variants={staggerItem}>
+              <ExperienceCard item={item} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
