@@ -50,30 +50,31 @@ export function ExperienceCard({ item, compact = false }) {
   )
 }
 
-export function ExperienceSection({ limit = 3 }) {
+export function ExperienceSection({ limit = 4 }) {
   const visibleExperience = experience.slice(0, limit)
 
   return (
-    <section id="experience" className="bg-white py-16 sm:py-20">
-      <div className="section-shell grid gap-12 lg:grid-cols-[0.72fr_1fr]">
-        <div>
-          <p className="section-label">Experience</p>
-          <h2 className="mt-4 max-w-xl font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
-            Recent experience across health tech, education, and product
-            engineering.
-          </h2>
+    <section id="experience" className="border-y border-line bg-white py-16 sm:py-20">
+      <div className="section-shell">
+        <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div>
+            <p className="section-label">Experience</p>
+            <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
+              Recent experience across health tech, education, and product
+              engineering.
+            </h2>
+          </div>
           <Link
-            className="focus-ring mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-ink px-5 text-sm font-semibold text-white transition hover:bg-graphite"
+            className="focus-ring inline-flex shrink-0 items-center gap-2 rounded-md text-sm font-semibold text-teal"
             to="/experience"
           >
-            View all experience
-            <ArrowRight size={16} />
+            View all experience <ArrowRight size={16} />
           </Link>
         </div>
 
-        <div className="divide-y divide-line border-y border-line">
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
           {visibleExperience.map((item) => (
-            <ExperienceCard compact item={item} key={`${item.company}-${item.role}`} />
+            <ExperienceCard item={item} key={`${item.company}-${item.role}`} />
           ))}
         </div>
       </div>
