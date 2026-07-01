@@ -1,7 +1,10 @@
 import usefulVelocity from '../content/posts/useful-velocity.md?raw'
 import polishedSoftware from '../content/posts/polished-software.md?raw'
+import privacyIos from '../content/posts/building-privacy-first-ios-apps.md?raw'
+import driverLogbook from '../content/posts/from-uber-driving-to-driver-logbook.md?raw'
+import localAi from '../content/posts/local-ai-tools-on-apple-silicon.md?raw'
 
-const rawPosts = [usefulVelocity, polishedSoftware]
+const rawPosts = [usefulVelocity, polishedSoftware, privacyIos, driverLogbook, localAi]
 
 function parseFrontmatter(source) {
   const match = source.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/)
