@@ -7,7 +7,7 @@ import { staggerContainer, staggerItem } from '../lib/animation.js'
 
 export function ExperienceCard({ item, compact = false }) {
   return (
-    <article className={compact ? 'py-7' : 'rounded-md border border-line bg-white p-6 shadow-line transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft md:p-8'}>
+    <article className={compact ? 'py-7' : 'flex h-full flex-col rounded-md border border-line bg-white p-6 shadow-line transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft md:p-8'}>
       <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-sm font-semibold text-coral">{item.type}</p>
@@ -39,7 +39,7 @@ export function ExperienceCard({ item, compact = false }) {
         ))}
       </ul>
 
-      <div className="mt-5 flex flex-wrap gap-2">
+      <div className="mt-auto pt-5 flex flex-wrap gap-2">
         {item.tags.map((tag) => (
           <span
             className="rounded-md border border-line bg-mist px-3 py-1.5 text-xs font-semibold text-slate"
@@ -83,7 +83,7 @@ export function ExperienceSection({ limit = 4 }) {
           whileInView="show"
         >
           {visibleExperience.map((item) => (
-            <motion.div key={`${item.company}-${item.role}`} variants={staggerItem}>
+            <motion.div className="h-full" key={`${item.company}-${item.role}`} variants={staggerItem}>
               <ExperienceCard item={item} />
             </motion.div>
           ))}
