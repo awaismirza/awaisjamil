@@ -96,7 +96,7 @@ export function HomePage() {
                 whileInView="show"
               >
                 {personalProjects.map((project) => (
-                  <motion.div key={project.title} variants={staggerItem}>
+                  <motion.div className="h-full" key={project.title} variants={staggerItem}>
                     <PersonalProjectCard featured project={project} />
                   </motion.div>
                 ))}
