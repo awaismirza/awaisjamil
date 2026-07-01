@@ -6,9 +6,9 @@ export const site = {
   email: 'hello@awaisjamil.com',
   availability: 'Available for selective product builds and senior engineering partnerships.',
   socials: [
-    { label: 'YouTube', href: 'https://youtube.com/@awaisjamil', platform: 'youtube' },
+    { label: 'YouTube', href: 'https://www.youtube.com/@AwaisMirza1', platform: 'youtube' },
     { label: 'GitHub', href: 'https://github.com/awaismirza', platform: 'github' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/awaisjamil', platform: 'linkedin' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/awais-jamil/', platform: 'linkedin' },
   ],
   nav: [
     { label: 'Experience', href: '/experience' },
