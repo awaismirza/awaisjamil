@@ -41,7 +41,9 @@ export function HomePage() {
         <HeroWorkbench />
       </section>
 
-      <section id="projects" className="border-y border-line bg-white py-16 sm:py-20">
+      <ExperienceSection />
+
+      <section id="projects" className="bg-white py-16 sm:py-20">
         <div className="section-shell">
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <div>
@@ -77,8 +79,6 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
-      <ExperienceSection />
 
       <section id="services" className="bg-mist py-16 sm:py-20">
         <div className="section-shell">
