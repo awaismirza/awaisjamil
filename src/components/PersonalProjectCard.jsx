@@ -5,8 +5,8 @@ export function PersonalProjectCard({ project, featured = false }) {
     <a
       className={
         featured
-          ? 'focus-ring group relative block overflow-hidden rounded-md border border-line bg-white p-6 shadow-line transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft'
-          : 'focus-ring group relative block overflow-hidden rounded-md border border-line bg-mist p-6 transition duration-300 hover:-translate-y-1 hover:border-ink hover:bg-white hover:shadow-soft md:p-8'
+          ? 'focus-ring group relative flex h-full flex-col overflow-hidden rounded-md border border-line bg-white p-6 shadow-line transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft'
+          : 'focus-ring group relative flex h-full flex-col overflow-hidden rounded-md border border-line bg-mist p-6 transition duration-300 hover:-translate-y-1 hover:border-ink hover:bg-white hover:shadow-soft md:p-8'
       }
       href={project.href}
       rel="noreferrer"
@@ -43,7 +43,7 @@ export function PersonalProjectCard({ project, featured = false }) {
         ))}
       </div>
 
-      <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-teal">
+      <span className="mt-auto pt-7 inline-flex items-center gap-2 text-sm font-semibold text-teal">
         View website
         <ArrowUpRight
           className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
