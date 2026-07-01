@@ -7,7 +7,7 @@ import { staggerContainer, staggerItem } from '../lib/animation.js'
 
 export function ExperienceCard({ item, compact = false }) {
   return (
-    <article className={compact ? 'py-7' : 'rounded-md border border-line bg-white p-6 shadow-line md:p-8'}>
+    <article className={compact ? 'py-7' : 'rounded-md border border-line bg-white p-6 shadow-line transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft md:p-8'}>
       <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-sm font-semibold text-coral">{item.type}</p>
