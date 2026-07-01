@@ -5,8 +5,8 @@ export function PersonalProjectCard({ project, featured = false }) {
     <a
       className={
         featured
-          ? 'focus-ring group relative overflow-hidden rounded-md border border-line bg-white p-6 shadow-line transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft'
-          : 'focus-ring group relative overflow-hidden rounded-md border border-line bg-mist p-6 transition duration-300 hover:-translate-y-1 hover:border-ink hover:bg-white hover:shadow-soft md:p-8'
+          ? 'focus-ring group relative block overflow-hidden rounded-md border border-line bg-white p-6 shadow-line transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft'
+          : 'focus-ring group relative block overflow-hidden rounded-md border border-line bg-mist p-6 transition duration-300 hover:-translate-y-1 hover:border-ink hover:bg-white hover:shadow-soft md:p-8'
       }
       href={project.href}
       rel="noreferrer"

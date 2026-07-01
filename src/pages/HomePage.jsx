@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/Button.jsx'
 import { AnimateIn } from '../components/AnimateIn.jsx'
+import { SocialLinks } from '../components/SocialIcons.jsx'
 import { staggerContainer, staggerItem } from '../lib/animation.js'
 import { ExperienceSection } from '../components/ExperienceSection.jsx'
 import { Footer } from '../components/Footer.jsx'
@@ -24,8 +25,8 @@ export function HomePage() {
       <section className="section-shell grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1fr_0.86fr] lg:py-24">
         <motion.div
           animate={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 18 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          initial={{ opacity: 0, y: 12 }}
+          transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <h1 className="max-w-4xl font-display text-5xl font-semibold leading-[1.02] tracking-[-0.03em] text-ink sm:text-6xl lg:text-7xl">
             I design and ship web and mobile products that feel sharp, useful,
@@ -35,16 +36,24 @@ export function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             className="mt-7 max-w-2xl text-lg leading-8 text-slate"
             initial={{ opacity: 0, y: 12 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
+            transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1], delay: 0.12 }}
           >
             Senior software engineer in Melbourne, building React, mobile, and
             product systems for founders and teams.
           </motion.p>
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row"
+            className="mt-7 sm:hidden"
             initial={{ opacity: 0, y: 12 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.28 }}
+            transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1], delay: 0.22 }}
+          >
+            <SocialLinks fullRow variant="nav" />
+          </motion.div>
+          <motion.div
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-6 flex flex-col gap-3 sm:mt-9 sm:flex-row"
+            initial={{ opacity: 0, y: 12 }}
+            transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
           >
             <Button href="/experience">View experience</Button>
             <Button href="/#contact" variant="secondary">
