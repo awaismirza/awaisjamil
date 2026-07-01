@@ -2,6 +2,7 @@ import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { site } from '../data/site.js'
+import { SocialLinks } from './SocialIcons.jsx'
 
 export function SiteLayout() {
   const [open, setOpen] = useState(false)
@@ -27,6 +28,10 @@ export function SiteLayout() {
                 {item.label}
               </NavLink>
             ))}
+
+            <span className="h-5 w-px bg-line" />
+
+            <SocialLinks variant="nav" />
           </div>
 
           <button
@@ -52,6 +57,9 @@ export function SiteLayout() {
                   {item.label}
                 </NavLink>
               ))}
+              <div className="mt-2 border-t border-line pt-4">
+                <SocialLinks variant="nav" />
+              </div>
             </div>
           </div>
         ) : null}
