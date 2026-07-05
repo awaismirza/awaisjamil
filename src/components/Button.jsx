@@ -3,9 +3,10 @@ import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const styles = {
-  primary: 'bg-ink text-white hover:bg-graphite',
-  secondary: 'border border-line bg-white text-ink hover:border-ink',
-  dark: 'bg-white text-ink hover:bg-mist',
+  primary: 'bg-ink text-white hover:bg-graphite dark:!bg-white dark:!text-ink dark:hover:!bg-line',
+  secondary:
+    'border border-line bg-white text-ink hover:border-ink dark:!border-white/15 dark:!bg-graphite dark:!text-white dark:hover:!border-white/35 dark:hover:!bg-white/10',
+  dark: 'bg-white text-ink hover:bg-mist dark:!bg-white dark:!text-ink dark:hover:!bg-line',
 }
 
 export function Button({ children, href, variant = 'primary', className }) {

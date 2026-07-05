@@ -8,18 +8,20 @@ import { staggerContainer, staggerItem } from '../lib/animation.js'
 import { ExperienceSection } from '../components/ExperienceSection.jsx'
 import { Footer } from '../components/Footer.jsx'
 import { HeroWorkbench } from '../components/HeroWorkbench.jsx'
-import { ProjectCard } from '../components/ProjectCard.jsx'
+import { ProductCard } from '../components/ProductCard.jsx'
 import { Seo } from '../components/Seo.jsx'
-import { projects } from '../data/projects.js'
+import { products } from '../data/products.js'
 import { posts } from '../data/posts.js'
 import { services } from '../data/services.js'
 
-const PREVIEW_PROJECT_COUNT = 3
+const PREVIEW_PRODUCT_COUNT = 3
 const PREVIEW_SERVICE_COUNT = 4
 const PREVIEW_POST_COUNT = 3
 
 export function HomePage() {
-  const previewProjects = projects.filter((p) => p.href && p.href !== '#').slice(0, PREVIEW_PROJECT_COUNT)
+  const previewProducts = products
+    .filter((p) => p.href && p.href !== '#' && p.href.startsWith('http'))
+    .slice(0, PREVIEW_PRODUCT_COUNT)
   const previewServices = services.slice(0, PREVIEW_SERVICE_COUNT)
   const previewPosts = posts.slice(0, PREVIEW_POST_COUNT)
 
@@ -73,12 +75,12 @@ export function HomePage() {
       {/* Experience preview */}
       <ExperienceSection />
 
-      {/* Projects preview */}
-      <section id="projects" className="bg-white py-16 sm:py-20">
+      {/* Products preview */}
+      <section id="products" className="bg-white py-16 sm:py-20">
         <div className="section-shell">
           <AnimateIn className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <div>
-              <p className="section-label">Personal projects</p>
+              <p className="section-label">Personal products</p>
               <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
                 iOS apps, open-source tools, and practical products built outside
                 client work.
@@ -86,9 +88,9 @@ export function HomePage() {
             </div>
             <Link
               className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-teal"
-              to="/projects"
+              to="/products"
             >
-              View all projects <ArrowRight size={16} />
+              View all products <ArrowRight size={16} />
             </Link>
           </AnimateIn>
 
@@ -100,9 +102,9 @@ export function HomePage() {
               viewport={{ once: true, margin: '-60px' }}
               whileInView="show"
             >
-              {previewProjects.map((project) => (
-                <motion.div className="h-full" key={project.title} variants={staggerItem}>
-                  <ProjectCard project={project} />
+              {previewProducts.map((product) => (
+                <motion.div className="h-full" key={product.title} variants={staggerItem}>
+                  <ProductCard product={product} />
                 </motion.div>
               ))}
             </motion.div>
