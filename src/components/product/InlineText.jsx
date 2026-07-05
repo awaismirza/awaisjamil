@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export function InlineText({ text }) {
   const pattern = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g
   const nodes = []
@@ -9,16 +11,22 @@ export function InlineText({ text }) {
 
     if (match[1]) {
       const href = match[2]
-      const isExternal = href.startsWith('http')
+      const linkClass = 'font-semibold text-teal hover:underline'
       nodes.push(
-        <a
-          className="font-semibold text-teal hover:underline"
-          href={href}
-          key={match.index}
-          {...(isExternal ? { rel: 'noreferrer', target: '_blank' } : {})}
-        >
-          {match[1]}
-        </a>,
+        href.startsWith('/') ? (
+          <Link className={linkClass} key={match.index} to={href}>
+            {match[1]}
+          </Link>
+        ) : (
+          <a
+            className={linkClass}
+            href={href}
+            key={match.index}
+            {...(href.startsWith('http') ? { rel: 'noreferrer', target: '_blank' } : {})}
+          >
+            {match[1]}
+          </a>
+        ),
       )
     } else {
       nodes.push(
