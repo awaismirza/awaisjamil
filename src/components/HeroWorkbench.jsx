@@ -10,18 +10,13 @@ export function HeroWorkbench() {
     >
       <div className="absolute inset-x-10 top-8 h-44 rounded-full border border-teal/20" />
       <div className="absolute bottom-10 left-8 right-10 h-24 rounded-[50%] border border-coral/20" />
-      <svg
+      <img
+        alt=""
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full text-teal/20"
-        viewBox="0 0 520 420"
-      >
-        <path
-          d="M30 282 C128 190, 174 336, 270 245 S407 153, 488 220"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3"
-        />
-      </svg>
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45 mix-blend-multiply dark:opacity-40 dark:mix-blend-screen"
+        decoding="async"
+        src="/hero-workbench-bg.png"
+      />
 
       <div className="relative ml-auto mt-8 w-[88%] rounded-md border border-line bg-white shadow-soft">
         <div className="flex h-10 items-center gap-2 border-b border-line px-4">

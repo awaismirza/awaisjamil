@@ -8,6 +8,25 @@
       name="description"
       content="Awais Jamil is a Melbourne-based senior software engineer building polished web and mobile products."
     />
+    <script>
+      ;(() => {
+        try {
+          const key = 'awaisjamil-theme'
+          const stored = localStorage.getItem(key)
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const theme = stored === 'dark' || stored === 'light' ? stored : systemDark ? 'dark' : 'light'
+
+          document.documentElement.classList.toggle('dark', theme === 'dark')
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme = theme
+        } catch {
+          document.documentElement.classList.toggle(
+            'dark',
+            window.matchMedia('(prefers-color-scheme: dark)').matches,
+          )
+        }
+      })()
+    </script>
     <title>Awais Jamil | Senior Software Engineer</title>
   </head>
   <body>

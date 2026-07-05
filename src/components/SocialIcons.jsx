@@ -27,9 +27,9 @@ function LinkedInIcon() {
 const iconMap = { youtube: YouTubeIcon, github: GitHubIcon, linkedin: LinkedInIcon }
 
 const navStyles = {
-  youtube:  'text-[#FF0000] hover:bg-red-50',
-  github:   'text-[#24292e] hover:bg-mist',
-  linkedin: 'text-[#0A66C2] hover:bg-blue-50',
+  youtube:  'text-[#FF0000] hover:bg-red-50 dark:hover:bg-[#FF0000]/15',
+  github:   'text-[#24292e] hover:bg-mist dark:text-white dark:hover:bg-white/10',
+  linkedin: 'text-[#0A66C2] hover:bg-blue-50 dark:hover:bg-[#0A66C2]/15',
 }
 
 const footerStyles = {
