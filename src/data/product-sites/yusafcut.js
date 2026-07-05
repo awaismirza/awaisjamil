@@ -8,6 +8,11 @@ export const yusafcut = {
   seoDescription:
     'YusafCut is a local-first, transcript-based video editor for Apple Silicon Macs. Edit the words; YusafCut edits the video. Open source, no cloud upload, no telemetry.',
 
+  accent: '#7C5CE0',
+  accentDark: '#5A3FC0',
+  accentSoft: 'rgba(124, 92, 224, 0.13)',
+  download: { kind: 'github', url: 'https://github.com/awaismirza/yusafCut' },
+
   facts: [
     { label: 'Platform', value: 'macOS · Apple Silicon' },
     { label: 'License', value: 'AGPL-3.0 · Open source' },
@@ -17,13 +22,16 @@ export const yusafcut = {
 
   hero: {
     eyebrow: 'Transcript-based video editing',
-    headline: 'Edit the words. YusafCut edits the video.',
+    headline: 'Edit the words.',
+    headlineAccent: 'YusafCut edits the video.',
     sub: 'A local-first desktop editor for cutting talking-head videos, podcasts, interviews, courses, and creator clips by editing their transcript. Delete a word and the matching video disappears — everything runs on your Mac.',
-    ctas: [
-      { label: 'View on GitHub', href: 'https://github.com/awaismirza/yusafCut', kind: 'primary', external: true },
-      { label: 'Buy me a coffee', href: 'https://buymeacoffee.com/awaismirza', kind: 'ghost', external: true },
-    ],
+    ctas: [{ label: 'Buy me a coffee', href: 'https://buymeacoffee.com/awaismirza', external: true }],
     badges: ['No cloud upload', 'No telemetry or API keys', 'Open source (AGPL)'],
+  },
+
+  closing: {
+    title: 'Cut your next video by editing words.',
+    sub: 'Free and open source for Apple Silicon Macs — clone it from GitHub and start editing.',
   },
 
   featuresTitle: 'The transcript is the timeline.',
