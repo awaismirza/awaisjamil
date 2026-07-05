@@ -8,6 +8,12 @@ export const driverLogbook = {
   seoDescription:
     'Track rideshare income, scan receipts with OCR, and get tax-ready reports. Built for Uber, Lyft, DiDi and Ola drivers. Free to download on iPhone.',
 
+  accent: '#1B9E83',
+  accentDark: '#15695C',
+  accentSoft: 'rgba(27, 158, 131, 0.14)',
+  // TODO: set the App Store listing URL once available
+  download: { kind: 'app-store', url: null },
+
   facts: [
     { label: 'Platform', value: 'iPhone · iOS 16+' },
     { label: 'Pricing', value: 'Free · Premium $2.99/mo' },
@@ -17,11 +23,17 @@ export const driverLogbook = {
 
   hero: {
     eyebrow: 'For Uber, Lyft, DiDi & Ola drivers',
-    headline: 'Every dollar. Always tracked.',
+    headline: 'Every dollar.',
+    headlineAccent: 'Always tracked.',
     sub: 'Driver Logbook makes tax time simple — scan receipts with your camera, log trip income instantly, and export a complete profit & loss report in seconds.',
-    // TODO: replace ctaBadge with the real App Store link in `ctas` once the listing URL is available
-    ctaBadge: 'Download on the App Store',
+    heroShot: '/driver-logbook/screenshot-dashboard.png',
+    heroShotAlt: 'Driver Logbook dashboard showing weekly profit',
     badges: ['Free to start', 'Private & offline-first', 'Tax-ready exports'],
+  },
+
+  closing: {
+    title: 'Know your profit. Every shift.',
+    sub: 'Download Driver Logbook free on the App Store. iPhone only · iOS 16+.',
   },
 
   metrics: [
