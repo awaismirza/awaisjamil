@@ -2,6 +2,13 @@ import { useOutletContext } from 'react-router-dom'
 import { Seo } from '../Seo.jsx'
 import { InlineText } from './InlineText.jsx'
 
+function scrollToSection(index) {
+  const target = document.getElementById(`section-${index}`)
+  if (!target) return
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  window.history.replaceState(null, '', `#section-${index}`)
+}
+
 function Block({ block }) {
   if (block.h3) {
     return <h3 className="font-display text-lg font-semibold text-ink">{block.h3}</h3>
@@ -54,9 +61,7 @@ export function ProductDocPage({ kind }) {
 
         <div
           className={
-            showContents
-              ? 'mt-12 lg:grid lg:grid-cols-[minmax(0,1fr)_240px] lg:items-start lg:gap-16'
-              : 'mt-12'
+            showContents ? 'mt-12 lg:grid lg:grid-cols-[minmax(0,1fr)_240px] lg:gap-16' : 'mt-12'
           }
         >
           <div className="grid max-w-3xl gap-10">
@@ -87,6 +92,10 @@ export function ProductDocPage({ kind }) {
                       className="focus-ring rounded-md px-2.5 py-1.5 text-[13px] font-medium text-slate transition hover:bg-mist hover:text-[var(--accent)] dark:text-white/70"
                       href={`#section-${index + 1}`}
                       key={section.heading}
+                      onClick={(event) => {
+                        event.preventDefault()
+                        scrollToSection(index + 1)
+                      }}
                     >
                       {section.heading}
                     </a>
