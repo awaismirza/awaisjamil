@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import { SiteLayout } from './components/SiteLayout.jsx'
 import { ContactPage } from './pages/ContactPage.jsx'
 import { ExperiencePage } from './pages/ExperiencePage.jsx'
@@ -9,6 +10,16 @@ import { ServicesPage } from './pages/ServicesPage.jsx'
 import { WritingPage } from './pages/WritingPage.jsx'
 
 export default function App() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const redirect = sessionStorage.getItem('redirect')
+    if (redirect) {
+      sessionStorage.removeItem('redirect')
+      navigate(redirect)
+    }
+  }, [navigate])
+
   return (
     <Routes>
       <Route element={<SiteLayout />}>
