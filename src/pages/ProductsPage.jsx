@@ -2,23 +2,23 @@ import { motion } from 'framer-motion'
 import { CTASection } from '../components/CTASection.jsx'
 import { Footer } from '../components/Footer.jsx'
 import { PageHero } from '../components/PageHero.jsx'
-import { ProjectCard } from '../components/ProjectCard.jsx'
+import { ProductCard } from '../components/ProductCard.jsx'
 import { Seo } from '../components/Seo.jsx'
 import { staggerContainer, staggerItem } from '../lib/animation.js'
-import { projects } from '../data/projects.js'
+import { products } from '../data/products.js'
 
-export function ProjectsPage() {
+export function ProductsPage() {
   return (
     <>
       <Seo
-        title="Projects"
-        description="Personal projects and products by Awais Jamil, including iOS apps, local AI tools, open-source work, and practical software experiments."
-        path="/projects"
+        title="Products"
+        description="Personal products by Awais Jamil, including iOS apps, local AI tools, open-source work, and practical software experiments."
+        path="/products"
       />
 
       <PageHero
         description="A collection of products and experiments built around privacy, productivity, local-first workflows, finance, faith, and creator tooling."
-        label="Projects"
+        label="Products"
         title="iOS apps, open-source tools, and practical products built outside client work."
       />
 
@@ -31,9 +31,9 @@ export function ProjectsPage() {
             viewport={{ once: true, margin: '-60px' }}
             whileInView="show"
           >
-            {projects.map((project) => (
-              <motion.div className="h-full" key={project.title} variants={staggerItem}>
-                <ProjectCard project={project} />
+            {products.map((product) => (
+              <motion.div className="h-full" key={product.title} variants={staggerItem}>
+                <ProductCard product={product} />
               </motion.div>
             ))}
           </motion.div>

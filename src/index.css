@@ -27,9 +27,21 @@ body {
     'Segoe UI', sans-serif;
 }
 
+.dark body {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    #111316;
+}
+
 ::selection {
   background: #d8f3ef;
   color: #111316;
+}
+
+.dark ::selection {
+  background: #0f766e;
+  color: #ffffff;
 }
 
 @layer components {
@@ -43,5 +55,59 @@ body {
 
   .focus-ring {
     @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal;
+  }
+}
+
+@layer utilities {
+  .dark .bg-white {
+    background-color: #111316;
+  }
+
+  .dark .bg-mist {
+    background-color: #1b2027;
+  }
+
+  .dark .bg-paper {
+    background-color: #111316;
+  }
+
+  .dark .bg-graphite {
+    background-color: #23272f;
+  }
+
+  .dark .text-ink {
+    color: #f8fafc;
+  }
+
+  .dark .text-slate {
+    color: #cbd5e1;
+  }
+
+  .dark .border-line {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .dark .shadow-line {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .dark .shadow-soft {
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+  }
+
+  .dark .hover\:bg-white:hover {
+    background-color: #23272f;
+  }
+
+  .dark .hover\:bg-mist:hover {
+    background-color: #1b2027;
+  }
+
+  .dark .hover\:border-ink:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .dark .hover\:text-ink:hover {
+    color: #ffffff;
   }
 }
