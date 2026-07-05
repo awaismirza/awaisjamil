@@ -1,5 +1,5 @@
 export const contact = {
-  email: 'hello@awaisjamil.com',
+  email: 'owaesmirza@gmail.com',
   location: 'Melbourne, Australia',
   availability:
     'Available for selective product builds, web applications, iOS apps, AI automation, and senior engineering partnerships.',
