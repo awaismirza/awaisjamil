@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { SiteLayout } from './components/SiteLayout.jsx'
 import { ProductDocPage } from './components/product/ProductDocPage.jsx'
 import { ProductSiteLayout } from './components/product/ProductSiteLayout.jsx'
@@ -13,6 +13,23 @@ import { ProductsPage } from './pages/ProductsPage.jsx'
 import { ServicesPage } from './pages/ServicesPage.jsx'
 import { WritingPage } from './pages/WritingPage.jsx'
 
+function ScrollManager() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const target = document.getElementById(hash.slice(1))
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        return
+      }
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname, hash])
+
+  return null
+}
+
 export default function App() {
   const navigate = useNavigate()
 
@@ -25,7 +42,9 @@ export default function App() {
   }, [navigate])
 
   return (
-    <Routes>
+    <>
+      <ScrollManager />
+      <Routes>
       <Route element={<SiteLayout />}>
         <Route index element={<HomePage />} />
         <Route path="experience" element={<ExperiencePage />} />
@@ -43,6 +62,7 @@ export default function App() {
         <Route path="terms" element={<ProductDocPage kind="terms" />} />
         <Route path="support" element={<ProductSupportPage />} />
       </Route>
-    </Routes>
+      </Routes>
+    </>
   )
 }
