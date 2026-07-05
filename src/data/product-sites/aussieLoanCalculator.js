@@ -8,6 +8,12 @@ export const aussieLoanCalculator = {
   seoDescription:
     'Aussie Loan Calculator provides mortgage, car loan, personal loan, stamp duty, and LMI repayment estimates for Australia — all calculated on your device.',
 
+  accent: '#C77A18',
+  accentDark: '#95560B',
+  accentSoft: 'rgba(199, 122, 24, 0.13)',
+  // TODO: set the App Store listing URL once available
+  download: { kind: 'app-store', url: null },
+
   facts: [
     { label: 'Platform', value: 'iPhone' },
     { label: 'Data', value: 'On-device only' },
@@ -16,11 +22,15 @@ export const aussieLoanCalculator = {
 
   hero: {
     eyebrow: 'Australian loan estimates',
-    headline: 'Mortgage, car loan, and personal loan estimates for Australia.',
-    sub: 'Repayment estimates, stamp duty, LMI, and amortisation schedules — calculated entirely on your device, with no accounts and no loan details sent to any server.',
-    // TODO: replace ctaBadge with the real App Store link in `ctas` once the listing URL is available
-    ctaBadge: 'Download on the App Store',
+    headline: 'Run the numbers',
+    headlineAccent: 'before the bank does.',
+    sub: 'Mortgage, car loan, and personal loan estimates for Australia — plus stamp duty, LMI, and amortisation schedules. Calculated entirely on your device, with no accounts and no loan details sent to any server.',
     badges: ['No accounts', 'Nothing leaves your device', 'Indicative estimates in seconds'],
+  },
+
+  closing: {
+    title: 'Run the numbers before you sign.',
+    sub: 'Indicative estimates only — always confirm rates, fees, and repayments with your lender or broker.',
   },
 
   featuresTitle: 'Every big Australian loan question, one app.',

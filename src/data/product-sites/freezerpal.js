@@ -8,6 +8,12 @@ export const freezerpal = {
   seoDescription:
     "FreezerPal is a simple, focused freezer inventory tracker for iPhone that reminds you what to eat before it's too late. Free for 15 items, $9.99 one-time to unlock unlimited.",
 
+  accent: '#2F7FE0',
+  accentDark: '#1D5FB8',
+  accentSoft: 'rgba(47, 127, 224, 0.13)',
+  // TODO: switch to { kind: 'app-store', url: '…' } once FreezerPal ships
+  download: { kind: 'coming-soon', note: 'Currently in TestFlight' },
+
   facts: [
     { label: 'Platform', value: 'iPhone' },
     { label: 'Pricing', value: 'Free · $9.99 one-time' },
@@ -17,12 +23,18 @@ export const freezerpal = {
 
   hero: {
     eyebrow: 'Freezer inventory & reminders',
-    headline: "Never lose track of what's in your freezer again.",
+    headline: 'Never lose track of',
+    headlineAccent: "what's in your freezer.",
     sub: 'Add items, set expiry reminders, and get notified before food goes to waste — entirely on your device, no account required.',
-    // TODO: replace ctaBadge with a real App Store link in `ctas` once FreezerPal ships
-    ctaBadge: 'Coming soon to the App Store',
+    heroShot: '/freezerpal/screenshot-home.png',
+    heroShotAlt: 'FreezerPal home dashboard with active items and expiring soon',
     ctaNote: 'Currently in TestFlight',
     badges: ['No account required', 'Works fully offline', 'One-time purchase, no subscription'],
+  },
+
+  closing: {
+    title: 'Stop losing food to the back of the freezer.',
+    sub: 'FreezerPal is coming soon to the App Store — free for your first 15 items.',
   },
 
   screenshotsTitle: 'Simple screens, built for a quick freezer check.',

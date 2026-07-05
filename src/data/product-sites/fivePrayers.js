@@ -8,6 +8,12 @@ export const fivePrayers = {
   seoDescription:
     'Five Prayers is a simple, private iPhone app that helps Muslims track the five daily prayers, log what they prayed, and understand what they missed.',
 
+  accent: '#1D8A5B',
+  accentDark: '#136645',
+  accentSoft: 'rgba(29, 138, 91, 0.13)',
+  // TODO: set the App Store listing URL once available
+  download: { kind: 'app-store', url: null },
+
   facts: [
     { label: 'Platform', value: 'iPhone' },
     { label: 'Data', value: 'Local-first' },
@@ -16,11 +22,17 @@ export const fivePrayers = {
 
   hero: {
     eyebrow: 'Simple Salah tracker',
-    headline: 'Private prayer tracking for the five daily prayers.',
+    headline: 'Private prayer tracking',
+    headlineAccent: 'for the five daily prayers.',
     sub: 'Five Prayers is a simple, private iPhone app that helps Muslims track the five daily prayers, log what they prayed, and understand what they missed.',
-    // TODO: replace ctaBadge with the real App Store link in `ctas` once the listing URL is available
-    ctaBadge: 'Download on the App Store',
+    heroShot: '/five-prayers/showcase-home.svg',
+    heroShotAlt: "Five Prayers home screen showing today's prayers and the next prayer card",
     badges: ['Local-first prayer logs', 'City-based prayer times', 'No ads or data selling'],
+  },
+
+  closing: {
+    title: 'Build a consistent prayer habit.',
+    sub: 'Five Prayers keeps your salah log private, on your device — no ads, no social pressure.',
   },
 
   screenshotsLabel: 'Showcase',
