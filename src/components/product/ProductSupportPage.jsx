@@ -15,24 +15,26 @@ export function ProductSupportPage() {
         title={`${site.name} — Support`}
       />
 
-      <section className="py-14 sm:py-20">
-        <p className="section-label">{site.name}</p>
-        <h1 className="mt-4 font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
+      <section className="section-shell py-14 sm:py-20">
+        <span className="inline-flex items-center rounded-full border border-[var(--accent)]/25 bg-[var(--accent-soft)] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
           Support
+        </span>
+        <h1 className="mt-5 font-display text-4xl font-semibold tracking-[-0.02em] text-ink sm:text-5xl">
+          Need help with {site.name}?
         </h1>
         <p className="mt-5 max-w-xl text-lg leading-8 text-slate">{support.intro}</p>
 
-        <div className="mt-8 max-w-xl rounded-md border border-line bg-white p-6 shadow-line">
-          <p className="text-sm font-semibold text-slate">Email support</p>
+        <div className="mt-9 max-w-xl rounded-2xl border border-line bg-white p-7 shadow-line">
+          <p className="text-xs font-bold uppercase tracking-[0.1em] text-slate">Email support</p>
           <a
-            className="focus-ring mt-2 inline-flex items-center gap-2 rounded-sm font-display text-xl font-semibold text-teal hover:underline"
+            className="focus-ring mt-3 inline-flex items-center gap-2.5 rounded-sm font-display text-xl font-semibold text-[var(--accent)] hover:underline"
             href={`mailto:${support.email}?subject=${encodeURIComponent(`${site.name} support`)}`}
           >
-            <Mail size={19} /> {support.email}
+            <Mail size={20} /> {support.email}
           </a>
           {support.checklist?.length ? (
             <>
-              <p className="mt-5 text-sm font-semibold text-ink">When contacting support, include:</p>
+              <p className="mt-6 text-sm font-semibold text-ink">When contacting support, include:</p>
               <ul className="mt-2 grid gap-1.5 text-sm leading-6 text-slate">
                 {support.checklist.map((item) => (
                   <li className="ml-5 list-disc" key={item}>
@@ -48,7 +50,7 @@ export function ProductSupportPage() {
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2">
             {support.links.map((link) => (
               <a
-                className="focus-ring inline-flex items-center gap-1.5 rounded-sm text-sm font-semibold text-teal hover:underline"
+                className="focus-ring inline-flex items-center gap-1.5 rounded-sm text-sm font-semibold text-[var(--accent)] hover:underline"
                 href={link.href}
                 key={link.href}
                 rel="noreferrer"
@@ -61,10 +63,10 @@ export function ProductSupportPage() {
         ) : null}
 
         {support.faqs?.length ? (
-          <div className="mt-12 grid max-w-3xl gap-8">
+          <div className="mt-14 grid max-w-3xl gap-5">
             <h2 className="font-display text-2xl font-semibold text-ink">Frequently asked questions</h2>
             {support.faqs.map((faq) => (
-              <div key={faq.q}>
+              <div className="rounded-2xl border border-line bg-white p-6 shadow-line" key={faq.q}>
                 <h3 className="font-display text-lg font-semibold text-ink">{faq.q}</h3>
                 <p className="mt-2 text-base leading-7 text-slate">
                   <InlineText text={faq.a} />
