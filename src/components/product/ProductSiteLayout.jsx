@@ -19,6 +19,14 @@ function navItems(slug) {
 export function ProductSiteLayout() {
   const { slug } = useParams()
   const [open, setOpen] = useState(false)
+  // Read once on mount so the strip doesn't pop in mid-visit
+  const [fromPortfolio] = useState(() => {
+    try {
+      return sessionStorage.getItem('visited-portfolio') === '1'
+    } catch {
+      return false
+    }
+  })
   const site = productSites[slug]
 
   if (!site) return <NotFoundPage />
@@ -35,18 +43,20 @@ export function ProductSiteLayout() {
       }}
     >
       <header className="sticky top-0 z-50 border-b border-line/80 bg-white/90 backdrop-blur-xl transition-colors dark:border-white/10 dark:bg-ink/90">
-        {/* Portfolio strip */}
-        <div className="border-b border-line/60 bg-mist/70 dark:border-white/5 dark:bg-graphite/40">
-          <div className="section-shell flex h-9 items-center justify-between">
-            <Link
-              className="focus-ring inline-flex items-center gap-1.5 rounded-sm text-xs font-semibold text-slate transition hover:text-ink dark:text-white/60 dark:hover:text-white"
-              to="/"
-            >
-              <ArrowLeft size={13} /> Back to awaisjamil.com
-            </Link>
-            <SocialLinks variant="nav" />
+        {/* Portfolio strip — only for visitors who navigated here from the portfolio */}
+        {fromPortfolio ? (
+          <div className="border-b border-line/60 bg-mist/70 dark:border-white/5 dark:bg-graphite/40">
+            <div className="section-shell flex h-9 items-center justify-between">
+              <Link
+                className="focus-ring inline-flex items-center gap-1.5 rounded-sm text-xs font-semibold text-slate transition hover:text-ink dark:text-white/60 dark:hover:text-white"
+                to="/"
+              >
+                <ArrowLeft size={13} /> Back to awaisjamil.com
+              </Link>
+              <SocialLinks variant="nav" />
+            </div>
           </div>
-        </div>
+        ) : null}
 
         {/* Product bar */}
         <nav className="section-shell flex h-16 items-center justify-between">

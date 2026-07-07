@@ -1,5 +1,5 @@
 import { Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { products } from '../data/products.js'
 import { site } from '../data/site.js'
@@ -9,6 +9,16 @@ import { ThemeToggle } from './ThemeToggle.jsx'
 
 export function SiteLayout() {
   const [open, setOpen] = useState(false)
+
+  // Lets product mini-sites know the visitor came from the portfolio, so they
+  // can show the "Back to awaisjamil.com" strip only for those visitors.
+  useEffect(() => {
+    try {
+      sessionStorage.setItem('visited-portfolio', '1')
+    } catch {
+      /* private browsing — strip just stays hidden */
+    }
+  }, [])
 
   return (
     <div className="min-h-screen text-ink transition-colors dark:text-white">
