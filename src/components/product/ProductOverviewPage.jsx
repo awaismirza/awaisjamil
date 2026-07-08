@@ -65,6 +65,9 @@ export function ProductOverviewPage() {
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <DownloadButton site={site} size="lg" />
+              {site.androidDownload ? (
+                <DownloadButton platform="android" site={site} size="lg" />
+              ) : null}
               {hero.ctas?.map((cta) => (
                 <a
                   className="focus-ring inline-flex items-center justify-center gap-2 rounded-full border border-line px-7 py-3.5 text-base font-semibold text-ink transition hover:border-ink dark:border-white/20 dark:text-white dark:hover:border-white/50"
@@ -224,7 +227,13 @@ export function ProductOverviewPage() {
         <section className="border-t border-line bg-mist py-16 sm:py-20 dark:border-white/10">
           <div className="section-shell">
             <SectionHeader center label="Pricing" sub={pricing.sub} title={pricing.title} />
-            <div className="mx-auto mt-12 grid max-w-3xl gap-6 md:grid-cols-2">
+            <div
+              className={`mx-auto mt-12 grid gap-6 ${
+                pricing.plans.length === 3
+                  ? 'max-w-5xl md:grid-cols-3'
+                  : 'max-w-3xl md:grid-cols-2'
+              }`}
+            >
               {pricing.plans.map((plan) => (
                 <div
                   className={`relative rounded-2xl border bg-white p-8 ${
@@ -234,9 +243,9 @@ export function ProductOverviewPage() {
                   }`}
                   key={plan.name}
                 >
-                  {plan.highlight ? (
+                  {plan.badge || plan.highlight ? (
                     <span className="absolute right-5 top-5 rounded-full bg-[var(--accent)] px-3 py-1 text-[11px] font-bold text-white">
-                      Most popular
+                      {plan.badge || 'Most popular'}
                     </span>
                   ) : null}
                   <p className="text-xs font-bold uppercase tracking-[0.1em] text-slate">{plan.name}</p>
@@ -276,8 +285,11 @@ export function ProductOverviewPage() {
                 {closing.title}
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-slate">{closing.sub}</p>
-              <div className="mt-9 flex justify-center">
+              <div className="mt-9 flex flex-wrap justify-center gap-4">
                 <DownloadButton site={site} size="lg" />
+                {site.androidDownload ? (
+                  <DownloadButton platform="android" site={site} size="lg" />
+                ) : null}
               </div>
             </AnimateIn>
           </div>

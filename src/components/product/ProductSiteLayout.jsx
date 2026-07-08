@@ -91,7 +91,12 @@ export function ProductSiteLayout() {
               </NavLink>
             ))}
             <ThemeToggle />
-            <DownloadButton compact site={site} />
+            <div className="flex items-center gap-2">
+              <DownloadButton compact site={site} />
+              {site.androidDownload ? (
+                <DownloadButton compact platform="android" site={site} />
+              ) : null}
+            </div>
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
@@ -121,8 +126,11 @@ export function ProductSiteLayout() {
                   {item.label}
                 </NavLink>
               ))}
-              <div className="mt-2 border-t border-line pt-4 dark:border-white/10">
+              <div className="mt-2 border-t border-line pt-4 dark:border-white/10 flex flex-col gap-2">
                 <DownloadButton site={site} />
+                {site.androidDownload ? (
+                  <DownloadButton platform="android" site={site} />
+                ) : null}
               </div>
             </div>
           </div>

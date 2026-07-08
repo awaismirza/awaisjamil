@@ -11,7 +11,24 @@ export function ProductCard({ product }) {
         <div>
           <p className="text-sm font-semibold text-coral">{product.type}</p>
           <h3 className="mt-2 font-display text-2xl font-semibold leading-tight">
-            {product.title}
+            {isLive ? (
+              isExternal ? (
+                <a
+                  className="hover:text-teal transition-colors"
+                  href={product.href}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {product.title}
+                </a>
+              ) : (
+                <Link className="hover:text-teal transition-colors" to={product.href}>
+                  {product.title}
+                </Link>
+              )
+            ) : (
+              product.title
+            )}
           </h3>
           <p className="mt-1 text-sm font-semibold text-teal">{product.year}</p>
         </div>

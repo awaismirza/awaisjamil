@@ -12,7 +12,7 @@ export const fivePrayers = {
   accentDark: '#136645',
   accentSoft: 'rgba(29, 138, 91, 0.13)',
   // TODO: set the App Store listing URL once available
-  download: { kind: 'app-store', url: null },
+  download: { kind: 'app-store', url: 'https://apps.apple.com/us/app/five-prayers/id6780003136' },
 
   facts: [
     { label: 'Platform', value: 'iPhone' },

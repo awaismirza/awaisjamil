@@ -12,7 +12,7 @@ export const aussieLoanCalculator = {
   accentDark: '#95560B',
   accentSoft: 'rgba(199, 122, 24, 0.13)',
   // TODO: set the App Store listing URL once available
-  download: { kind: 'app-store', url: null },
+  download: { kind: 'app-store', url: 'https://apps.apple.com/us/app/aussie-loan-cal/id6759710626' },
 
   facts: [
     { label: 'Platform', value: 'iPhone' },

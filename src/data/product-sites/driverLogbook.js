@@ -12,7 +12,8 @@ export const driverLogbook = {
   accentDark: '#15695C',
   accentSoft: 'rgba(27, 158, 131, 0.14)',
   // TODO: set the App Store listing URL once available
-  download: { kind: 'app-store', url: null },
+  download: { kind: 'app-store', url: 'https://apps.apple.com/us/app/driver-logbook/id6770195963' },
+  androidDownload: { kind: 'coming-soon', platform: 'android' },
 
   facts: [
     { label: 'Platform', value: 'iPhone · iOS 16+' },
@@ -167,10 +168,25 @@ export const driverLogbook = {
         ],
       },
       {
-        name: 'Premium',
+        name: 'Premium Monthly',
         price: '$1.99',
         per: '/ month',
-        description: 'Everything in Free, plus iCloud sync, GPS mileage tracking, and full data export.',
+        description: 'Everything in Free, billed monthly. Cancel anytime.',
+        features: [
+          'Everything in Free',
+          'iCloud sync across all your iPhones',
+          'GPS mileage tracking',
+          'Full PDF/CSV export of your data',
+          'Full backup export & import',
+          'Priority support',
+        ],
+        note: 'Subscription auto-renews unless cancelled at least 24 hours before the end of the current period. Manage in Apple ID Settings.',
+      },
+      {
+        name: 'Premium Yearly',
+        price: '$9.99',
+        per: '/ year',
+        description: 'Everything in Free, billed annually. Save 58% over monthly.',
         features: [
           'Everything in Free',
           'iCloud sync across all your iPhones',
@@ -180,7 +196,8 @@ export const driverLogbook = {
           'Priority support',
         ],
         highlight: true,
-        note: 'Also available: $9.99/year (save 58%). Subscription auto-renews unless cancelled at least 24 hours before the end of the current period. Manage in Apple ID Settings.',
+        badge: 'Best Value',
+        note: 'Subscription auto-renews unless cancelled at least 24 hours before the end of the current period. Manage in Apple ID Settings.',
       },
     ],
   },

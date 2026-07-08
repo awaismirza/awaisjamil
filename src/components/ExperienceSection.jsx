@@ -88,6 +88,15 @@ export function ExperienceSection({ limit = 4 }) {
             </motion.div>
           ))}
         </motion.div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            className="focus-ring inline-flex items-center gap-2 rounded-full border border-line bg-white px-7 py-3.5 text-sm font-semibold text-ink transition hover:border-ink dark:border-white/20 dark:bg-graphite dark:text-white dark:hover:border-white/50"
+            to="/experience"
+          >
+            View all experience <ArrowRight size={16} />
+          </Link>
+        </div>
       </div>
     </section>
   )

@@ -14,6 +14,14 @@ function AppleLogo({ size = 16 }) {
   )
 }
 
+function AndroidLogo({ size = 16 }) {
+  return (
+    <svg aria-hidden="true" fill="currentColor" height={size} viewBox="0 0 24 24" width={size}>
+      <path d="M17.52 14.37L19.4 17.6a.75.75 0 1 1-1.3.75l-1.95-3.36c-1.3.56-2.78.88-4.15.88s-2.85-.32-4.15-.88l-1.95 3.36a.75.75 0 1 1-1.3-.75l1.88-3.23C4.16 12.65 2.5 10.15 2.5 7.25h19c0 2.9-1.66 5.4-3.98 7.12zM7.5 10.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zm9 0a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zM16 1.75a.75.75 0 0 1 .16 1l-1.15 1.95c1.65.65 3.08 1.68 4.2 2.9h-14.4c1.12-1.22 2.55-2.25 4.2-2.9L7.84 2.75a.75.75 0 1 1 1.3-.75l1.58 2.73c.42-.05.86-.08 1.28-.08s.86.03 1.28.08l1.58-2.73a.75.75 0 0 1 1.1-.25z" />
+    </svg>
+  )
+}
+
 const base =
   'focus-ring inline-flex items-center justify-center gap-2 rounded-full font-semibold text-white transition hover:brightness-110'
 const sizes = {
@@ -21,9 +29,20 @@ const sizes = {
   lg: 'px-7 py-3.5 text-base',
 }
 
-export function DownloadButton({ site, size = 'md', compact = false }) {
-  const download = site.download
+export function DownloadButton({ site, download: directDownload, platform = 'ios', size = 'md', compact = false }) {
+  const download = directDownload || (platform === 'android' ? site?.androidDownload : site?.download)
   if (!download) return null
+
+  if (platform === 'android') {
+    return (
+      <span
+        className={`focus-ring inline-flex items-center justify-center gap-2 rounded-full font-semibold transition cursor-default border border-slate/30 text-slate dark:border-white/20 dark:text-white/80 bg-transparent ${sizes[size]} opacity-70`}
+        title="Android app is currently in development"
+      >
+        <AndroidLogo size={size === 'lg' ? 18 : 16} /> {compact ? 'Android' : 'Android coming soon'}
+      </span>
+    )
+  }
 
   if (download.kind === 'github') {
     return (

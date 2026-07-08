@@ -14,14 +14,13 @@ import { products } from '../data/products.js'
 import { posts } from '../data/posts.js'
 import { services } from '../data/services.js'
 
-const PREVIEW_PRODUCT_COUNT = 3
 const PREVIEW_SERVICE_COUNT = 4
 const PREVIEW_POST_COUNT = 3
 
 export function HomePage() {
   const previewProducts = products
-    .filter((p) => p.href && p.href !== '#' && p.href.startsWith('http'))
-    .slice(0, PREVIEW_PRODUCT_COUNT)
+    .filter((p) => p.href && p.href !== '#')
+    .slice(0, 4)
   const previewServices = services.slice(0, PREVIEW_SERVICE_COUNT)
   const previewPosts = posts.slice(0, PREVIEW_POST_COUNT)
 
@@ -73,7 +72,7 @@ export function HomePage() {
       </section>
 
       {/* Experience preview */}
-      <ExperienceSection />
+      <ExperienceSection limit={6} />
 
       {/* Products preview */}
       <section id="products" className="bg-white py-16 sm:py-20">
@@ -96,7 +95,7 @@ export function HomePage() {
 
           <div className="mt-12">
             <motion.div
-              className="grid gap-5 md:grid-cols-3"
+              className="grid gap-5 md:grid-cols-2"
               initial="hidden"
               variants={staggerContainer}
               viewport={{ once: true, margin: '-60px' }}
@@ -108,6 +107,15 @@ export function HomePage() {
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <Link
+              className="focus-ring inline-flex items-center gap-2 rounded-full border border-line bg-white px-7 py-3.5 text-sm font-semibold text-ink transition hover:border-ink dark:border-white/20 dark:bg-graphite dark:text-white dark:hover:border-white/50"
+              to="/products"
+            >
+              View all products <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
