@@ -1,5 +1,12 @@
 # Product page conventions
 
+For products that also have a real shipping app with its own repo (currently: Driver
+Logbook), keep this site's feature/pricing/legal copy consistent with that app's own docs —
+don't let the two drift. Driver Logbook's app repo is expected as a sibling directory at
+`../Rideshare-expense-tracker` (see that repo's `CLAUDE.md` for the current feature set,
+Premium gating, and copy rules); its product page data lives at
+`src/data/product-sites/driverLogbook.js` in this repo.
+
 Every product that has its own page on this site (an internal `/products/<slug>` route,
 as opposed to a card that just links out to an external site) follows the same pattern:
 
