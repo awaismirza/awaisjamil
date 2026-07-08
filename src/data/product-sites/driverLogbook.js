@@ -1,4 +1,4 @@
-import { Camera, Car, CloudUpload, DollarSign, PieChart, ReceiptText } from 'lucide-react'
+import { Camera, Car, CloudUpload, FileDown, MapPin, PieChart, ReceiptText } from 'lucide-react'
 
 export const driverLogbook = {
   slug: 'driver-logbook',
@@ -16,7 +16,7 @@ export const driverLogbook = {
 
   facts: [
     { label: 'Platform', value: 'iPhone · iOS 16+' },
-    { label: 'Pricing', value: 'Free · Premium $2.99/mo' },
+    { label: 'Pricing', value: 'Free · Premium $1.99/mo' },
     { label: 'Data', value: 'On-device + your iCloud' },
     { label: 'Tracking', value: 'Zero third-party SDKs' },
   ],
@@ -107,19 +107,25 @@ export const driverLogbook = {
       icon: PieChart,
       title: 'P&L reports',
       description:
-        'Weekly, monthly and yearly profit & loss views with a donut chart breakdown by expense category. Export CSV for your tax agent with one tap.',
+        'Weekly, monthly and yearly profit & loss views with a donut chart breakdown by expense category — see exactly where your money goes.',
     },
     {
-      icon: DollarSign,
-      title: 'Australian GST (Premium)',
+      icon: MapPin,
+      title: 'GPS mileage tracking (Premium)',
       description:
-        'GST-registered? Toggle GST on any expense for automatic Input Tax Credit calculation (÷ 11). Set business-use percentage per category. BAS-ready annual summary.',
+        'Start a shift and Driver Logbook tracks your kilometres automatically with GPS — no manual odometer readings. Log an odometer reading instead and it always takes priority over the GPS distance.',
+    },
+    {
+      icon: FileDown,
+      title: 'Export PDF or CSV',
+      description:
+        'Export a full PDF or CSV report of your income, expenses and tracked mileage for any date range — every detail, ready to hand to your accountant or keep for your own records.',
     },
     {
       icon: CloudUpload,
       title: 'iCloud sync (Premium)',
       description:
-        "All your entries encrypted and synced across every iPhone you own via Apple's CloudKit. Add a trip on one device, see it on another in seconds.",
+        "All your entries encrypted and synced across every iPhone you own via Apple's CloudKit — add a trip on one device, see it on another in seconds. Prefer to manage it yourself? Export a full backup and import it on any device, any time.",
     },
   ],
 
@@ -144,7 +150,7 @@ export const driverLogbook = {
 
   pricing: {
     title: "Start free. Upgrade when you're ready.",
-    sub: 'Core tracking features are free forever. Premium unlocks iCloud sync, GST tracking and CSV export.',
+    sub: 'Core tracking features are free forever. Premium unlocks iCloud sync, GPS mileage tracking and full PDF/CSV export.',
     plans: [
       {
         name: 'Free',
@@ -162,19 +168,19 @@ export const driverLogbook = {
       },
       {
         name: 'Premium',
-        price: '$2.99',
+        price: '$1.99',
         per: '/ month',
-        description: 'Everything in Free, plus iCloud sync, GST tracking, and full data export.',
+        description: 'Everything in Free, plus iCloud sync, GPS mileage tracking, and full data export.',
         features: [
           'Everything in Free',
           'iCloud sync across all your iPhones',
-          'Australian GST & ITC tracking',
-          'CSV export for your accountant',
-          'Yearly BAS summary',
+          'GPS mileage tracking',
+          'Full PDF/CSV export of your data',
+          'Full backup export & import',
           'Priority support',
         ],
         highlight: true,
-        note: 'Also available: $24.99/year (save 30%). Subscription auto-renews unless cancelled at least 24 hours before the end of the current period. Manage in Apple ID Settings.',
+        note: 'Also available: $9.99/year (save 58%). Subscription auto-renews unless cancelled at least 24 hours before the end of the current period. Manage in Apple ID Settings.',
       },
     ],
   },
@@ -233,8 +239,9 @@ export const driverLogbook = {
             ul: [
               'Driver name and currency preference',
               'Trip income entries: platform (Uber, DiDi, Lyft, Ola, etc.), amount, number of trips, date, notes',
-              'Expense entries: category, merchant name, amount, date, GST flag, business-use percentage, receipt image',
+              'Expense entries: category, merchant name, amount, date, receipt image',
               'Vehicle profiles: make, model, year, colour, nickname',
+              'Mileage trips (Premium): GPS-tracked route distance, odometer readings, start/end times',
             ],
           },
           {
@@ -264,7 +271,6 @@ export const driverLogbook = {
           {
             ul: [
               'Advertising identifiers (IDFA) — we do not use ATT',
-              'Location data',
               'Contacts',
               "Browsing or usage analytics beyond Apple's anonymised crash logs",
               'Any data from children under 13',
@@ -273,18 +279,19 @@ export const driverLogbook = {
         ],
       },
       {
-        heading: '3. Camera & photo library',
+        heading: '3. Camera, photo library & location',
         blocks: [
-          { p: 'Driver Logbook requests the following device permissions solely to enable receipt capture:' },
+          { p: 'Driver Logbook requests the following device permissions solely to enable receipt capture and, for Premium users, GPS mileage tracking:' },
           {
             ul: [
               '**Camera:** used to photograph paper receipts. The camera is only activated when you explicitly tap "Scan Receipt" in the App. No photos are taken in the background.',
               '**Photo Library (read):** used to let you attach an existing photo from your library as a receipt image. We only access the specific image you select — we do not scan or index your full library.',
               '**Photo Library (write):** used only when you explicitly choose to save a scanned receipt back to your photo library.',
+              '**Location (Premium, When-In-Use only):** used only while you have an active tracked shift, to record your trip distance via GPS. We never request "Always" location access, and location is processed entirely on-device — it is never transmitted to any server we operate. You can log an odometer reading instead of using GPS at any time.',
             ],
           },
           {
-            p: 'You can revoke any of these permissions at any time in **Settings → Privacy & Security** on your iPhone. Revoking camera or photo library access does not delete any previously captured receipt images stored in the App.',
+            p: 'You can revoke any of these permissions at any time in **Settings → Privacy & Security** on your iPhone. Revoking camera or photo library access does not delete any previously captured receipt images stored in the App; revoking location access simply stops GPS-based shift tracking (you can still log trips manually).',
           },
         ],
       },
@@ -295,8 +302,8 @@ export const driverLogbook = {
           {
             ul: [
               'Display your dashboard, trip list, expense list, and profit/loss reports within the App',
-              'Calculate net profit, GST Input Tax Credits, and expense summaries',
-              'Generate CSV exports you explicitly request',
+              'Calculate net profit, mileage-based cost estimates, and expense summaries',
+              'Generate PDF/CSV exports and full data backups you explicitly request',
               'Sync your data to your own Apple devices via iCloud (if enabled)',
               "Diagnose and fix crashes using Apple's anonymised crash reporting",
             ],
@@ -307,7 +314,7 @@ export const driverLogbook = {
         ],
       },
       {
-        heading: '5. iCloud Sync (Premium)',
+        heading: '5. iCloud Sync & Backup (Premium)',
         blocks: [
           { p: 'iCloud Sync is an optional Premium feature — it is off by default. When you enable it:' },
           {
@@ -318,6 +325,9 @@ export const driverLogbook = {
               'Disabling iCloud Sync in the App stops future sync. Existing local data is not deleted.',
               'To delete your iCloud data entirely: go to **Settings → [Your Name] → iCloud → Manage Account Storage → Driver Logbook → Delete Data**.',
             ],
+          },
+          {
+            p: "If you'd rather manage your own backups instead of (or alongside) iCloud Sync, Premium also lets you export a full backup file of your data and import it back in on any device — the file is generated on-device and only goes wherever you choose to save or share it.",
           },
           {
             p: "Apple's iCloud privacy practices are governed by the [Apple Privacy Policy](https://www.apple.com/legal/privacy/).",
@@ -433,13 +443,13 @@ export const driverLogbook = {
               'Log trip income from platforms including Uber, DiDi, Lyft, and Ola',
               'Record and categorise business expenses',
               'Capture and store receipt images with on-device OCR extraction',
-              'View profit and loss reports and export data as CSV',
-              'Track Australian GST and Input Tax Credits (Premium)',
-              'Sync data across devices via iCloud (Premium)',
+              'View profit and loss reports and export data as PDF or CSV',
+              'Track GPS-based trip mileage (Premium)',
+              'Sync data across devices via iCloud, or export/import a full backup (Premium)',
             ],
           },
           {
-            p: '**Important:** Driver Logbook is a record-keeping tool only. It does **not** provide tax advice, accounting services, financial planning, legal advice, or any regulated financial service. Any report or export generated by the App is for your personal reference only. You should consult a qualified tax professional or registered tax agent before lodging any tax return or BAS.',
+            p: '**Important:** Driver Logbook is a record-keeping tool only. It does **not** provide tax advice, accounting services, financial planning, legal advice, or any regulated financial service. Any report or export generated by the App is for your personal reference only. You should consult a qualified tax professional before lodging any tax return.',
           },
         ],
       },
@@ -481,12 +491,13 @@ export const driverLogbook = {
           {
             ul: [
               'iCloud Sync across all your iPhones',
-              'Australian GST tracking and Input Tax Credit calculation',
-              'CSV export of your financial data',
+              'GPS mileage tracking',
+              'PDF/CSV export of your financial data',
+              'Full data backup export and import',
             ],
           },
           {
-            p: 'Premium is available as a monthly ($2.99 USD/month) or annual ($24.99 USD/year) auto-renewing subscription. Prices may vary by region and are displayed in the App Store at the time of purchase.',
+            p: 'Premium is available as a monthly ($1.99 USD/month) or annual ($9.99 USD/year) auto-renewing subscription. Prices may vary by region and are displayed in the App Store at the time of purchase.',
           },
           {
             ul: [
