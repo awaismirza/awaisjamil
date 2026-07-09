@@ -1,4 +1,4 @@
-import { BarChart3, Bell, CalendarCheck, CircleCheck, MapPin, ShieldCheck } from 'lucide-react'
+import { BarChart3, Bell, CalendarCheck, CircleCheck, MapPin, ShieldCheck, Volume2 } from 'lucide-react'
 
 export const fivePrayers = {
   slug: 'five-prayers',
@@ -54,7 +54,7 @@ export const fivePrayers = {
       src: '/five-prayers/showcase-settings.svg',
       alt: 'Five Prayers settings screen showing appearance, tracking, and prayer time controls',
       title: 'Settings',
-      caption: 'Appearance, tracking, and prayer time controls.',
+      caption: 'Appearance, tracking, prayer time, and adhan controls.',
     },
   ],
 
@@ -89,6 +89,12 @@ export const fivePrayers = {
       description: 'Use local iOS notifications for reminders while keeping your data on your device.',
     },
     {
+      icon: Volume2,
+      title: 'Hear the adhan',
+      description:
+        'When a prayer notification arrives while the app is open, Five Prayers plays the full adhan. Choose from several recordings by different muezzins in Settings.',
+    },
+    {
       icon: ShieldCheck,
       title: 'Private and local-first',
       description: 'No ads, no social profiles, no leaderboards, and no selling user data.',
@@ -109,6 +115,10 @@ export const fivePrayers = {
         a: 'It may contact a prayer time provider to download prayer times for the selected city and year.',
       },
       {
+        q: 'Where do the prayer times and adhan recordings come from?',
+        a: 'Prayer times and adhan recordings are provided by the AlAdhan API (aladhan.com), a free service run by Islamic Network. The adhan recordings are bundled with the app, so they play without an internet connection.',
+      },
+      {
         q: 'Why might prayer times differ from my mosque?',
         a: 'Prayer times are estimated and can vary by calculation method, settings, and local adjustments. Verify times with your local mosque or trusted authority when accuracy matters.',
       },
@@ -117,7 +127,7 @@ export const fivePrayers = {
 
   privacy: {
     title: 'Privacy Policy',
-    lastUpdated: '14 June 2026',
+    lastUpdated: '9 July 2026',
     seoDescription:
       'Five Prayers is local-first. Prayer logs stay on the device, and the app avoids ads, profiling, and data selling.',
     summary:
@@ -161,7 +171,7 @@ export const fivePrayers = {
         blocks: [
           { p: 'Location or a selected city is used only to calculate prayer times.' },
           {
-            p: 'The app may contact a prayer time provider to download prayer times for the selected city and year when the user chooses a city or refreshes prayer times.',
+            p: 'The app may contact a prayer time provider — the AlAdhan API (aladhan.com), run by Islamic Network — to download prayer times for the selected city and year when the user chooses a city or refreshes prayer times.',
           },
         ],
       },
@@ -215,7 +225,7 @@ export const fivePrayers = {
 
   terms: {
     title: 'Terms & Conditions',
-    lastUpdated: '14 June 2026',
+    lastUpdated: '9 July 2026',
     seoDescription:
       'Terms for Five Prayers: a practical prayer tracking tool, not a religious authority.',
     summary:
@@ -259,7 +269,10 @@ export const fivePrayers = {
         heading: 'Third-party providers',
         blocks: [
           {
-            p: 'The app may rely on third-party prayer time data providers. We do not guarantee that third-party data will always be available, complete, or error-free.',
+            p: 'The app may rely on third-party prayer time data providers, such as the AlAdhan API by Islamic Network. We do not guarantee that third-party data will always be available, complete, or error-free.',
+          },
+          {
+            p: 'Adhan recordings are provided by the AlAdhan adhan collection by Islamic Network and are bundled with the app.',
           },
         ],
       },
