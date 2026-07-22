@@ -81,7 +81,8 @@ export const breather = {
       caption: 'Appearance, quick-log toggles, categories, and reminder schedules — all in one place.',
     },
     {
-      src: '/breather/screenshot-reminders-dark.png',
+      src: '/breather/screenshot-reminders-light.png',
+      srcDark: '/breather/screenshot-reminders-dark.png',
       alt: 'Breather reminder schedules list showing Rest eyes, Hydrate, and Stand up rules',
       title: 'Reminders that respect focus',
       caption: 'Schedule reminders to stand, rest your eyes, or hydrate — on your own cadence and hours.',
