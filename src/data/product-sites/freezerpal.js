@@ -11,14 +11,12 @@ export const freezerpal = {
   accent: '#2F7FE0',
   accentDark: '#1D5FB8',
   accentSoft: 'rgba(47, 127, 224, 0.13)',
-  // TODO: switch to { kind: 'app-store', url: '…' } once FreezerPal ships
-  download: { kind: 'coming-soon', note: 'Currently in TestFlight' },
+  download: { kind: 'app-store', url: 'https://apps.apple.com/us/app/freezer-pal/id6787021888' },
 
   facts: [
     { label: 'Platform', value: 'iPhone' },
     { label: 'Pricing', value: 'Free · $9.99 one-time' },
     { label: 'Data', value: '100% on-device' },
-    { label: 'Status', value: 'In TestFlight' },
   ],
 
   hero: {
@@ -28,13 +26,12 @@ export const freezerpal = {
     sub: 'Add items, set expiry reminders, and get notified before food goes to waste — entirely on your device, no account required.',
     heroShot: '/freezerpal/screenshot-home.png',
     heroShotAlt: 'FreezerPal home dashboard with active items and expiring soon',
-    ctaNote: 'Currently in TestFlight',
     badges: ['No account required', 'Works fully offline', 'One-time purchase, no subscription'],
   },
 
   closing: {
     title: 'Stop losing food to the back of the freezer.',
-    sub: 'FreezerPal is coming soon to the App Store — free for your first 15 items.',
+    sub: 'FreezerPal is available now on the App Store — free for your first 15 items.',
   },
 
   screenshotsTitle: 'Simple screens, built for a quick freezer check.',
