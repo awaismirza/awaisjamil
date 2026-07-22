@@ -1,17 +1,17 @@
 import { Activity, Bell, Coffee, RadioTower, SunMoon, Tags, Timer } from 'lucide-react'
 
-export const breather = {
-  slug: 'breather',
-  name: 'Breather',
+export const wfhFocus = {
+  slug: 'wfhfocus',
+  name: 'WFH Focus',
   category: 'Focus timer with hydration & break tracking',
-  icon: '/breather/icon.svg',
+  icon: '/wfhfocus/icon.svg',
   seoDescription:
-    'Breather is a flexible focus timer for iPhone with custom categories, one-tap coffee/water logging, and configurable break reminders. Free 14-day trial, then $9.99 one-time.',
+    'WFH Focus is a flexible focus timer for iPhone with custom categories, one-tap coffee/water logging, and configurable break reminders. Free 14-day trial, then $9.99 one-time.',
 
   accent: '#14B8A6',
   accentDark: '#0F8F82',
   accentSoft: 'rgba(20, 184, 166, 0.14)',
-  // TODO: switch to { kind: 'app-store', url: '…' } once Breather ships
+  // TODO: switch to { kind: 'app-store', url: '…' } once WFH Focus ships
   download: { kind: 'coming-soon', note: 'Coming soon to the App Store' },
 
   facts: [
@@ -25,14 +25,14 @@ export const breather = {
     eyebrow: 'Focus timer + hydration & break tracking',
     headline: 'Stay focused.',
     headlineAccent: 'Actually take your breaks.',
-    sub: 'Breather is a flexible focus timer for iPhone — pick a category, start the clock, and log coffee, water, and breaks without ever losing your place. Configurable reminders nudge you to stand, hydrate, and rest your eyes on a schedule you control.',
+    sub: 'WFH Focus is a flexible focus timer for iPhone — pick a category, start the clock, and log coffee, water, and breaks without ever losing your place. Configurable reminders nudge you to stand, hydrate, and rest your eyes on a schedule you control.',
     ctaNote: 'Coming soon to the App Store',
     badges: ['14-day free trial', 'One-time purchase, no subscription', 'On-device — no accounts, no analytics'],
   },
 
   closing: {
     title: 'Focus on your terms.',
-    sub: 'Breather is coming soon to the App Store — try every feature free for 14 days, then unlock it once for $9.99.',
+    sub: 'WFH Focus is coming soon to the App Store — try every feature free for 14 days, then unlock it once for $9.99.',
   },
 
   metrics: [
@@ -47,49 +47,49 @@ export const breather = {
   screenshotsTitle: 'A focus timer built around how you actually work.',
   screenshots: [
     {
-      src: '/breather/screenshot-onboarding.png',
-      alt: 'Breather first-launch onboarding screen introducing focus, hydration, and reminders',
+      src: '/wfhfocus/screenshot-onboarding.png',
+      alt: 'WFH Focus first-launch onboarding screen introducing focus, hydration, and reminders',
       title: 'A guided first run',
       caption: 'A short welcome flow introduces focus, hydration, and reminders before you ever see the timer.',
     },
     {
-      src: '/breather/screenshot-timer-idle-light.png',
-      srcDark: '/breather/screenshot-timer-idle-dark.png',
-      alt: 'Breather timer idle screen with a category selected and daily activity rings',
+      src: '/wfhfocus/screenshot-timer-idle-light.png',
+      srcDark: '/wfhfocus/screenshot-timer-idle-dark.png',
+      alt: 'WFH Focus timer idle screen with a category selected and daily activity rings',
       title: 'Pick a category, hit start',
       caption: 'Study, Fitness, Work, Read, or a category you create — each with its own icon and color.',
     },
     {
-      src: '/breather/screenshot-timer-running-light.png',
-      srcDark: '/breather/screenshot-timer-running-dark.png',
-      alt: 'Breather timer running with quick-log buttons for coffee, water, and break',
+      src: '/wfhfocus/screenshot-timer-running-light.png',
+      srcDark: '/wfhfocus/screenshot-timer-running-dark.png',
+      alt: 'WFH Focus timer running with quick-log buttons for coffee, water, and break',
       title: 'Log without losing focus',
       caption: 'Coffee, water, and custom quick-log buttons sit right next to the running timer.',
     },
     {
-      src: '/breather/screenshot-history-light.png',
-      srcDark: '/breather/screenshot-history-dark.png',
-      alt: 'Breather history view showing a day-by-day timeline of focus, water, coffee, and breaks',
+      src: '/wfhfocus/screenshot-history-light.png',
+      srcDark: '/wfhfocus/screenshot-history-dark.png',
+      alt: 'WFH Focus history view showing a day-by-day timeline of focus, water, coffee, and breaks',
       title: 'Every session, every day',
       caption: 'Browse day by day — focus time, water, coffee, and breaks in one merged timeline.',
     },
     {
-      src: '/breather/screenshot-settings-light.png',
-      srcDark: '/breather/screenshot-settings-dark.png',
-      alt: 'Breather settings screen with appearance, quick-log, categories, and reminder options',
+      src: '/wfhfocus/screenshot-settings-light.png',
+      srcDark: '/wfhfocus/screenshot-settings-dark.png',
+      alt: 'WFH Focus settings screen with appearance, quick-log, categories, and reminder options',
       title: 'Make it yours',
       caption: 'Appearance, quick-log toggles, categories, and reminder schedules — all in one place.',
     },
     {
-      src: '/breather/screenshot-reminders-light.png',
-      srcDark: '/breather/screenshot-reminders-dark.png',
-      alt: 'Breather reminder schedules list showing Rest eyes, Hydrate, and Stand up rules',
+      src: '/wfhfocus/screenshot-reminders-light.png',
+      srcDark: '/wfhfocus/screenshot-reminders-dark.png',
+      alt: 'WFH Focus reminder schedules list showing Rest eyes, Hydrate, and Stand up rules',
       title: 'Reminders that respect focus',
       caption: 'Schedule reminders to stand, rest your eyes, or hydrate — on your own cadence and hours.',
     },
     {
-      src: '/breather/screenshot-live-activity-dark.png',
-      alt: 'Breather Live Activity on the iPhone Lock Screen showing a running Fitness timer',
+      src: '/wfhfocus/screenshot-live-activity-dark.png',
+      alt: 'WFH Focus Live Activity on the iPhone Lock Screen showing a running Fitness timer',
       title: 'Live on your Lock Screen',
       caption: 'A Live Activity keeps the countdown visible on your Lock Screen and Dynamic Island.',
     },
@@ -137,7 +137,7 @@ export const breather = {
       icon: SunMoon,
       title: 'Light, dark, or system',
       description:
-        'Match your phone’s appearance automatically, or pick light or dark manually — Breather looks native either way.',
+        'Match your phone’s appearance automatically, or pick light or dark manually — WFH Focus looks native either way.',
     },
   ],
 
@@ -178,7 +178,7 @@ export const breather = {
         ],
       },
       {
-        name: 'Breather Pro',
+        name: 'WFH Focus Pro',
         price: '$9.99',
         per: 'one-time',
         description:
@@ -200,7 +200,7 @@ export const breather = {
   support: {
     email: 'owaesmirza@gmail.com',
     intro:
-      'Questions about Breather, the free trial, or the Pro unlock? Support is handled directly by the developer.',
+      'Questions about WFH Focus, the free trial, or the Pro unlock? Support is handled directly by the developer.',
     checklist: ['App version (Settings → About)', 'iPhone model and iOS version', 'A short description of the issue'],
     faqs: [
       {
@@ -209,18 +209,18 @@ export const breather = {
       },
       {
         q: 'What happens when my trial ends?',
-        a: 'Breather keeps working on the free tier: unlimited focus sessions and quick-logging, built-in break reminders, 1 custom category, 1 custom quick-log item, and your last 3 days of history. A one-time $9.99 purchase unlocks everything again, for good.',
+        a: 'WFH Focus keeps working on the free tier: unlimited focus sessions and quick-logging, built-in break reminders, 1 custom category, 1 custom quick-log item, and your last 3 days of history. A one-time $9.99 purchase unlocks everything again, for good.',
       },
       {
-        q: 'Is Breather Pro a subscription?',
+        q: 'Is WFH Focus Pro a subscription?',
         a: 'No. It’s a single one-time purchase through the App Store — pay once, keep it forever. If you reinstall or switch devices, use **Restore Purchases** in Settings.',
       },
       {
-        q: 'Does Breather work offline?',
+        q: 'Does WFH Focus work offline?',
         a: 'Yes. The timer, quick-logging, reminders, and history all work fully offline — everything is stored on your device.',
       },
       {
-        q: 'Does Breather track me or sell my data?',
+        q: 'Does WFH Focus track me or sell my data?',
         a: 'No. There’s no account, no server we operate, and no analytics or advertising SDKs. Your data stays on your device.',
       },
     ],
@@ -230,18 +230,18 @@ export const breather = {
     title: 'Privacy Policy',
     lastUpdated: '22 July 2026',
     seoDescription:
-      'Breather privacy policy: no account, no server, no analytics. Focus sessions, categories, and reminders stay on your device.',
+      'WFH Focus privacy policy: no account, no server, no analytics. Focus sessions, categories, and reminders stay on your device.',
     summary:
-      'Breather has no account, no server, and no analytics. Every focus session, quick-log entry, category, and reminder schedule you create is stored locally on your device — never transmitted to us or anyone else.',
+      'WFH Focus has no account, no server, and no analytics. Every focus session, quick-log entry, category, and reminder schedule you create is stored locally on your device — never transmitted to us or anyone else.',
     sections: [
       {
         heading: '1. Who we are',
         blocks: [
           {
-            p: 'Breather ("the App", "we", "us", "our") is an iOS application developed and published by Awais Jamil, an individual developer. Our contact email is [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
+            p: 'WFH Focus ("the App", "we", "us", "our") is an iOS application developed and published by Awais Jamil, an individual developer. Our contact email is [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
           },
           {
-            p: 'This Privacy Policy explains how we handle information in connection with your use of Breather on iPhone. By downloading or using the App you agree to the practices described in this policy.',
+            p: 'This Privacy Policy explains how we handle information in connection with your use of WFH Focus on iPhone. By downloading or using the App you agree to the practices described in this policy.',
           },
         ],
       },
@@ -249,7 +249,7 @@ export const breather = {
         heading: '2. Information we collect',
         blocks: [
           { h3: 'Data you enter directly' },
-          { p: 'When you use Breather you create the following information, entirely on your device:' },
+          { p: 'When you use WFH Focus you create the following information, entirely on your device:' },
           {
             ul: [
               'Focus session records: category, planned and actual duration, start/end time, and whether the session completed or was stopped early',
@@ -260,11 +260,11 @@ export const breather = {
             ],
           },
           {
-            p: 'All of this information is stored exclusively on your device using Apple’s SwiftData framework, within an App Group container shared only between the Breather app and its own Lock Screen widget and Live Activity — not with us, and not with any third party.',
+            p: 'All of this information is stored exclusively on your device using Apple’s SwiftData framework, within an App Group container shared only between the WFH Focus app and its own Lock Screen widget and Live Activity — not with us, and not with any third party.',
           },
           { h3: 'Live Activities & Dynamic Island' },
           {
-            p: 'When a focus session is running, Breather may display a Live Activity on your Lock Screen and in the Dynamic Island via Apple’s ActivityKit. This is rendered and updated entirely on your device — no session data is sent to us or to Apple’s servers to power it.',
+            p: 'When a focus session is running, WFH Focus may display a Live Activity on your Lock Screen and in the Dynamic Island via Apple’s ActivityKit. This is rendered and updated entirely on your device — no session data is sent to us or to Apple’s servers to power it.',
           },
           { h3: 'Crash reports' },
           {
@@ -286,10 +286,10 @@ export const breather = {
         heading: '3. Notifications',
         blocks: [
           {
-            p: 'Breather requests Notification permission to schedule two kinds of local, on-device notifications: a "block complete" alert when a focus session’s timer ends, and break reminders based on the schedules you configure. Both are scheduled and delivered entirely by iOS on your device — no push notification service or third party is involved.',
+            p: 'WFH Focus requests Notification permission to schedule two kinds of local, on-device notifications: a "block complete" alert when a focus session’s timer ends, and break reminders based on the schedules you configure. Both are scheduled and delivered entirely by iOS on your device — no push notification service or third party is involved.',
           },
           {
-            p: 'You can revoke notification permission at any time in **Settings → Notifications → Breather** on your iPhone. Revoking it simply stops reminders and the completion alert from appearing; it does not delete any data already logged in the App.',
+            p: 'You can revoke notification permission at any time in **Settings → Notifications → WFH Focus** on your iPhone. Revoking it simply stops reminders and the completion alert from appearing; it does not delete any data already logged in the App.',
           },
         ],
       },
@@ -297,7 +297,7 @@ export const breather = {
         heading: '4. In-app purchase',
         blocks: [
           {
-            p: 'The one-time Breather Pro unlock is processed entirely by Apple through the App Store using StoreKit. We do not collect or store your payment card information. Your entitlement (whether you’re on the free trial, expired, or have purchased Pro) is tracked locally on your device and re-synced from Apple via **Restore Purchases** — we do not operate a server that tracks your purchase.',
+            p: 'The one-time WFH Focus Pro unlock is processed entirely by Apple through the App Store using StoreKit. We do not collect or store your payment card information. Your entitlement (whether you’re on the free trial, expired, or have purchased Pro) is tracked locally on your device and re-synced from Apple via **Restore Purchases** — we do not operate a server that tracks your purchase.',
           },
         ],
       },
@@ -319,7 +319,7 @@ export const breather = {
           {
             ul: [
               'Delete individual sessions, quick-log entries, categories, or reminder rules from within the App',
-              'Delete all Breather data by removing the App from your iPhone — this permanently removes its SwiftData store and its App Group container',
+              'Delete all WFH Focus data by removing the App from your iPhone — this permanently removes its SwiftData store and its App Group container',
             ],
           },
           { p: 'We have no ability to delete data on your behalf, as we have no access to it.' },
@@ -329,7 +329,7 @@ export const breather = {
         heading: "7. Children's privacy",
         blocks: [
           {
-            p: 'Breather is not directed at children and we do not knowingly collect personal information from anyone under 13. If you believe a child under 13 has entered personal data into the App, please contact us and we will provide guidance on removing it from the device.',
+            p: 'WFH Focus is not directed at children and we do not knowingly collect personal information from anyone under 13. If you believe a child under 13 has entered personal data into the App, please contact us and we will provide guidance on removing it from the device.',
           },
         ],
       },
@@ -348,7 +348,7 @@ export const breather = {
         heading: '9. Changes to this policy',
         blocks: [
           {
-            p: 'We may update this Privacy Policy periodically. When we do, we will update the "Last updated" date at the top of this page. Continued use of Breather after changes are posted constitutes your acceptance of the revised policy.',
+            p: 'We may update this Privacy Policy periodically. When we do, we will update the "Last updated" date at the top of this page. Continued use of WFH Focus after changes are posted constitutes your acceptance of the revised policy.',
           },
         ],
       },
@@ -371,18 +371,18 @@ export const breather = {
     title: 'Terms & Conditions',
     lastUpdated: '22 July 2026',
     seoDescription:
-      'Terms and conditions for Breather, including the free tier, the 14-day trial, the one-time Pro unlock, and the Apple EULA.',
+      'Terms and conditions for WFH Focus, including the free tier, the 14-day trial, the one-time Pro unlock, and the Apple EULA.',
     summary:
-      'Use Breather to track your own focus time, hydration, and breaks. Don’t misuse the App or reverse-engineer it, and understand it is provided as-is and isn’t a medical or workplace-safety tool. The Pro unlock is a one-time purchase, not a subscription, preceded by a 14-day free trial. These Terms incorporate Apple’s standard EULA.',
+      'Use WFH Focus to track your own focus time, hydration, and breaks. Don’t misuse the App or reverse-engineer it, and understand it is provided as-is and isn’t a medical or workplace-safety tool. The Pro unlock is a one-time purchase, not a subscription, preceded by a 14-day free trial. These Terms incorporate Apple’s standard EULA.',
     sections: [
       {
         heading: '1. Acceptance of terms',
         blocks: [
           {
-            p: 'By downloading, installing, or using Breather (the "App"), you agree to be bound by these Terms & Conditions ("Terms"). If you do not agree to these Terms, do not download or use the App.',
+            p: 'By downloading, installing, or using WFH Focus (the "App"), you agree to be bound by these Terms & Conditions ("Terms"). If you do not agree to these Terms, do not download or use the App.',
           },
           {
-            p: "These Terms apply to all users of any version of Breather distributed through the Apple App Store. Your use of the App is also subject to Apple's [Standard End User License Agreement (EULA)](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/), which is incorporated here by reference. In the event of a conflict between these Terms and Apple's EULA, Apple's EULA controls with respect to Apple's role.",
+            p: "These Terms apply to all users of any version of WFH Focus distributed through the Apple App Store. Your use of the App is also subject to Apple's [Standard End User License Agreement (EULA)](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/), which is incorporated here by reference. In the event of a conflict between these Terms and Apple's EULA, Apple's EULA controls with respect to Apple's role.",
           },
           {
             p: 'We reserve the right to update these Terms at any time. Continued use after updates are posted constitutes acceptance of the revised Terms.',
@@ -392,7 +392,7 @@ export const breather = {
       {
         heading: '2. Description of the App',
         blocks: [
-          { p: 'Breather is a personal focus-timer application that lets you:' },
+          { p: 'WFH Focus is a personal focus-timer application that lets you:' },
           {
             ul: [
               'Run a focus timer against built-in or custom categories, with adjustable durations',
@@ -404,7 +404,7 @@ export const breather = {
             ],
           },
           {
-            p: '**Important:** Breather is a personal productivity and habit-tracking tool only. It does **not** provide medical, ergonomic, or occupational-health advice, and its break reminders are not a substitute for your employer’s workplace safety policies or professional medical guidance. Consult a qualified professional for any health-related decisions.',
+            p: '**Important:** WFH Focus is a personal productivity and habit-tracking tool only. It does **not** provide medical, ergonomic, or occupational-health advice, and its break reminders are not a substitute for your employer’s workplace safety policies or professional medical guidance. Consult a qualified professional for any health-related decisions.',
           },
         ],
       },
@@ -412,7 +412,7 @@ export const breather = {
         heading: '3. Eligibility',
         blocks: [
           {
-            p: 'You must be at least 13 years old and hold a valid Apple ID to use Breather. By using the App you represent and warrant that you meet these requirements. The App is intended for personal, non-commercial use.',
+            p: 'You must be at least 13 years old and hold a valid Apple ID to use WFH Focus. By using the App you represent and warrant that you meet these requirements. The App is intended for personal, non-commercial use.',
           },
         ],
       },
@@ -437,15 +437,15 @@ export const breather = {
         blocks: [
           { h3: 'Free tier' },
           {
-            p: 'Breather offers a free tier — unlimited focus sessions and quick-logging, built-in break reminder schedules, 1 custom category, 1 custom quick-log item, and 3 days of history — available at no charge with no time limit.',
+            p: 'WFH Focus offers a free tier — unlimited focus sessions and quick-logging, built-in break reminder schedules, 1 custom category, 1 custom quick-log item, and 3 days of history — available at no charge with no time limit.',
           },
           { h3: '14-day free trial' },
           {
-            p: 'Every feature of Breather Pro is automatically unlocked for 14 days starting from your first launch of the App on a device, with no account, sign-up, or payment method required. Trial status is tracked locally on your device; reinstalling the App does not restart the trial if the same purchase/trial state can be restored.',
+            p: 'Every feature of WFH Focus Pro is automatically unlocked for 14 days starting from your first launch of the App on a device, with no account, sign-up, or payment method required. Trial status is tracked locally on your device; reinstalling the App does not restart the trial if the same purchase/trial state can be restored.',
           },
-          { h3: 'Breather Pro (one-time purchase)' },
+          { h3: 'WFH Focus Pro (one-time purchase)' },
           {
-            p: 'After the trial ends, the following features require a one-time Breather Pro purchase made through the Apple App Store:',
+            p: 'After the trial ends, the following features require a one-time WFH Focus Pro purchase made through the Apple App Store:',
           },
           {
             ul: [
@@ -456,11 +456,11 @@ export const breather = {
             ],
           },
           {
-            p: 'Breather Pro is a single **one-time purchase** (currently $9.99 USD, subject to regional App Store pricing) — it does not auto-renew, expire, or require any ongoing payment. Payment is charged to your Apple ID at confirmation of purchase. No refund is issued except as required by applicable law or Apple’s standard refund process.',
+            p: 'WFH Focus Pro is a single **one-time purchase** (currently $9.99 USD, subject to regional App Store pricing) — it does not auto-renew, expire, or require any ongoing payment. Payment is charged to your Apple ID at confirmation of purchase. No refund is issued except as required by applicable law or Apple’s standard refund process.',
           },
           { h3: 'Price changes' },
           {
-            p: 'We may change the Breather Pro price at any time for future purchasers. Price changes do not affect a purchase you have already made.',
+            p: 'We may change the WFH Focus Pro price at any time for future purchasers. Price changes do not affect a purchase you have already made.',
           },
         ],
       },
@@ -468,7 +468,7 @@ export const breather = {
         heading: '6. User responsibilities',
         blocks: [
           {
-            p: 'You agree to use Breather only for lawful purposes and in accordance with these Terms. You must not:',
+            p: 'You agree to use WFH Focus only for lawful purposes and in accordance with these Terms. You must not:',
           },
           {
             ul: [
@@ -487,7 +487,7 @@ export const breather = {
         heading: '7. Intellectual property',
         blocks: [
           {
-            p: 'Breather, its name, logo, user interface design, source code, and all associated intellectual property are owned by or licensed to the developer, Awais Jamil. Nothing in these Terms grants you any ownership rights in the App or its content.',
+            p: 'WFH Focus, its name, logo, user interface design, source code, and all associated intellectual property are owned by or licensed to the developer, Awais Jamil. Nothing in these Terms grants you any ownership rights in the App or its content.',
           },
         ],
       },
@@ -495,14 +495,14 @@ export const breather = {
         heading: '8. Privacy',
         blocks: [
           {
-            p: 'Your use of Breather is also governed by our [Privacy Policy](/products/breather/privacy), which is incorporated into these Terms by reference. By using the App you consent to the data practices described in the Privacy Policy.',
+            p: 'Your use of WFH Focus is also governed by our [Privacy Policy](/products/wfhfocus/privacy), which is incorporated into these Terms by reference. By using the App you consent to the data practices described in the Privacy Policy.',
           },
         ],
       },
       {
         heading: '9. Third-party services',
         blocks: [
-          { p: 'Breather integrates with the following Apple platform services:' },
+          { p: 'WFH Focus integrates with the following Apple platform services:' },
           {
             ul: [
               "**Apple StoreKit** — for the one-time Pro in-app purchase. Payment processing is handled entirely by Apple.",
@@ -530,7 +530,7 @@ export const breather = {
             ],
           },
           {
-            p: 'Breather is a habit-tracking and productivity aid, not a medical, safety, or compliance tool. You are responsible for your own health and workplace decisions.',
+            p: 'WFH Focus is a habit-tracking and productivity aid, not a medical, safety, or compliance tool. You are responsible for your own health and workplace decisions.',
           },
         ],
       },
@@ -541,7 +541,7 @@ export const breather = {
             p: 'To the maximum extent permitted by applicable law, the developer (Awais Jamil) shall not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages arising from or related to your use of or inability to use the App, including but not limited to loss of data, missed reminders, or any decision made in reliance on the App’s tracking.',
           },
           {
-            p: 'Our total aggregate liability to you for any claim arising from these Terms or your use of the App shall not exceed the total amount you paid for Breather Pro, or AUD $10 if you have not made a purchase.',
+            p: 'Our total aggregate liability to you for any claim arising from these Terms or your use of the App shall not exceed the total amount you paid for WFH Focus Pro, or AUD $10 if you have not made a purchase.',
           },
           {
             p: 'Some jurisdictions do not allow the exclusion or limitation of certain damages. In such jurisdictions, our liability is limited to the fullest extent permitted by law.',

@@ -1,7 +1,7 @@
 export const products = [
   {
-    title: 'Breather',
-    slug: 'breather',
+    title: 'WFH Focus',
+    slug: 'wfhfocus',
     type: 'Native iOS app',
     year: '2026',
     status: 'Coming soon',
@@ -10,7 +10,7 @@ export const products = [
     impact:
       'Built a production-grade SwiftUI + SwiftData app with StoreKit 2 in-app purchases, ActivityKit Live Activities, and a 14-day trial before a one-time unlock.',
     stack: ['Swift', 'SwiftUI', 'SwiftData', 'StoreKit 2', 'ActivityKit', 'iOS'],
-    href: '/products/breather',
+    href: '/products/wfhfocus',
   },
   {
     title: 'Five Prayers',
