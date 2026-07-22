@@ -131,7 +131,7 @@ export function ProductOverviewPage() {
               animate={{ opacity: 1, y: 0 }}
               className="mx-auto hidden h-44 w-44 rounded-[2.5rem] border border-line shadow-soft lg:block"
               initial={{ opacity: 0, y: 24 }}
-              src={site.icon}
+              src={(isDark && site.iconDark) || site.icon}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
             />
           )}

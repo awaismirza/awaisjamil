@@ -2,6 +2,8 @@ import { ArrowLeft, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { Link, NavLink, Outlet, useParams } from 'react-router-dom'
 import { productSites } from '../../data/product-sites/index.js'
+import { DARK_THEME } from '../../lib/theme.js'
+import { useTheme } from '../../lib/useTheme.js'
 import { NotFoundPage } from '../../pages/NotFoundPage.jsx'
 import { SocialLinks } from '../SocialIcons.jsx'
 import { ThemeToggle } from '../ThemeToggle.jsx'
@@ -19,6 +21,8 @@ function navItems(slug) {
 export function ProductSiteLayout() {
   const { slug } = useParams()
   const [open, setOpen] = useState(false)
+  const theme = useTheme()
+  const isDark = theme === DARK_THEME
   // Read once on mount so the strip doesn't pop in mid-visit
   const [fromPortfolio] = useState(() => {
     try {
@@ -65,7 +69,7 @@ export function ProductSiteLayout() {
               alt=""
               className="h-9 w-9 rounded-xl border border-line"
               height={36}
-              src={site.icon}
+              src={(isDark && site.iconDark) || site.icon}
               width={36}
             />
             <span className="font-display text-lg font-semibold text-ink dark:text-white">
@@ -144,7 +148,7 @@ export function ProductSiteLayout() {
       <footer className="border-t border-line bg-mist transition-colors dark:border-white/10 dark:bg-graphite/40">
         <div className="section-shell flex flex-wrap items-center justify-between gap-x-10 gap-y-6 py-10">
           <div className="flex items-center gap-3">
-            <img alt="" className="h-9 w-9 rounded-xl border border-line" height={36} src={site.icon} width={36} />
+            <img alt="" className="h-9 w-9 rounded-xl border border-line" height={36} src={(isDark && site.iconDark) || site.icon} width={36} />
             <div>
               <p className="font-display text-sm font-semibold text-ink">{site.name}</p>
               <p className="text-xs text-slate">© 2026 Awais Jamil. All rights reserved.</p>
