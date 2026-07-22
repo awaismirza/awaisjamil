@@ -6,6 +6,7 @@ import { Seo } from '../Seo.jsx'
 import { staggerContainer, staggerItem } from '../../lib/animation.js'
 import { DARK_THEME } from '../../lib/theme.js'
 import { useTheme } from '../../lib/useTheme.js'
+import { AnimatedTimerDial } from './AnimatedTimerDial.jsx'
 import { DownloadButton } from './DownloadButton.jsx'
 
 function Eyebrow({ children }) {
@@ -32,7 +33,7 @@ function SectionHeader({ label, title, sub, center = false }) {
 
 export function ProductOverviewPage() {
   const site = useOutletContext()
-  const { hero, metrics, screenshots, features, howItWorks, pricing, closing } = site
+  const { hero, metrics, screenshots, features, howItWorks, pricing, closing, timerShowcase } = site
   const theme = useTheme()
   const isDark = theme === DARK_THEME
   const heroShotSrc = (isDark && hero.heroShotDark) || hero.heroShot
@@ -140,6 +141,15 @@ export function ProductOverviewPage() {
                 <p className="mt-1.5 text-sm text-slate">{metric.label}</p>
               </div>
             ))}
+          </div>
+        </section>
+      ) : null}
+
+      {/* Live timer showcase */}
+      {timerShowcase ? (
+        <section className="border-t border-line bg-white py-16 sm:py-20 dark:border-white/10">
+          <div className="section-shell">
+            <AnimatedTimerDial label={timerShowcase.label} totalMinutes={timerShowcase.totalMinutes} />
           </div>
         </section>
       ) : null}

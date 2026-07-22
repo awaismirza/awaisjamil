@@ -44,6 +44,8 @@ export const breather = {
     { value: '0', label: 'Accounts, servers, or trackers involved' },
   ],
 
+  timerShowcase: { label: 'Focus', totalMinutes: 25 },
+
   screenshotsLabel: 'The app',
   screenshotsTitle: 'A focus timer built around how you actually work.',
   screenshots: [
@@ -66,13 +68,6 @@ export const breather = {
       alt: 'Breather timer running with quick-log buttons for coffee, water, and break',
       title: 'Log without losing focus',
       caption: 'Coffee, water, and custom quick-log buttons sit right next to the running timer.',
-    },
-    {
-      src: '/breather/screenshot-landscape-clock-light.png',
-      srcDark: '/breather/screenshot-landscape-clock-dark.png',
-      alt: 'Breather full-screen landscape clock view',
-      title: 'Full-screen clock in landscape',
-      caption: 'Turn your phone sideways for a distraction-free, full-screen countdown.',
     },
     {
       src: '/breather/screenshot-history-light.png',
