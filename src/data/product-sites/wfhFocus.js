@@ -7,7 +7,7 @@ export const wfhFocus = {
   icon: '/wfhfocus/icon-light.png',
   iconDark: '/wfhfocus/icon-dark.png',
   seoDescription:
-    'WFH Focus is a flexible focus timer for iPhone with custom categories, one-tap coffee/water logging, and configurable break reminders. Free 14-day trial, then $9.99 one-time.',
+    'WFH Focus is a flexible focus timer for iPhone with custom categories, one-tap coffee/water logging, and configurable break reminders. Monthly or Yearly subscription with a 14-day free trial, or a one-time Lifetime purchase.',
 
   accent: '#14B8A6',
   accentDark: '#0F8F82',
@@ -17,7 +17,7 @@ export const wfhFocus = {
 
   facts: [
     { label: 'Platform', value: 'iPhone · iOS 17+' },
-    { label: 'Pricing', value: '14-day trial · $9.99 one-time' },
+    { label: 'Pricing', value: '14-day free trial · Monthly, Yearly, or Lifetime' },
     { label: 'Data', value: 'On-device only' },
     { label: 'Status', value: 'Coming soon' },
   ],
@@ -28,17 +28,17 @@ export const wfhFocus = {
     headlineAccent: 'Actually take your breaks.',
     sub: 'WFH Focus is a flexible focus timer for iPhone — pick a category, start the clock, and log coffee, water, and breaks without ever losing your place. Configurable reminders nudge you to stand, hydrate, and rest your eyes on a schedule you control.',
     ctaNote: 'Coming soon to the App Store',
-    badges: ['14-day free trial', 'One-time purchase, no subscription', 'On-device — no accounts, no analytics'],
+    badges: ['14-day free trial', 'Monthly, Yearly, or Lifetime', 'On-device — no accounts, no analytics'],
   },
 
   closing: {
     title: 'Focus on your terms.',
-    sub: 'WFH Focus is coming soon to the App Store — try every feature free for 14 days, then unlock it once for $9.99.',
+    sub: 'WFH Focus is coming soon to the App Store — try every feature free for 14 days on a Monthly or Yearly plan, or unlock it for good with a one-time Lifetime purchase.',
   },
 
   metrics: [
-    { value: '14 days', label: 'Every feature unlocked, free, from your first launch' },
-    { value: '$9.99', label: 'One-time purchase — not a subscription' },
+    { value: '14 days', label: 'Free trial on any Monthly or Yearly plan' },
+    { value: '3', label: 'Ways to unlock Pro — Monthly, Yearly, or Lifetime' },
     { value: '0', label: 'Accounts, servers, or trackers involved' },
   ],
 
@@ -162,14 +162,14 @@ export const wfhFocus = {
   ],
 
   pricing: {
-    title: 'Free to try. One purchase, forever.',
-    sub: 'Every feature is unlocked for 14 days from your first launch — no card required. After that, a single $9.99 purchase unlocks it for good.',
+    title: 'Free to try. Flexible to keep.',
+    sub: 'Start a 14-day free trial on a Monthly or Yearly plan — cancel anytime. Prefer not to subscribe? A one-time Lifetime purchase unlocks everything for good.',
     plans: [
       {
         name: 'Free',
         price: '$0',
         per: '/ forever',
-        description: 'Core tracking, always free — even after your trial ends.',
+        description: 'Core tracking, always free — no trial or purchase needed.',
         features: [
           'Unlimited focus sessions & quick-logging',
           'Built-in break reminder schedules',
@@ -179,11 +179,10 @@ export const wfhFocus = {
         ],
       },
       {
-        name: 'WFH Focus Pro',
-        price: '$9.99',
-        per: 'one-time',
-        description:
-          'Try it free for 14 days from your first launch. Afterward, one purchase unlocks it for good — not a subscription.',
+        name: 'Pro',
+        price: '$4.99',
+        per: '/ month',
+        description: 'Or $24.99/year (best value) — both start with a 14-day free trial, cancel anytime.',
         features: [
           'Unlimited custom categories',
           'Unlimited custom quick-log items',
@@ -192,7 +191,18 @@ export const wfhFocus = {
           'CSV export',
         ],
         highlight: true,
-        badge: 'Best value',
+        badge: '14-day free trial',
+        note: 'Auto-renewing subscription via the App Store. Manage or cancel anytime in Settings → Apple ID → Subscriptions.',
+      },
+      {
+        name: 'Lifetime',
+        price: 'One-time',
+        per: 'pay once',
+        description: 'Prefer not to subscribe? Pay once and unlock everything for good — no recurring charge.',
+        features: [
+          'Everything in Pro',
+          'No trial, no auto-renewal',
+        ],
         note: 'One-time purchase via the App Store. Restore anytime from Settings → Restore Purchases.',
       },
     ],
@@ -206,15 +216,19 @@ export const wfhFocus = {
     faqs: [
       {
         q: 'Is the 14-day trial really free?',
-        a: 'Yes. Every feature — unlimited categories, unlimited history, CSV export, everything — is unlocked automatically for 14 days from your first launch. No card required, no account, nothing to cancel.',
+        a: 'Yes. Start a Monthly or Yearly plan and every feature — unlimited categories, unlimited history, CSV export, everything — is unlocked immediately. Apple doesn\'t charge you until the 14 days end, and you can cancel anytime before then in Settings → Apple ID → Subscriptions with nothing charged.',
       },
       {
-        q: 'What happens when my trial ends?',
-        a: 'WFH Focus keeps working on the free tier: unlimited focus sessions and quick-logging, built-in break reminders, 1 custom category, 1 custom quick-log item, and your last 3 days of history. A one-time $9.99 purchase unlocks everything again, for good.',
+        q: 'What happens when my trial or subscription ends?',
+        a: 'If you don\'t cancel, your subscription auto-renews at the regular price and Pro stays unlocked. If you cancel (during the trial or afterward), WFH Focus drops back to the free tier: unlimited focus sessions and quick-logging, built-in break reminders, 1 custom category, 1 custom quick-log item, and your last 3 days of history.',
       },
       {
         q: 'Is WFH Focus Pro a subscription?',
-        a: 'No. It’s a single one-time purchase through the App Store — pay once, keep it forever. If you reinstall or switch devices, use **Restore Purchases** in Settings.',
+        a: 'It\'s your choice. Monthly and Yearly are auto-renewing subscriptions, each starting with a 14-day free trial. If you\'d rather not subscribe, a one-time Lifetime purchase unlocks everything for good with no recurring charge. If you reinstall or switch devices, use **Restore Purchases** in Settings.',
+      },
+      {
+        q: 'Can I switch between Monthly, Yearly, and Lifetime?',
+        a: 'You can switch between Monthly and Yearly anytime in Settings → Apple ID → Subscriptions — the change takes effect at your next renewal. Lifetime is a separate one-time purchase and doesn\'t require cancelling an existing subscription.',
       },
       {
         q: 'Does WFH Focus work offline?',
@@ -298,7 +312,7 @@ export const wfhFocus = {
         heading: '4. In-app purchase',
         blocks: [
           {
-            p: 'The one-time WFH Focus Pro unlock is processed entirely by Apple through the App Store using StoreKit. We do not collect or store your payment card information. Your entitlement (whether you’re on the free trial, expired, or have purchased Pro) is tracked locally on your device and re-synced from Apple via **Restore Purchases** — we do not operate a server that tracks your purchase.',
+            p: 'Pro subscriptions (Monthly/Yearly) and the one-time Lifetime purchase are processed entirely by Apple through the App Store using StoreKit. We do not collect or store your payment card information. Your entitlement (whether you’re on a free trial, subscribed, have purchased Lifetime, or have no active entitlement) is tracked locally on your device and re-synced from Apple via **Restore Purchases** — we do not operate a server that tracks your purchase or subscription status.',
           },
         ],
       },
@@ -372,9 +386,9 @@ export const wfhFocus = {
     title: 'Terms & Conditions',
     lastUpdated: '22 July 2026',
     seoDescription:
-      'Terms and conditions for WFH Focus, including the free tier, the 14-day trial, the one-time Pro unlock, and the Apple EULA.',
+      'Terms and conditions for WFH Focus, including the free tier, Monthly/Yearly subscription auto-renewal and cancellation, the 14-day free trial, the one-time Lifetime purchase, and the Apple EULA.',
     summary:
-      'Use WFH Focus to track your own focus time, hydration, and breaks. Don’t misuse the App or reverse-engineer it, and understand it is provided as-is and isn’t a medical or workplace-safety tool. The Pro unlock is a one-time purchase, not a subscription, preceded by a 14-day free trial. These Terms incorporate Apple’s standard EULA.',
+      'Use WFH Focus to track your own focus time, hydration, and breaks. Don’t misuse the App or reverse-engineer it, and understand it is provided as-is and isn’t a medical or workplace-safety tool. Pro is available as an auto-renewing Monthly or Yearly subscription (each with a 14-day free trial) or a one-time Lifetime purchase. These Terms incorporate Apple’s standard EULA.',
     sections: [
       {
         heading: '1. Acceptance of terms',
@@ -440,13 +454,20 @@ export const wfhFocus = {
           {
             p: 'WFH Focus offers a free tier — unlimited focus sessions and quick-logging, built-in break reminder schedules, 1 custom category, 1 custom quick-log item, and 3 days of history — available at no charge with no time limit.',
           },
-          { h3: '14-day free trial' },
+          { h3: 'Pro subscriptions (Monthly / Yearly)' },
           {
-            p: 'Every feature of WFH Focus Pro is automatically unlocked for 14 days starting from your first launch of the App on a device, with no account, sign-up, or payment method required. Trial status is tracked locally on your device; reinstalling the App does not restart the trial if the same purchase/trial state can be restored.',
+            p: 'Pro can be unlocked with an auto-renewing subscription, billed monthly or yearly through the Apple App Store. Each plan is preceded by a 14-day free trial, starting when you first subscribe to that plan on a device — no charge is made during the trial.',
           },
-          { h3: 'WFH Focus Pro (one-time purchase)' },
           {
-            p: 'After the trial ends, the following features require a one-time WFH Focus Pro purchase made through the Apple App Store:',
+            p: 'Payment is charged to your Apple ID at confirmation of purchase (or, if you started a free trial, when the trial ends, unless you cancel first). Your subscription automatically renews for the same length at the then-current price unless you turn off auto-renewal at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period. You can manage or cancel your subscription, and turn off auto-renewal, at any time in your iPhone\'s Settings → [your name] → Subscriptions — cancelling stops future renewals but does not refund the current period. Any unused portion of a free trial is forfeited if you cancel during the trial.',
+          },
+          { h3: 'Pro lifetime purchase' },
+          {
+            p: 'If you\'d rather not subscribe, a one-time, non-consumable Lifetime purchase made through the Apple App Store unlocks Pro permanently with no recurring charge and no trial. Payment is charged to your Apple ID at confirmation of purchase.',
+          },
+          { h3: 'What Pro unlocks' },
+          {
+            p: 'Any of the above — an active subscription (including its trial period) or the Lifetime purchase — unlocks:',
           },
           {
             ul: [
@@ -456,12 +477,17 @@ export const wfhFocus = {
               'CSV export',
             ],
           },
+          { h3: 'Restoring purchases' },
           {
-            p: 'WFH Focus Pro is a single **one-time purchase** (currently $9.99 USD, subject to regional App Store pricing) — it does not auto-renew, expire, or require any ongoing payment. Payment is charged to your Apple ID at confirmation of purchase. No refund is issued except as required by applicable law or Apple’s standard refund process.',
+            p: 'If you reinstall the App or switch devices, use **Restore Purchases** in Settings to re-link an active subscription or a previous Lifetime purchase to the App — no new charge is made.',
           },
           { h3: 'Price changes' },
           {
-            p: 'We may change the WFH Focus Pro price at any time for future purchasers. Price changes do not affect a purchase you have already made.',
+            p: 'We may change subscription or Lifetime purchase prices at any time for future purchasers or renewal terms, subject to Apple\'s requirements for notifying existing subscribers of price increases. Price changes do not affect a Lifetime purchase you\'ve already made.',
+          },
+          { h3: 'Refunds' },
+          {
+            p: 'All payments are processed by Apple. Refund requests are handled entirely by Apple under its own refund policies — we do not process refunds directly.',
           },
         ],
       },
@@ -506,7 +532,7 @@ export const wfhFocus = {
           { p: 'WFH Focus integrates with the following Apple platform services:' },
           {
             ul: [
-              "**Apple StoreKit** — for the one-time Pro in-app purchase. Payment processing is handled entirely by Apple.",
+              "**Apple StoreKit** — for Pro subscriptions and the one-time Lifetime purchase. Payment processing is handled entirely by Apple.",
               "**Apple ActivityKit** — to power the Lock Screen and Dynamic Island Live Activity while a focus session is running.",
               '**Apple UserNotifications** — for local, on-device completion alerts and break reminders.',
             ],
