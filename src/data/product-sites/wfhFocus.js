@@ -180,9 +180,9 @@ export const wfhFocus = {
       },
       {
         name: 'Pro',
-        price: '$4.99',
+        price: '$2.99',
         per: '/ month',
-        description: 'Or $24.99/year (best value) — both start with a 14-day free trial, cancel anytime.',
+        description: 'Or $14.99/year (best value) — both start with a 14-day free trial, cancel anytime.',
         features: [
           'Unlimited custom categories',
           'Unlimited custom quick-log items',
