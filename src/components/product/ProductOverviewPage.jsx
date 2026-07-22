@@ -4,6 +4,9 @@ import { useOutletContext } from 'react-router-dom'
 import { AnimateIn } from '../AnimateIn.jsx'
 import { Seo } from '../Seo.jsx'
 import { staggerContainer, staggerItem } from '../../lib/animation.js'
+import { DARK_THEME } from '../../lib/theme.js'
+import { useTheme } from '../../lib/useTheme.js'
+import { AnimatedTimerDial } from './AnimatedTimerDial.jsx'
 import { DownloadButton } from './DownloadButton.jsx'
 
 function Eyebrow({ children }) {
@@ -30,7 +33,10 @@ function SectionHeader({ label, title, sub, center = false }) {
 
 export function ProductOverviewPage() {
   const site = useOutletContext()
-  const { hero, metrics, screenshots, features, howItWorks, pricing, closing } = site
+  const { hero, metrics, screenshots, features, howItWorks, pricing, closing, timerShowcase } = site
+  const theme = useTheme()
+  const isDark = theme === DARK_THEME
+  const heroShotSrc = (isDark && hero.heroShotDark) || hero.heroShot
 
   return (
     <>
@@ -97,7 +103,16 @@ export function ProductOverviewPage() {
             ) : null}
           </motion.div>
 
-          {hero.heroShot ? (
+          {timerShowcase ? (
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              className="mx-auto"
+              initial={{ opacity: 0, y: 24 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <AnimatedTimerDial label={timerShowcase.label} totalMinutes={timerShowcase.totalMinutes} />
+            </motion.div>
+          ) : hero.heroShot ? (
             <motion.div
               animate={{ opacity: 1, y: 0 }}
               className="mx-auto"
@@ -107,7 +122,7 @@ export function ProductOverviewPage() {
               <img
                 alt={hero.heroShotAlt ?? `${site.name} app screenshot`}
                 className="w-60 rounded-[2.5rem] border border-line bg-white shadow-soft ring-1 ring-black/5 sm:w-64"
-                src={hero.heroShot}
+                src={heroShotSrc}
               />
             </motion.div>
           ) : (
@@ -157,7 +172,7 @@ export function ProductOverviewPage() {
                     alt={shot.alt}
                     className="w-52 rounded-[2rem] border border-line bg-white shadow-soft ring-1 ring-black/5"
                     loading="lazy"
-                    src={shot.src}
+                    src={(isDark && shot.srcDark) || shot.src}
                   />
                   <figcaption className="mt-5 max-w-[14rem] text-center">
                     <span className="block text-sm font-semibold text-ink">{shot.title}</span>
