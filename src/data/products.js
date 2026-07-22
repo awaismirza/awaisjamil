@@ -1,5 +1,18 @@
 export const products = [
   {
+    title: 'Breather',
+    slug: 'breather',
+    type: 'Native iOS app',
+    year: '2026',
+    status: 'Coming soon',
+    summary:
+      'A flexible focus timer for iPhone with custom categories, one-tap coffee/water logging, configurable break reminders, and a Lock Screen Live Activity.',
+    impact:
+      'Built a production-grade SwiftUI + SwiftData app with StoreKit 2 in-app purchases, ActivityKit Live Activities, and a 14-day trial before a one-time unlock.',
+    stack: ['Swift', 'SwiftUI', 'SwiftData', 'StoreKit 2', 'ActivityKit', 'iOS'],
+    href: '/products/breather',
+  },
+  {
     title: 'Five Prayers',
     slug: 'five-prayers',
     type: 'Native iOS app',
