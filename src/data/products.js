@@ -53,7 +53,6 @@ export const products = [
     slug: 'freezerpal',
     type: 'Native iOS app',
     year: '2026',
-    status: 'In development',
     summary:
       'A freezer inventory app for tracking food, expiry dates, product photos, and household stock.',
     impact:
