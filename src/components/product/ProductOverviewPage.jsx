@@ -103,7 +103,16 @@ export function ProductOverviewPage() {
             ) : null}
           </motion.div>
 
-          {hero.heroShot ? (
+          {timerShowcase ? (
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              className="mx-auto"
+              initial={{ opacity: 0, y: 24 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <AnimatedTimerDial label={timerShowcase.label} totalMinutes={timerShowcase.totalMinutes} />
+            </motion.div>
+          ) : hero.heroShot ? (
             <motion.div
               animate={{ opacity: 1, y: 0 }}
               className="mx-auto"
@@ -141,15 +150,6 @@ export function ProductOverviewPage() {
                 <p className="mt-1.5 text-sm text-slate">{metric.label}</p>
               </div>
             ))}
-          </div>
-        </section>
-      ) : null}
-
-      {/* Live timer showcase */}
-      {timerShowcase ? (
-        <section className="border-t border-line bg-white py-16 sm:py-20 dark:border-white/10">
-          <div className="section-shell">
-            <AnimatedTimerDial label={timerShowcase.label} totalMinutes={timerShowcase.totalMinutes} />
           </div>
         </section>
       ) : null}
