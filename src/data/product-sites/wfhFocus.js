@@ -4,7 +4,8 @@ export const wfhFocus = {
   slug: 'wfhfocus',
   name: 'WFH Focus',
   category: 'Focus timer with hydration & break tracking',
-  icon: '/wfhfocus/icon.svg',
+  icon: '/wfhfocus/icon-light.png',
+  iconDark: '/wfhfocus/icon-dark.png',
   seoDescription:
     'WFH Focus is a flexible focus timer for iPhone with custom categories, one-tap coffee/water logging, and configurable break reminders. Free 14-day trial, then $9.99 one-time.',
 
