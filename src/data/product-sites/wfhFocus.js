@@ -163,7 +163,7 @@ export const wfhFocus = {
 
   pricing: {
     title: 'Free to try. Flexible to keep.',
-    sub: 'Start a 1-month free trial on a Monthly or Yearly Membership plan — cancel anytime.',
+    sub: 'Start a 1-month free trial on a Monthly or Yearly plan — cancel anytime.',
     plans: [
       {
         name: 'Free',
@@ -181,7 +181,7 @@ export const wfhFocus = {
         name: 'Pro',
         price: '$2.99',
         per: '/ month',
-        description: 'Starts with a 1-month free trial, cancel anytime.',
+        description: 'Or $14.99/year (best value) — starts with a 1-month free trial, cancel anytime.',
         features: [
           'Unlimited custom categories',
           'Unlimited custom quick-log items',
@@ -190,21 +190,6 @@ export const wfhFocus = {
           'CSV export',
         ],
         highlight: true,
-        badge: '1-month free trial',
-        note: 'Auto-renewing subscription via the App Store. Manage or cancel anytime in Settings → Apple ID → Subscriptions.',
-      },
-      {
-        name: 'Yearly Membership',
-        price: '$14.99',
-        per: '/ year',
-        description: 'Best value — starts with a 1-month free trial, cancel anytime.',
-        features: [
-          'Everything in Pro',
-          '1-month free trial',
-          'Unlimited custom categories & history',
-          'Advanced progress & insights',
-          'CSV export',
-        ],
         badge: '1-month free trial',
         note: 'Auto-renewing subscription via the App Store. Manage or cancel anytime in Settings → Apple ID → Subscriptions.',
       },
