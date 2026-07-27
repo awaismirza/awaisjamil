@@ -4,6 +4,7 @@ import { driverLogbook } from './driverLogbook.js'
 import { fivePrayers } from './fivePrayers.js'
 import { freezerpal } from './freezerpal.js'
 import { yusafcut } from './yusafcut.js'
+import { clearpath } from './clearpath.js'
 
 // Each product's mini-site (overview, privacy, terms, support) lives in its own
 // file here. To update a product's support email or copy, edit its file — the
@@ -15,4 +16,5 @@ export const productSites = {
   [fivePrayers.slug]: fivePrayers,
   [aussieLoanCalculator.slug]: aussieLoanCalculator,
   [yusafcut.slug]: yusafcut,
+  [clearpath.slug]: clearpath,
 }

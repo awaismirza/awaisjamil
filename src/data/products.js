@@ -61,6 +61,19 @@ export const products = [
     href: '/products/freezerpal',
   },
   {
+    title: 'ClearPath',
+    slug: 'clearpath',
+    type: 'Native iOS app',
+    year: '2026',
+    status: 'Coming soon',
+    summary:
+      'A local-only debt payoff tracker for iPhone with snowball, avalanche and custom strategies, and a live debt-free date projection.',
+    impact:
+      'Built a SwiftUI + SwiftData app with a pure payoff-projection engine, Swift Charts timeline, a what-if simulator, Face ID lock, and local due-date reminders.',
+    stack: ['Swift', 'SwiftUI', 'SwiftData', 'Swift Charts', 'LocalAuthentication', 'iOS'],
+    href: '/products/clearpath',
+  },
+  {
     title: 'YusafCut',
     slug: 'yusafcut',
     type: 'macOS / Local AI tool',
