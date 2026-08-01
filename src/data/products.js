@@ -13,6 +13,19 @@ export const products = [
     href: '/products/wfhfocus',
   },
   {
+    title: 'Fasting Tide',
+    slug: 'fasting-tide',
+    type: 'Native iOS & macOS app',
+    year: '2026',
+    status: 'Coming soon',
+    summary:
+      'A private intermittent-fasting timer with weekly routines, real rest days, full history, and useful local insights.',
+    impact:
+      'Built as a local-first companion for iPhone, iPad, and Mac, with a one-time Pro unlock and no accounts, ads, or tracking.',
+    stack: ['Swift', 'SwiftUI', 'SwiftData', 'StoreKit', 'iOS', 'macOS'],
+    href: '/products/fasting-tide',
+  },
+  {
     title: 'Five Prayers',
     slug: 'five-prayers',
     type: 'Native iOS app',

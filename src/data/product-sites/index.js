@@ -1,6 +1,7 @@
 import { aussieLoanCalculator } from './aussieLoanCalculator.js'
 import { wfhFocus } from './wfhFocus.js'
 import { driverLogbook } from './driverLogbook.js'
+import { fastingTide } from './fastingTide.js'
 import { fivePrayers } from './fivePrayers.js'
 import { freezerpal } from './freezerpal.js'
 import { yusafcut } from './yusafcut.js'
@@ -12,6 +13,7 @@ export const productSites = {
   [wfhFocus.slug]: wfhFocus,
   [freezerpal.slug]: freezerpal,
   [driverLogbook.slug]: driverLogbook,
+  [fastingTide.slug]: fastingTide,
   [fivePrayers.slug]: fivePrayers,
   [aussieLoanCalculator.slug]: aussieLoanCalculator,
   [yusafcut.slug]: yusafcut,

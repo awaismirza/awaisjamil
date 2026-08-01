@@ -31,6 +31,27 @@ function SectionHeader({ label, title, sub, center = false }) {
   )
 }
 
+function ScreenshotPlaceholder({ shot }) {
+  return (
+    <div
+      aria-label={`${shot.title} screenshot coming soon`}
+      className="relative flex aspect-[9/19.5] w-52 flex-col overflow-hidden rounded-[2rem] border border-[var(--accent)]/25 bg-gradient-to-b from-[var(--accent-soft)] via-white to-mist p-5 shadow-soft ring-1 ring-black/5 dark:via-graphite dark:to-ink"
+      role="img"
+    >
+      <div className="mx-auto mt-1 h-1.5 w-16 rounded-full bg-ink/10 dark:bg-white/15" />
+      <div className="mx-auto mt-10 grid h-28 w-28 place-items-center rounded-full border-[10px] border-[var(--accent)] bg-white shadow-[0_0_0_8px_var(--accent-soft)] dark:bg-graphite">
+        <span className="font-display text-xl font-semibold text-[var(--accent)]">{shot.title}</span>
+      </div>
+      <div className="mt-auto rounded-2xl border border-line bg-white/80 p-3 backdrop-blur dark:border-white/10 dark:bg-graphite/80">
+        <div className="h-2 w-16 rounded-full bg-[var(--accent)]/40" />
+        <div className="mt-2 h-1.5 w-full rounded-full bg-ink/10 dark:bg-white/10" />
+        <div className="mt-1.5 h-1.5 w-3/4 rounded-full bg-ink/10 dark:bg-white/10" />
+      </div>
+      <span className="absolute inset-x-0 bottom-2 text-center text-[9px] font-semibold uppercase tracking-[0.12em] text-slate/70">Screenshot coming soon</span>
+    </div>
+  )
+}
+
 export function ProductOverviewPage() {
   const site = useOutletContext()
   const { hero, metrics, screenshots, features, howItWorks, pricing, closing, timerShowcase } = site
@@ -167,13 +188,17 @@ export function ProductOverviewPage() {
               whileInView="show"
             >
               {screenshots.map((shot) => (
-                <motion.figure className="flex flex-col items-center" key={shot.src} variants={staggerItem}>
-                  <img
-                    alt={shot.alt}
-                    className="w-52 rounded-[2rem] border border-line bg-white shadow-soft ring-1 ring-black/5"
-                    loading="lazy"
-                    src={(isDark && shot.srcDark) || shot.src}
-                  />
+                <motion.figure className="flex flex-col items-center" key={shot.src ?? shot.title} variants={staggerItem}>
+                  {shot.placeholder ? (
+                    <ScreenshotPlaceholder shot={shot} />
+                  ) : (
+                    <img
+                      alt={shot.alt}
+                      className="w-52 rounded-[2rem] border border-line bg-white shadow-soft ring-1 ring-black/5"
+                      loading="lazy"
+                      src={(isDark && shot.srcDark) || shot.src}
+                    />
+                  )}
                   <figcaption className="mt-5 max-w-[14rem] text-center">
                     <span className="block text-sm font-semibold text-ink">{shot.title}</span>
                     <span className="mt-1 block text-xs leading-5 text-slate">{shot.caption}</span>
