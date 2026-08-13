@@ -12,14 +12,12 @@ export const wfhFocus = {
   accent: '#14B8A6',
   accentDark: '#0F8F82',
   accentSoft: 'rgba(20, 184, 166, 0.14)',
-  // TODO: switch to { kind: 'app-store', url: '…' } once WFH Focus ships
-  download: { kind: 'coming-soon', note: 'Coming soon to the App Store' },
+  download: { kind: 'app-store', url: 'https://apps.apple.com/us/app/wfh-focus-pro/id6793546469' },
 
   facts: [
     { label: 'Platform', value: 'iPhone · iOS 17+' },
     { label: 'Pricing', value: '1-month free trial · Monthly or Yearly Membership' },
     { label: 'Data', value: 'On-device only' },
-    { label: 'Status', value: 'Coming soon' },
   ],
 
   hero: {
@@ -27,13 +25,12 @@ export const wfhFocus = {
     headline: 'Stay focused.',
     headlineAccent: 'Actually take your breaks.',
     sub: 'WFH Focus is a flexible focus timer for iPhone — pick a category, start the clock, and log coffee, water, and breaks without ever losing your place. Configurable reminders nudge you to stand, hydrate, and rest your eyes on a schedule you control.',
-    ctaNote: 'Coming soon to the App Store',
     badges: ['1-month free trial', 'Monthly or Yearly Membership', 'On-device — no accounts, no analytics'],
   },
 
   closing: {
     title: 'Focus on your terms.',
-    sub: 'WFH Focus is coming soon to the App Store — try every feature free for 1 month on a Monthly or Yearly plan.',
+    sub: 'WFH Focus is available now on the App Store — try every feature free for 1 month on a Monthly or Yearly plan.',
   },
 
   metrics: [

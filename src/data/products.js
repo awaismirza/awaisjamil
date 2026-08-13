@@ -4,12 +4,11 @@ export const products = [
     slug: 'wfhfocus',
     type: 'Native iOS app',
     year: '2026',
-    status: 'Coming soon',
     summary:
-      'A flexible focus timer for iPhone with custom categories, one-tap coffee/water logging, configurable break reminders, and a Lock Screen Live Activity.',
+      'A flexible focus timer for iPhone with custom categories, one-tap coffee/water logging, and configurable break reminders.',
     impact:
-      'Built a production-grade SwiftUI + SwiftData app with StoreKit 2 in-app purchases, ActivityKit Live Activities, and a 14-day trial before a one-time unlock.',
-    stack: ['Swift', 'SwiftUI', 'SwiftData', 'StoreKit 2', 'ActivityKit', 'iOS'],
+      'Built a production-grade SwiftUI + SwiftData app with StoreKit 2 subscriptions (Monthly/Yearly with a 1-month free trial) and a Lifetime one-time purchase.',
+    stack: ['Swift', 'SwiftUI', 'SwiftData', 'StoreKit 2', 'iOS'],
     href: '/products/wfhfocus',
   },
   {
