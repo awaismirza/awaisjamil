@@ -8,9 +8,9 @@ export const voiceAlarmPro = {
   seoDescription:
     'Voice Alarm Pro is a private, recording-first iPhone reminder app. Record a short message, schedule it, and hear it when the moment arrives.',
 
-  accent: '#3F9970',
-  accentDark: '#287051',
-  accentSoft: 'rgba(63, 153, 112, 0.14)',
+  accent: '#08415C',
+  accentDark: '#489BC4',
+  accentSoft: 'rgba(8, 65, 92, 0.12)',
   download: { kind: 'coming-soon', platform: 'ios' },
 
   facts: [

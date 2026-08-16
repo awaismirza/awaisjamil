@@ -1,6 +1,6 @@
 export const products = [
   {
-    title: 'WFH Focus',
+    title: 'WFH Focus Pro',
     slug: 'wfhfocus',
     type: 'Native iOS app',
     year: '2026',

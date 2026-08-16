@@ -2,7 +2,7 @@ import { Activity, Bell, Coffee, RadioTower, SunMoon, Tags, Timer } from 'lucide
 
 export const wfhFocus = {
   slug: 'wfhfocus',
-  name: 'WFH Focus',
+  name: 'WFH Focus Pro',
   category: 'Focus timer with hydration & break tracking',
   icon: '/wfhfocus/icon-light.png',
   iconDark: '/wfhfocus/icon-dark.png',
