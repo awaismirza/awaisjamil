@@ -1,16 +1,36 @@
-# React + Vite
+# awaisjamil.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The source for [awaisjamil.com](https://awaisjamil.com): a React + Vite portfolio with a reusable product mini-site system.
 
-Currently, two official plugins are available:
+## Start here
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+All content-authoring conventions live in [docs/authoring-content.md](docs/authoring-content.md). Read it before adding or changing a product, experience entry, personal project, or product legal/support page. It is written for people and every coding agent, not for one particular AI tool.
 
-## React Compiler
+For a product-specific quick reference, see [docs/product-pages.md](docs/product-pages.md).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local development
 
-## Expanding the ESLint configuration
+```sh
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Before handing off a change, run:
+
+```sh
+npm run lint
+npm run test
+npm run build
+```
+
+## Content locations
+
+| Content | Source |
+| --- | --- |
+| Product cards, Products page, main-nav product menu | `src/data/products.js` |
+| Product mini-sites and their legal/support copy | `src/data/product-sites/` |
+| Registered product mini-sites | `src/data/product-sites/index.js` |
+| Professional experience timeline | `src/data/experience.js` (`experience`) |
+| Legacy personal-project list | `src/data/experience.js` (`personalProjects`) |
+
+The app routes and layouts render these data sources automatically; do not duplicate navigation or page markup for a normal product addition.

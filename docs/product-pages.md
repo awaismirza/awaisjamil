@@ -1,53 +1,29 @@
-# Product page conventions
+# Product mini-site quick reference
 
-For products that also have a real shipping app with its own repo (currently: Driver
-Logbook), keep this site's feature/pricing/legal copy consistent with that app's own docs —
-don't let the two drift. Driver Logbook's app repo is expected as a sibling directory at
-`../Rideshare-expense-tracker` (see that repo's `CLAUDE.md` for the current feature set,
-Premium gating, and copy rules); its product page data lives at
-`src/data/product-sites/driverLogbook.js` in this repo.
+The complete, repository-wide guide is [authoring-content.md](authoring-content.md). This page is a short checklist for internal product mini-sites.
 
-Every product that has its own page on this site (an internal `/products/<slug>` route,
-as opposed to a card that just links out to an external site) follows the same pattern:
+## Required files and data
 
-1. An **Overview** page — the main product landing page (hero, features, screenshots, pricing).
-2. A **Privacy Policy** page.
-3. A **Terms & Conditions** page.
-4. A **Support** page (FAQ + contact email).
+1. Create `src/data/product-sites/<camelCaseName>.js`.
+2. Store its icon and screenshots in `public/<slug>/`.
+3. Register the product in `src/data/product-sites/index.js`.
+4. Add its card to `src/data/products.js` with `href: '/products/<slug>'`.
+5. Supply overview content plus `privacy`, `terms`, and `support` data in the product definition.
 
-## Sticky side navigation
+No new route, navigation component, legal page component, or product layout is needed. The shared route in `src/App.jsx` and `ProductSiteLayout` automatically render:
 
-On large screens (`lg:` breakpoint and up), every one of a product's pages shows a
-**fixed, vertically-centered navigation panel docked to the right edge of the viewport**,
-listing all four pages (Overview / Privacy Policy / Terms & Conditions / Support) with the
-current page highlighted. This lets a visitor jump straight from the product page to its
-Privacy Policy, from Privacy to Terms, etc., without needing to go back to `/products` first.
+- `/products/<slug>` — Overview
+- `/products/<slug>/privacy` — Privacy Policy
+- `/products/<slug>/terms` — Terms & Conditions
+- `/products/<slug>/support` — Support
 
-It uses `position: fixed` (not `position: sticky`) specifically because product Overview
-pages are built from several full-bleed, alternating-background sections (see FreezerPal's
-hero/screenshots/features/pricing sections) — a `sticky` element scoped to a single grid
-column would break out of that layout. `fixed` keeps the nav pinned to the viewport
-independent of the section structure, and is hidden below `lg` so it doesn't fight for space
-with the mobile layout (mobile falls back to the in-page "Back to <Product>" link and the
-footer links row instead).
+They also provide responsive product navigation, current-page highlighting, dark mode, the portfolio return strip, and footer links.
 
-**Reference implementation:** `src/pages/freezerpal/FreezerPalSideNav.jsx`, wired into
-`src/pages/freezerpal/FreezerPalPage.jsx` (pass `current="overview"`) and
-`src/pages/freezerpal/FreezerPalLegalLayout.jsx` (pass `current` through as a prop, one of
-`"privacy" | "terms" | "support"`), which the three legal pages (`FreezerPalPrivacyPage.jsx`,
-`FreezerPalTermsPage.jsx`, `FreezerPalSupportPage.jsx`) already forward.
+## Do not ship until
 
-When adding a new product with its own internal page (rather than an external link), copy
-this pattern:
-
-- `src/pages/<product>/<Product>Page.jsx` — overview
-- `src/pages/<product>/<Product>LegalLayout.jsx` — shared shell for the three legal pages
-- `src/pages/<product>/<Product>PrivacyPage.jsx`
-- `src/pages/<product>/<Product>TermsPage.jsx`
-- `src/pages/<product>/<Product>SupportPage.jsx`
-- `src/pages/<product>/<Product>SideNav.jsx` — the fixed right-side nav, product-specific
-  (its links are hardcoded to that product's routes, same as `FreezerPalSideNav.jsx`)
-
-Products still in development without a real page yet (no Overview/Privacy/Terms/Support)
-use the generic `src/pages/ProductComingSoonPage.jsx` placeholder instead — it doesn't need
-the side nav since there's only one page.
+- all claims match the product’s authoritative documentation;
+- privacy, terms, pricing, and support copy agree;
+- screenshots have useful alt text and load from `public/<slug>/`;
+- the product card appears on `/products` and in both Products menus;
+- light/dark theme and mobile/desktop navigation are checked;
+- `npm run lint`, `npm run test`, and `npm run build` pass.
