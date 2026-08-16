@@ -5,6 +5,7 @@ import { fastingTide } from './fastingTide.js'
 import { fivePrayers } from './fivePrayers.js'
 import { freezerpal } from './freezerpal.js'
 import { yusafcut } from './yusafcut.js'
+import { voiceAlarmPro } from './voiceAlarmPro.js'
 
 // Each product's mini-site (overview, privacy, terms, support) lives in its own
 // file here. To update a product's support email or copy, edit its file — the
@@ -17,4 +18,5 @@ export const productSites = {
   [fivePrayers.slug]: fivePrayers,
   [aussieLoanCalculator.slug]: aussieLoanCalculator,
   [yusafcut.slug]: yusafcut,
+  [voiceAlarmPro.slug]: voiceAlarmPro,
 }
