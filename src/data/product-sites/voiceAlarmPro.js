@@ -5,6 +5,7 @@ export const voiceAlarmPro = {
   name: 'Voice Alarm Pro',
   category: 'Spoken reminders for iPhone',
   icon: '/voice-alarm-pro/icon.svg',
+  iconDark: '/voice-alarm-pro/icon-dark.svg',
   seoDescription:
     'Voice Alarm Pro is a private, recording-first iPhone reminder app. Record a short message, schedule it, and hear it when the moment arrives.',
 

@@ -1,50 +1,134 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { Mic } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
-const BARS = [20, 34, 55, 31, 74, 48, 88, 58, 39, 68, 46, 27, 62, 36, 22]
+const BARS = [18, 32, 54, 38, 76, 48, 88, 62, 42, 70, 52, 30, 64, 40, 24, 46, 20]
 
-export function AnimatedRecordingWaveform({ label = 'Recording a reminder' }) {
+export function AnimatedRecordingWaveform({ label = 'Your reminder, in your voice' }) {
   const reduceMotion = useReducedMotion()
+  const [seconds, setSeconds] = useState(4)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSeconds((prev) => (prev >= 30 ? 1 : prev + 1))
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const formattedSeconds = String(seconds).padStart(2, '0')
 
   return (
-    <div aria-hidden="true" className="relative mx-auto grid h-[280px] w-[280px] place-items-center sm:h-[320px] sm:w-[320px]">
-      <div className="pointer-events-none absolute -inset-8 rounded-full blur-3xl" style={{ background: 'var(--accent-soft)' }} />
-      <div className="absolute inset-2 rounded-full border border-[var(--accent)]/15 bg-white/70 shadow-soft dark:bg-graphite/70" />
-      <div className="absolute inset-7 rounded-full border border-dashed border-[var(--accent)]/25" />
+    <div
+      aria-hidden="true"
+      className="relative mx-auto flex w-[300px] flex-col items-center rounded-[2.25rem] border border-line bg-white/90 p-6 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-graphite/90 sm:w-[340px]"
+    >
+      {/* Background Soft Glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -inset-6 -z-10 rounded-full blur-3xl"
+        style={{ background: 'var(--accent-soft)' }}
+      />
 
-      <svg className="relative h-28 w-60 overflow-visible sm:w-72" viewBox="0 0 300 120">
-        {BARS.map((height, index) => {
-          const x = 10 + index * 20
-          const opacity = 0.35 + (height / 100) * 0.65
-          return (
-            <motion.rect
-              animate={reduceMotion ? undefined : { height: [height, Math.max(16, height * 0.48), Math.min(94, height * 1.12), height] }}
-              fill="var(--accent)"
-              height={height}
-              initial={false}
-              key={x}
-              opacity={opacity}
-              rx="5"
-              transition={{ delay: index * 0.045, duration: 1.35, ease: 'easeInOut', repeat: Infinity }}
-              width="10"
-              x={x}
-              y={60 - height / 2}
+      {/* Top Header: Recording Status & Timer */}
+      <div className="flex w-full items-center justify-between border-b border-line/60 pb-3.5 dark:border-white/5">
+        <div className="flex items-center gap-2">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#C62E3E] opacity-75" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#C62E3E]" />
+          </span>
+          <span className="text-xs font-bold uppercase tracking-wider text-ink dark:text-white">
+            REC
+          </span>
+        </div>
+        <span className="font-mono text-xs font-semibold tabular-nums text-slate dark:text-white/60">
+          00:{formattedSeconds} / 00:30
+        </span>
+      </div>
+
+      {/* Center Waveform Visualizer */}
+      <div className="my-5 flex h-20 w-full items-center justify-center">
+        <svg className="h-full w-full overflow-visible" viewBox="0 0 280 80">
+          {BARS.map((height, index) => {
+            const x = 8 + index * 16
+            const opacity = 0.45 + (height / 100) * 0.55
+            return (
+              <motion.rect
+                animate={
+                  reduceMotion
+                    ? undefined
+                    : {
+                        height: [
+                          height,
+                          Math.max(12, height * 0.42),
+                          Math.min(76, height * 1.18),
+                          height,
+                        ],
+                        y: [
+                          40 - height / 2,
+                          40 - Math.max(12, height * 0.42) / 2,
+                          40 - Math.min(76, height * 1.18) / 2,
+                          40 - height / 2,
+                        ],
+                      }
+                }
+                fill="var(--accent)"
+                height={height}
+                initial={false}
+                key={x}
+                opacity={opacity}
+                rx="4"
+                transition={{
+                  delay: (index % 5) * 0.1,
+                  duration: 1.2,
+                  ease: 'easeInOut',
+                  repeat: Infinity,
+                }}
+                width="7"
+                x={x}
+                y={40 - height / 2}
+              />
+            )
+          })}
+        </svg>
+      </div>
+
+      {/* Mic Action Icon with Radiating Rings */}
+      <div className="relative my-2 flex items-center justify-center">
+        {/* Pulse rings */}
+        {!reduceMotion && (
+          <>
+            <motion.div
+              animate={{ scale: [1, 1.45, 1.7], opacity: [0.35, 0.15, 0] }}
+              className="absolute h-14 w-14 rounded-full border-2 border-[var(--accent)]"
+              transition={{ duration: 2.2, ease: 'easeOut', repeat: Infinity }}
             />
-          )
-        })}
-      </svg>
+            <motion.div
+              animate={{ scale: [1, 1.3], opacity: [0.4, 0] }}
+              className="absolute h-14 w-14 rounded-full border border-[var(--accent)]"
+              transition={{ delay: 0.4, duration: 2.2, ease: 'easeOut', repeat: Infinity }}
+            />
+          </>
+        )}
 
-      <motion.div
-        animate={reduceMotion ? undefined : { boxShadow: ['0 0 0 0 var(--accent-soft)', '0 0 0 20px transparent', '0 0 0 0 transparent'] }}
-        className="relative -mt-2 grid h-20 w-20 place-items-center rounded-full bg-[var(--accent)] text-white shadow-[0_14px_32px_var(--accent-soft)] sm:h-24 sm:w-24"
-        transition={{ duration: 2, ease: 'easeOut', repeat: Infinity }}
-      >
-        <Mic size={36} strokeWidth={2.4} />
-      </motion.div>
+        <div
+          className="relative grid h-14 w-14 place-items-center rounded-full text-white shadow-lg sm:h-16 sm:w-16"
+          style={{
+            background: 'var(--accent)',
+            boxShadow: '0 8px 24px var(--accent-soft)',
+          }}
+        >
+          <Mic className="sm:h-7 sm:w-7" size={24} strokeWidth={2.4} />
+        </div>
+      </div>
 
-      <div className="absolute bottom-7 text-center sm:bottom-9">
-        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--accent)]">Live waveform</p>
-        <p className="mt-1 text-sm font-medium text-slate">{label}</p>
+      {/* Bottom Labels */}
+      <div className="mt-4 text-center">
+        <p className="font-display text-sm font-bold text-ink dark:text-white">
+          {label}
+        </p>
+        <p className="mt-0.5 text-xs text-slate dark:text-white/60">
+          1-Tap Recording · 100% On-Device
+        </p>
       </div>
     </div>
   )
