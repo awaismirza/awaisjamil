@@ -4,12 +4,23 @@ This is the canonical workflow for adding or changing content in `awaisjamil.com
 
 The site is a React + Vite app styled with Tailwind utilities. It is data-driven: most new content belongs in a data file, and the shared UI renders it. Prefer extending the model below to making a one-off page.
 
+## Data-first rule
+
+**All product, portfolio, and experience content must be added through the existing data files.** Do not hard-code a new product card, experience card, navigation row, or product-page section into a React page or layout.
+
+- Internal product mini-site content, including the Overview, Privacy Policy, Terms & Conditions, Support FAQ, pricing, screenshots, and theme accent, lives in `src/data/product-sites/<camelCaseName>.js`.
+- Product portfolio cards and the data that powers the Products page, home-page product preview, and desktop/mobile Products menus live in `src/data/products.js`.
+- Professional experience entries live in the `experience` array in `src/data/experience.js`.
+- The legacy personal-project list lives in the `personalProjects` array in `src/data/experience.js`.
+
+Shared React components, layouts, routes, and navigation consume these data sources automatically. Change those shared files only when the requested work introduces a reusable capability that the current data model cannot represent; then extend the model and document the new field in this guide.
+
 ## Before editing
 
 1. Inspect the current working tree. Preserve unrelated changes.
 2. Find the authoritative source for the facts being published. For a shipping app, read its README, product requirements, release/support/privacy docs, and repository instructions. Do not infer pricing, platform support, subscription terms, privacy practices, or product capabilities.
 3. Choose the correct content surface below.
-4. Reuse the shared components and copy the closest existing data shape. Do not copy stale claims from an older product.
+4. Add the content through the correct data file and reuse the shared components. Copy the closest existing data shape; do not copy stale claims from an older product.
 5. Run all validation commands after the change.
 
 ## Choose the right content surface
