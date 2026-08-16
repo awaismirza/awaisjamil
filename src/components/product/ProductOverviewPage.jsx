@@ -7,6 +7,7 @@ import { staggerContainer, staggerItem } from '../../lib/animation.js'
 import { DARK_THEME } from '../../lib/theme.js'
 import { useTheme } from '../../lib/useTheme.js'
 import { AnimatedTimerDial } from './AnimatedTimerDial.jsx'
+import { AnimatedRecordingWaveform } from './AnimatedRecordingWaveform.jsx'
 import { DownloadButton } from './DownloadButton.jsx'
 
 function Eyebrow({ children }) {
@@ -54,7 +55,7 @@ function ScreenshotPlaceholder({ shot }) {
 
 export function ProductOverviewPage() {
   const site = useOutletContext()
-  const { hero, metrics, screenshots, features, howItWorks, pricing, closing, timerShowcase } = site
+  const { hero, metrics, screenshots, features, howItWorks, pricing, closing, timerShowcase, recordingShowcase } = site
   const theme = useTheme()
   const isDark = theme === DARK_THEME
   const heroShotSrc = (isDark && hero.heroShotDark) || hero.heroShot
@@ -124,7 +125,16 @@ export function ProductOverviewPage() {
             ) : null}
           </motion.div>
 
-          {timerShowcase ? (
+          {recordingShowcase ? (
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              className="mx-auto"
+              initial={{ opacity: 0, y: 24 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <AnimatedRecordingWaveform label={recordingShowcase.label} />
+            </motion.div>
+          ) : timerShowcase ? (
             <motion.div
               animate={{ opacity: 1, y: 0 }}
               className="mx-auto"

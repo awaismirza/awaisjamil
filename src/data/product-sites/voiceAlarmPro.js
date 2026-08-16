@@ -28,6 +28,10 @@ export const voiceAlarmPro = {
     badges: ['Your own recorded voice', 'Private by design', 'No account required'],
   },
 
+  recordingShowcase: {
+    label: 'Your reminder, in your voice',
+  },
+
   closing: {
     title: 'Keep every routine within earshot.',
     sub: 'Voice Alarm Pro is coming soon to the App Store for iPhone and iPad.',
@@ -35,10 +39,36 @@ export const voiceAlarmPro = {
 
   screenshotsTitle: 'A calmer way to stay on track.',
   screenshots: [
-    { title: 'Today', caption: 'See your next alarm and what is coming up today.', placeholder: true },
-    { title: 'Record', caption: 'Capture a short reminder in your own voice.', placeholder: true },
-    { title: 'Schedule', caption: 'Choose a one-time, repeating, or interval schedule.', placeholder: true },
-    { title: 'Alarm', caption: 'Review playback, sounds, vibration, and quiet hours.', placeholder: true },
+    {
+      src: '/voice-alarm-pro/screenshot-today.png',
+      alt: 'Voice Alarm Pro Today screen showing the next alarm and later alarms',
+      title: 'Today',
+      caption: 'See your next alarm and what is coming up today.',
+    },
+    {
+      src: '/voice-alarm-pro/screenshot-new-alarm.png',
+      alt: 'Voice Alarm Pro new alarm screen with recording, playback, and schedule controls',
+      title: 'New alarm',
+      caption: 'Record once, preview it, and choose when it should arrive.',
+    },
+    {
+      src: '/voice-alarm-pro/screenshot-alarm-detail.png',
+      alt: 'Voice Alarm Pro alarm detail screen showing delivery and quiet-hours settings',
+      title: 'Alarm controls',
+      caption: 'Fine-tune voice, sound, vibration, and quiet hours.',
+    },
+    {
+      src: '/voice-alarm-pro/screenshot-settings.png',
+      alt: 'Voice Alarm Pro settings screen with Pro features and playback options',
+      title: 'Your setup',
+      caption: 'Set your defaults, volume, loop behaviour, and Pro options.',
+    },
+    {
+      src: '/voice-alarm-pro/screenshot-recording.png',
+      alt: 'Voice Alarm Pro recording screen with a live audio waveform',
+      title: 'Recording',
+      caption: 'A simple, focused space to capture the prompt in your own voice.',
+    },
   ],
 
   featuresTitle: 'A reminder that meets you in the moment.',
