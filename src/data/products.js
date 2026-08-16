@@ -85,4 +85,17 @@ export const products = [
     stack: ['macOS', 'Local AI', 'Transcription', 'Apple Silicon', 'Video Editing'],
     href: '/products/yusafcut',
   },
+  {
+    title: 'Voice Alarm Pro',
+    slug: 'voice-alarm-pro',
+    type: 'Native iOS app',
+    year: '2026',
+    status: 'Coming soon',
+    summary:
+      'A private, recording-first reminder app that plays your own short voice prompts at the moments they matter.',
+    impact:
+      'Designed as a calm, on-device iOS experience with local notifications, recording-first alarm creation, flexible schedules, and a one-time Pro unlock.',
+    stack: ['Swift', 'SwiftUI', 'SwiftData', 'StoreKit 2', 'UserNotifications', 'iOS'],
+    href: '/products/voice-alarm-pro',
+  },
 ]
