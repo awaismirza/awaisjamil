@@ -5,6 +5,7 @@ This file applies to every AI agent working in this repository. The canonical, t
 ## Non-negotiable conventions
 
 - A standard internal product page is data-driven: create one product definition in `src/data/product-sites/`, register it in `src/data/product-sites/index.js`, and add its portfolio card to `src/data/products.js`.
+- All product, portfolio, and experience content is data-first: use `src/data/product-sites/`, `src/data/products.js`, and the `experience`/`personalProjects` arrays in `src/data/experience.js`; do not hard-code content into React pages or navigation components.
 - Every internal product mini-site must supply Overview, Privacy Policy, Terms & Conditions, and Support content. The shared product layout automatically provides desktop/mobile navigation, dark mode, the portfolio return strip, and footer legal links.
 - Do not create a second bespoke route or copy the product layout for a normal product. `src/App.jsx` already serves every registered product at `/products/:slug` and its three companion pages.
 - Match product claims, pricing, platform support, privacy statements, and legal wording to the product’s authoritative source. For a sibling app repository, read its agent instructions and relevant docs before writing website copy.

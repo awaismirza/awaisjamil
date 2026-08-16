@@ -34,3 +34,5 @@ npm run build
 | Legacy personal-project list | `src/data/experience.js` (`personalProjects`) |
 
 The app routes and layouts render these data sources automatically; do not duplicate navigation or page markup for a normal product addition.
+
+**Data-first rule:** add product, portfolio, and experience content to these data files rather than hard-coding it in pages, cards, layouts, or navigation components.
