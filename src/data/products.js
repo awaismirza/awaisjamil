@@ -1,5 +1,18 @@
 export const products = [
   {
+    title: 'Log My Rep',
+    slug: 'log-my-rep',
+    type: 'Native iOS app',
+    year: '2026',
+    status: 'Coming soon',
+    summary:
+      'A set-by-set workout logger for iPhone with automatic PR detection, background-safe rest timers, 28 training programs, and 165 animated exercise demonstrations.',
+    impact:
+      'Built a production SwiftUI + SwiftData app with a runtime vector animation engine, estimated-1RM progress charts, and a StoreKit 2 yearly subscription with a 7-day free trial.',
+    stack: ['Swift', 'SwiftUI', 'SwiftData', 'Swift Charts', 'StoreKit 2', 'iOS'],
+    href: '/products/log-my-rep',
+  },
+  {
     title: 'WFH Focus Pro',
     slug: 'wfhfocus',
     type: 'Native iOS app',
