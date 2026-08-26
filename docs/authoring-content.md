@@ -18,7 +18,7 @@ Shared React components, layouts, routes, and navigation consume these data sour
 ## Before editing
 
 1. Inspect the current working tree. Preserve unrelated changes.
-2. Find the authoritative source for the facts being published. For a shipping app, read its README, product requirements, release/support/privacy docs, and repository instructions. Do not infer pricing, platform support, subscription terms, privacy practices, or product capabilities.
+2. Find the authoritative source for the facts being published. For a shipping app, read its README, product requirements, release/support/privacy docs, changelog, and repository instructions. Use the matching versioned product spec and changelog under `docs/` when available. Do not infer pricing, platform support, subscription terms, privacy practices, or product capabilities.
 3. Choose the correct content surface below.
 4. Add the content through the correct data file and reuse the shared components. Copy the closest existing data shape; do not copy stale claims from an older product.
 5. Run all validation commands after the change.
