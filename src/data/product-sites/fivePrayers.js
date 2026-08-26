@@ -1,4 +1,4 @@
-import { BarChart3, Bell, BookOpen, CalendarCheck, CircleCheck, Compass, Headphones, Heart, MapPin, Repeat2, ShieldCheck, Volume2 } from 'lucide-react'
+import { BarChart3, Bell, BookOpen, CalendarCheck, CircleCheck, Compass, Headphones, Heart, MapPin, Repeat2, ShieldCheck, Sparkles, Volume2 } from 'lucide-react'
 
 export const fivePrayers = {
   slug: 'five-prayers',
@@ -25,9 +25,9 @@ export const fivePrayers = {
     headline: 'Prayer, Quran, and Qibla',
     headlineAccent: 'in one private place.',
     sub: 'Track the five daily prayers, read and listen to the Quran, find Qibla, and keep a personal Tasbih practice without ads, accounts, or social pressure.',
-    heroShot: '/five-prayers/showcase-home.svg',
+    heroShot: '/five-prayers/screenshot-home.png',
     heroShotAlt: "Five Prayers home screen showing today's prayers and the next prayer card",
-    badges: ['Quran reading and audio', 'Local-first personal data', 'No ads or data selling'],
+    badges: ['Quran reading and audio', '99 Names of Allah', 'No ads or data selling'],
   },
 
   closing: {
@@ -39,20 +39,32 @@ export const fivePrayers = {
   screenshotsTitle: 'A calm place for daily worship.',
   screenshots: [
     {
-      src: '/five-prayers/showcase-home.svg',
-      alt: "Five Prayers home screen showing today's prayers and the next prayer card",
+      src: '/five-prayers/screenshot-home.png',
+      alt: "Five Prayers home screen showing today's prayer checklist and Isha prayer card",
       title: 'Home',
-      caption: "Today's prayers and the next prayer card.",
+      caption: "Track today's prayers and see what is next.",
     },
     {
-      src: '/five-prayers/showcase-analytics.svg',
-      alt: 'Five Prayers analytics screen showing streaks and consistency by prayer',
-      title: 'Analytics',
-      caption: 'Streaks and consistency by prayer.',
+      src: '/five-prayers/screenshot-quran.png',
+      alt: 'Five Prayers Quran library showing searchable surahs, favourites, recent selections, and play controls',
+      title: 'Quran',
+      caption: 'Read, listen, favourite, and revisit surahs.',
     },
     {
-      src: '/five-prayers/showcase-settings.svg',
-      alt: 'Five Prayers settings screen showing appearance, tracking, and prayer time controls',
+      src: '/five-prayers/screenshot-qibla.png',
+      alt: 'Five Prayers Qibla screen showing compass guidance and help for an unavailable compass',
+      title: 'Qibla',
+      caption: 'Find the direction to the Kaaba with clear guidance.',
+    },
+    {
+      src: '/five-prayers/screenshot-tools.png',
+      alt: 'Five Prayers Tools screen showing Prayer Progress, Tasbih, and 99 Names of Allah',
+      title: 'Tools',
+      caption: 'Progress, Tasbih, and the 99 Beautiful Names.',
+    },
+    {
+      src: '/five-prayers/screenshot-settings.png',
+      alt: 'Five Prayers settings showing city prayer times, reminders, Fajr alarm, and adhan controls',
       title: 'Settings',
       caption: 'Appearance, tracking, prayer time, and adhan controls.',
     },
@@ -108,6 +120,12 @@ export const fivePrayers = {
         'When you play a surah, its selected text, translation, and audio are saved on your device for later replay. You can clear these downloads in Settings.',
     },
     {
+      icon: Sparkles,
+      title: 'Learn the 99 Names of Allah',
+      description:
+        'Read each name in Arabic with transliteration and English meaning, then listen to its Arabic pronunciation.',
+    },
+    {
       icon: Compass,
       title: 'Find Qibla',
       description:
@@ -155,6 +173,10 @@ export const fivePrayers = {
       {
         q: 'Can I listen without internet?',
         a: 'After a surah has been played successfully, the app saves its selected Quran text, translation, recitation, and optional spoken-translation audio on the device for offline replay. You can review the cache size or remove these downloads in Settings.',
+      },
+      {
+        q: 'How do the 99 Names of Allah work?',
+        a: 'The app shows Arabic, transliteration, English translation, and meanings for the 99 Beautiful Names of Allah. When available, it streams a separate Arabic pronunciation for each name. A built-in list of Arabic names and translations remains available offline.',
       },
       {
         q: 'How does Qibla work?',
@@ -219,6 +241,17 @@ export const fivePrayers = {
           },
           {
             p: 'As with any internet request, a provider may receive technical request information such as your IP address and device/network information under its own terms and privacy practices. See [Al Quran Cloud’s Terms & Conditions](https://alquran.cloud/terms-and-conditions).',
+          },
+        ],
+      },
+      {
+        heading: '99 Names of Allah',
+        blocks: [
+          {
+            p: 'When available, Five Prayers requests Arabic names, transliterations, English meanings, and Arabic-pronunciation audio from Asmaul Husna API. The app does not create an account for this service or send it prayer logs, Tasbih history, location, or other user-entered data.',
+          },
+          {
+            p: 'The app stores the last successful 99 Names response locally to make the feature more resilient. A bundled Arabic/English reference list remains available when the online source cannot be reached. As with any internet request, the provider may receive technical request information such as IP address under its own practices.',
           },
         ],
       },
@@ -341,6 +374,9 @@ export const fivePrayers = {
           },
           {
             p: 'Quran content is saved for personal, educational offline replay within the app. Do not use the app to remove attribution, misrepresent Quran text, or redistribute content in a way that violates applicable rights or provider terms.',
+          },
+          {
+            p: 'The 99 Names of Allah feature may use Asmaul Husna API for Arabic names, translations, meanings, and individual pronunciation audio. Availability of this source and its audio is not guaranteed. The app also provides a local reference fallback for reading the Arabic names and English translations.',
           },
         ],
       },

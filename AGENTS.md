@@ -1,6 +1,20 @@
 # Repository instructions for AI agents
 
+Start here. This file is the repository's tool-agnostic operating agreement for
+Codex, Claude, Gemini, Cursor, Copilot, and human contributors.
+
 This file applies to every AI agent working in this repository. The canonical, tool-agnostic workflow is [docs/authoring-content.md](docs/authoring-content.md). Read it before changing site content, product pages, product legal copy, or portfolio/experience data.
+
+## Required reading order
+
+1. This file.
+2. [docs/authoring-content.md](docs/authoring-content.md) for any content, product,
+   legal, support, portfolio, or experience work.
+3. The relevant product specification and changelog in `docs/` before changing product
+   claims. For Five Prayers, read [docs/five-prayers-spec.md](docs/five-prayers-spec.md)
+   and [docs/five-prayers-changelog.md](docs/five-prayers-changelog.md).
+4. The sibling product repository's instructions and documentation when it is the
+   authoritative source.
 
 ## Non-negotiable conventions
 
@@ -11,6 +25,11 @@ This file applies to every AI agent working in this repository. The canonical, t
 - Match product claims, pricing, platform support, privacy statements, and legal wording to the product’s authoritative source. For a sibling app repository, read its agent instructions and relevant docs before writing website copy.
 - Preserve existing user changes. Do not modify unrelated files or replace project content with generic template copy.
 - Validate content/code changes with `npm run lint`, `npm run test`, and `npm run build`.
+- Before committing, run `git diff --check`, review `git status`, and stage only files
+  belonging to the requested change. Never include unrelated working-tree changes.
+- Keep product documentation versioned. Update the appropriate product spec and
+  changelog in the same change as a meaningful product-page capability, privacy,
+  platform, release-status, or source-attribution update.
 
 ## Driver Logbook exception
 
