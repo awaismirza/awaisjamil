@@ -86,16 +86,16 @@ export const products = [
     href: '/products/yusafcut',
   },
   {
-    title: 'Voice Alarm Pro',
-    slug: 'voice-alarm-pro',
+    title: 'Sayso',
+    slug: 'sayso',
     type: 'Native iOS app',
     year: '2026',
     status: 'Coming soon',
     summary:
-      'A private, recording-first reminder app that plays your own short voice prompts at the moments they matter.',
+      'An alarm app with no text-to-speech in it: every alarm is a short message you recorded in your own voice, played back at the moment you chose.',
     impact:
-      'Designed as a calm, on-device iOS experience with local notifications, recording-first alarm creation, flexible schedules, and a one-time Pro unlock.',
+      'Recording-first alarm creation with a live waveform, a full-screen ringing view with an optional passcode gate, Home and Lock Screen widgets, per-alarm quiet hours, and a one-time Plus unlock. Entirely on-device.',
     stack: ['Swift', 'SwiftUI', 'SwiftData', 'StoreKit 2', 'UserNotifications', 'iOS'],
-    href: '/products/voice-alarm-pro',
+    href: '/products/sayso',
   },
 ]
