@@ -1,17 +1,16 @@
-import { BarChart3, Bell, BookOpen, CalendarCheck, CircleCheck, Compass, Headphones, Heart, MapPin, Repeat2, ShieldCheck, Sparkles, Volume2 } from 'lucide-react'
+import { BarChart3, Bell, BookOpen, CalendarCheck, CircleCheck, Headphones, Heart, MapPin, Repeat2, ShieldCheck, Volume2 } from 'lucide-react'
 
 export const fivePrayers = {
   slug: 'five-prayers',
   name: 'Five Prayers',
-  category: 'Private prayer, Quran, and Qibla companion for iPhone',
+  category: 'Private prayer and Quran companion for iPhone',
   icon: '/five-prayers/icon.png',
   seoDescription:
-    'Five Prayers is a private iPhone companion for daily prayer tracking, Quran reading and recitation, Qibla direction, and personal dhikr tools.',
+    'Five Prayers is a private iPhone companion for daily Salah tracking, guided Quran reading, listening, and personal progress.',
 
   accent: '#1D8A5B',
   accentDark: '#136645',
   accentSoft: 'rgba(29, 138, 91, 0.13)',
-  // TODO: set the App Store listing URL once available
   download: { kind: 'app-store', url: 'https://apps.apple.com/us/app/five-prayers/id6780003136' },
 
   facts: [
@@ -20,14 +19,20 @@ export const fivePrayers = {
     { label: 'Ads & tracking', value: 'None' },
   ],
 
+  metrics: [
+    { value: '5', label: 'daily prayers' },
+    { value: '114', label: 'surahs to explore' },
+    { value: '0', label: 'accounts required' },
+  ],
+
   hero: {
     eyebrow: 'A daily worship companion',
-    headline: 'Prayer, Quran, and Qibla',
+    headline: 'Prayer and Quran practice',
     headlineAccent: 'in one private place.',
-    sub: 'Track the five daily prayers, read and listen to the Quran, find Qibla, and keep a personal Tasbih practice without ads, accounts, or social pressure.',
+    sub: 'Track the five daily prayers, build a guided Quran reading habit, and listen to the Quran without ads, accounts, or social pressure.',
     heroShot: '/five-prayers/screenshot-home.png',
     heroShotAlt: "Five Prayers home screen showing today's prayers and the next prayer card",
-    badges: ['Quran reading and audio', '99 Names of Allah', 'No ads or data selling'],
+    badges: ['Guided Quran reading', 'Private local progress', 'No ads or data selling'],
   },
 
   closing: {
@@ -47,20 +52,8 @@ export const fivePrayers = {
     {
       src: '/five-prayers/screenshot-quran.png',
       alt: 'Five Prayers Quran library showing searchable surahs, favourites, recent selections, and play controls',
-      title: 'Quran',
-      caption: 'Read, listen, favourite, and revisit surahs.',
-    },
-    {
-      src: '/five-prayers/screenshot-qibla.png',
-      alt: 'Five Prayers Qibla screen showing compass guidance and help for an unavailable compass',
-      title: 'Qibla',
-      caption: 'Find the direction to the Kaaba with clear guidance.',
-    },
-    {
-      src: '/five-prayers/screenshot-tools.png',
-      alt: 'Five Prayers Tools screen showing Prayer Progress, Tasbih, and 99 Names of Allah',
-      title: 'Tools',
-      caption: 'Progress, Tasbih, and the 99 Beautiful Names.',
+      title: 'Quran library',
+      caption: 'Read, listen, favourite, and revisit all 114 surahs.',
     },
     {
       src: '/five-prayers/screenshot-settings.png',
@@ -85,9 +78,9 @@ export const fivePrayers = {
     },
     {
       icon: BarChart3,
-      title: 'See daily and long-term stats',
+      title: 'Follow your progress',
       description:
-        'Review completion trends, consistency by prayer, and steady progress without social pressure.',
+        'Review prayer consistency, ayahs read, ayahs left, reading sets, and progress across your private practice.',
     },
     {
       icon: MapPin,
@@ -97,9 +90,9 @@ export const fivePrayers = {
     },
     {
       icon: BookOpen,
-      title: 'Read the Noble Quran',
+      title: 'Build a guided Quran reading',
       description:
-        'Browse all 114 surahs with Uthmani Arabic text and a selectable translation, then return directly to the ayah currently playing.',
+        'Start at Al-Faatiha and continue through the Quran in order with a daily ayah goal. Your next set is always ready when you return.',
     },
     {
       icon: Headphones,
@@ -120,16 +113,10 @@ export const fivePrayers = {
         'When you play a surah, its selected text, translation, and audio are saved on your device for later replay. You can clear these downloads in Settings.',
     },
     {
-      icon: Sparkles,
-      title: 'Learn the 99 Names of Allah',
+      icon: CalendarCheck,
+      title: 'Create custom reading goals',
       description:
-        'Read each name in Arabic with transliteration and English meaning, then listen to its Arabic pronunciation.',
-    },
-    {
-      icon: Compass,
-      title: 'Find Qibla',
-      description:
-        'Use your iPhone’s location and compass to see the direction to the Kaaba from wherever you are.',
+        'Add optional named readings with daily, hourly, every-second-day, or weekly private reminders.',
     },
     {
       icon: Bell,
@@ -146,6 +133,25 @@ export const fivePrayers = {
       icon: ShieldCheck,
       title: 'Private and local-first',
       description: 'No ads, no social profiles, no leaderboards, and no selling user data.',
+    },
+  ],
+
+  howItWorksTitle: 'A simple rhythm for reading more consistently.',
+  howItWorks: [
+    {
+      title: 'Choose your reading',
+      description:
+        'Set up the optional After prayer reading plan or add a named custom reading with a goal that fits your day.',
+    },
+    {
+      title: 'Read or listen',
+      description:
+        'Continue from the next sequential ayah, read manually, or listen with your selected reciter.',
+    },
+    {
+      title: 'See your progress',
+      description:
+        'Keep ayahs read, reading sets, goal days, and ayahs remaining in private on-device insights.',
     },
   ],
 
@@ -175,12 +181,12 @@ export const fivePrayers = {
         a: 'After a surah has been played successfully, the app saves its selected Quran text, translation, recitation, and optional spoken-translation audio on the device for offline replay. You can review the cache size or remove these downloads in Settings.',
       },
       {
-        q: 'How do the 99 Names of Allah work?',
-        a: 'The app shows Arabic, transliteration, English translation, and meanings for the 99 Beautiful Names of Allah. When available, it streams a separate Arabic pronunciation for each name. A built-in list of Arabic names and translations remains available offline.',
+        q: 'How do Quran reading plans work?',
+        a: 'The primary After prayer reading plan continues sequentially from Al-Faatiha and shows the next set of ayahs. You can also create custom reading plans with their own labels, goals, and optional local reminders.',
       },
       {
-        q: 'How does Qibla work?',
-        a: 'Qibla uses location and compass access on your iPhone to calculate the direction to the Kaaba. Location is used on-device for this calculation and is not sent to a Qibla service by the app.',
+        q: 'Can I set a reminder after prayer?',
+        a: 'After-prayer reading is connected to the Salah handoff and does not use a fixed-time reminder. Custom reading plans can optionally use hourly, daily, every-second-day, or weekly local reminders.',
       },
       {
         q: 'Why might prayer times differ from my mosque?',
@@ -191,11 +197,11 @@ export const fivePrayers = {
 
   privacy: {
     title: 'Privacy Policy',
-    lastUpdated: '21 August 2026',
+    lastUpdated: '31 August 2026',
     seoDescription:
-      'Five Prayers is local-first. Personal prayer, Quran, and Tasbih data stays on the device, and the app avoids ads, profiling, and data selling.',
+      'Five Prayers is local-first. Personal prayer and Quran reading data stays on the device, and the app avoids ads, profiling, and data selling.',
     summary:
-      'Five Prayers is local-first. Personal prayer, Quran, and Tasbih data stays on the device, and the app avoids ads, profiling, and data selling.',
+      'Five Prayers is local-first. Personal prayer and Quran reading data stays on the device, and the app avoids ads, profiling, and data selling.',
     sections: [
       {
         heading: 'Overview',
@@ -217,13 +223,13 @@ export const fivePrayers = {
         ],
       },
       {
-        heading: 'Prayer, Quran, and Tasbih data',
+        heading: 'Prayer and Quran data',
         blocks: [
           {
-            p: "Prayer logs are stored on the user's device. App settings such as reminders, selected city, calculation method, display preferences, Quran reader preferences, favorites, recent selections, and Tasbih counters are also stored locally on the device.",
+            p: "Prayer logs are stored on the user's device. App settings such as reminders, selected city, calculation method, display preferences, Quran reader preferences, favorites, recent selections, and reading plans are also stored locally on the device.",
           },
           {
-            p: 'This may include prayer status, prayer date, prayer name, reminders, selected city, calculation method, display preferences, Quran favorites and listening-loop selections, and Tasbih counts.',
+            p: 'This may include prayer status, prayer date, prayer name, reminders, selected city, calculation method, display preferences, Quran favorites and listening-loop selections, and reading progress.',
           },
           {
             p: 'Users can delete their app data from within the app where available or by deleting the app from their device.',
@@ -234,7 +240,7 @@ export const fivePrayers = {
         heading: 'Quran downloads and providers',
         blocks: [
           {
-            p: 'When you open or play a Quran selection, Five Prayers may request Quran text, translation/reciter edition information, and ayah audio from Al Quran Cloud, an Islamic Network service. The app does not create an account for this service or send it your prayer log, favorites, or Tasbih history.',
+            p: 'When you open or play a Quran selection, Five Prayers may request Quran text, translation/reciter edition information, and ayah audio from Al Quran Cloud, an Islamic Network service. The app does not create an account for this service or send it your prayer log, favorites, or reading history.',
           },
           {
             p: 'After a successful Quran load, the app saves the selected Quran text and translation in persistent app storage. When playback starts, it also saves the selected recitation audio and optional spoken-translation audio for offline replay. These Quran downloads are excluded from iCloud Backup and can be removed at any time in the app’s Settings.',
@@ -245,25 +251,11 @@ export const fivePrayers = {
         ],
       },
       {
-        heading: '99 Names of Allah',
+        heading: 'City selection',
         blocks: [
-          {
-            p: 'When available, Five Prayers requests Arabic names, transliterations, English meanings, and Arabic-pronunciation audio from Asmaul Husna API. The app does not create an account for this service or send it prayer logs, Tasbih history, location, or other user-entered data.',
-          },
-          {
-            p: 'The app stores the last successful 99 Names response locally to make the feature more resilient. A bundled Arabic/English reference list remains available when the online source cannot be reached. As with any internet request, the provider may receive technical request information such as IP address under its own practices.',
-          },
-        ],
-      },
-      {
-        heading: 'Location and city selection',
-        blocks: [
-          { p: 'Location or a selected city is used only to calculate prayer times.' },
+          { p: 'A selected city is used only to calculate prayer times.' },
           {
             p: 'The app may contact a prayer time provider — the AlAdhan API (aladhan.com), run by Islamic Network — to download prayer times for the selected city and year when the user chooses a city or refreshes prayer times.',
-          },
-          {
-            p: 'If you use the Qibla compass, location and heading information are used on your device to calculate the direction to the Kaaba. Five Prayers does not send your Qibla location to a Qibla provider.',
           },
         ],
       },
@@ -317,7 +309,7 @@ export const fivePrayers = {
 
   terms: {
     title: 'Terms & Conditions',
-    lastUpdated: '21 August 2026',
+    lastUpdated: '31 August 2026',
     seoDescription:
       'Terms for Five Prayers: a practical prayer tracking tool, not a religious authority.',
     summary:
@@ -374,9 +366,6 @@ export const fivePrayers = {
           },
           {
             p: 'Quran content is saved for personal, educational offline replay within the app. Do not use the app to remove attribution, misrepresent Quran text, or redistribute content in a way that violates applicable rights or provider terms.',
-          },
-          {
-            p: 'The 99 Names of Allah feature may use Asmaul Husna API for Arabic names, translations, meanings, and individual pronunciation audio. Availability of this source and its audio is not guaranteed. The app also provides a local reference fallback for reading the Arabic names and English translations.',
           },
         ],
       },

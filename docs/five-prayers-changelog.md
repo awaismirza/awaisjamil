@@ -4,48 +4,49 @@ This changelog describes the public Five Prayers product represented on
 awaisjamil.com. It is a documentation source for agents and contributors; it does
 not by itself indicate that a version has been submitted to or approved by Apple.
 
-## [1.5] — Planned
+## [1.6] — Current product direction
 
-### Added
+### Changed
 
-- **99 Names of Allah** in Tools: browse all 99 Beautiful Names with Arabic text,
-  transliteration, English translation, search, and per-name detail screens.
-- Arabic pronunciation playback for individual names when the source audio is
-  available.
-- A local fallback of all 99 Arabic names with transliterations and English
-  translations, so the reference remains usable when the source is unavailable.
+- Focused the app on four connected destinations: Prayer, Reading, Progress, and
+  Settings.
+- Added a dedicated Reading dashboard for a guided Quran practice instead of a
+  general-purpose tools catalogue.
+- Added an optional **After prayer reading** plan that starts at Al-Faatiha and
+  continues sequentially through the Quran after Salah.
+- Added multiple named custom reading plans. Each plan has its own daily ayah goal,
+  sequential position, progress, and completion history.
+- Added optional private local reminders for custom plans: hourly, daily, every
+  second day, or weekly. The After prayer plan is connected to the Salah handoff
+  and does not use a fixed-time reminder.
+- Added reading analytics for ayahs read, ayahs remaining, reading sets, completed
+  goal days, and per-plan progress.
+- Added Quran listening completion: finishing playback of a reading set marks that
+  set as read, while users can also mark a set read manually.
+- Moved detailed Reading insights to the Progress tab, with a prominent action inside
+  the Reading summary card.
+- Preserved the Quran library with all 114 surahs, selectable translation and
+  reciter, background playback, lock-screen controls, favourites, recent selections,
+  loops, and persistent offline cache.
 
-### Data and privacy
+### Removed
 
-- Uses Asmaul Husna API for the online Arabic names, meanings, and pronunciation
-  audio. The feature does not send prayer history, Tasbih history, or Qibla location
-  to this source.
-- Caches the last valid response locally; expanded meanings and audio may be absent
-  until a successful online response is available.
-
-### Release status
-
-- Planned iOS metadata: version **1.5**, build **12**.
-- Not yet archived, uploaded to TestFlight, or submitted to App Store Connect.
-
-## [1.4] — Current project baseline
-
-### Added
-
-- Five primary destinations: Prayer, Quran, Qibla, Tools, and Settings.
-- City-based prayer times with local cache and static fallback, local reminders,
-  selectable bundled adhan recordings, and an optional Fajr alarm.
-- Prayer tracking, missed/made-up prayer workflows, progress analytics, and CSV
-  export.
-- Quran library and reader for all 114 surahs, selectable translation and reciter,
-  background playback, lock-screen controls, favourites/recent selections, loops,
-  optional spoken translation, and persistent offline cache.
-- On-device Qibla direction and distance guidance.
-- Tasbih with multiple counters, editable targets, reset/delete, and count history.
+- Removed the Qibla compass and its location permission.
+- Removed the generic Tools destination, Tasbih counter, 99 Names of Allah, and
+  Names of the Prophet reference features.
 
 ### Privacy and attribution
 
-- Local-first data storage with no ads, social profiles, or third-party analytics.
-- AlAdhan / Islamic Network for prayer-time data and bundled adhan collection; Al
-  Quran Cloud / Islamic Network for Quran content and media, with attribution and
-  rights-holder notices in the app.
+- Prayer logs, reading plans, reading progress, favourites, and settings remain
+  local-first.
+- The app has no accounts, ads, social profiles, leaderboards, or third-party
+  analytics.
+- AlAdhan / Islamic Network supplies downloaded prayer times and bundled adhan
+  attribution. Al Quran Cloud / Islamic Network supplies Quran editions and audio;
+  the app preserves provider and rights-holder attribution.
+
+### Release status
+
+- Product metadata: version **1.6**, build **15**.
+- The changelog does not itself confirm TestFlight, App Store Connect, or App Store
+  release status.
