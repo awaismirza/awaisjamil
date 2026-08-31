@@ -30,10 +30,10 @@ export const products = [
     type: 'Native iOS app',
     year: '2026',
     summary:
-      'A private iPhone companion for the five daily prayers, Quran reading and audio, Qibla direction, and personal Tasbih practice.',
+      'A private iPhone companion for the five daily prayers, guided Quran reading, listening, and personal progress.',
     impact:
-      'Built as a local-first SwiftUI app with background Quran playback, durable offline Quran caching, a device compass, and responsive product/legal pages.',
-    stack: ['Swift', 'SwiftUI', 'AVFoundation', 'Core Location', 'iOS', 'Static Website'],
+      'Built as a local-first SwiftUI app with sequential reading plans, background Quran playback, durable offline Quran caching, and private progress insights.',
+    stack: ['Swift', 'SwiftUI', 'SwiftData', 'AVFoundation', 'iOS', 'Static Website'],
     href: '/products/five-prayers',
   },
   {
