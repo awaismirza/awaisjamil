@@ -31,7 +31,7 @@ export const fivePrayers = {
     headlineAccent: 'in one private place.',
     sub: 'Track the five daily prayers, build a guided Quran reading habit, and listen to the Quran without ads, accounts, or social pressure.',
     heroShot: '/five-prayers/screenshot-home.png',
-    heroShotAlt: "Five Prayers home screen showing today's prayers and the next prayer card",
+    heroShotAlt: "Five Prayers Prayer tab showing today's prayer schedule and the current Isha action",
     badges: ['Guided Quran reading', 'Private local progress', 'No ads or data selling'],
   },
 
@@ -45,9 +45,9 @@ export const fivePrayers = {
   screenshots: [
     {
       src: '/five-prayers/screenshot-home.png',
-      alt: "Five Prayers home screen showing today's prayer checklist and Isha prayer card",
-      title: 'Home',
-      caption: "Track today's prayers and see what is next.",
+      alt: "Five Prayers Prayer tab showing today's prayer schedule and the current Isha action",
+      title: 'Prayer',
+      caption: "Track today's prayers and see the current prayer action.",
     },
     {
       src: '/five-prayers/screenshot-quran.png',
@@ -56,10 +56,22 @@ export const fivePrayers = {
       caption: 'Read, listen, favourite, and revisit all 114 surahs.',
     },
     {
-      src: '/five-prayers/screenshot-settings.png',
-      alt: 'Five Prayers settings showing city prayer times, reminders, Fajr alarm, and adhan controls',
-      title: 'Settings',
-      caption: 'Appearance, tracking, prayer time, and adhan controls.',
+      src: '/five-prayers/screenshot-reading-overview.png',
+      alt: 'Five Prayers Reading tab showing the reading overview and completed daily reading',
+      title: 'Reading overview',
+      caption: 'See daily progress and active reading goals.',
+    },
+    {
+      src: '/five-prayers/screenshot-reading-setup.png',
+      alt: 'Five Prayers new custom reading screen showing a reading label, daily goal, and private reminder',
+      title: 'Custom reading',
+      caption: 'Create a reading with a daily ayah goal and private reminder.',
+    },
+    {
+      src: '/five-prayers/screenshot-reading-progress.png',
+      alt: 'Five Prayers Reading tab showing an active Night Reading plan and its next set',
+      title: 'Reading progress',
+      caption: 'Continue an active plan from its next contiguous ayah set.',
     },
   ],
 
