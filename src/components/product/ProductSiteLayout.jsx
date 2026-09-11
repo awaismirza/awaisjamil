@@ -1,7 +1,7 @@
 import { ArrowLeft, Menu, X } from 'lucide-react'
 import { useState } from 'react'
-import { Link, NavLink, Outlet, useParams } from 'react-router-dom'
-import { productSites } from '../../data/product-sites/index.js'
+import { Link, Navigate, NavLink, Outlet, useLocation, useParams } from 'react-router-dom'
+import { productAliases, productSites } from '../../data/product-sites/index.js'
 import { DARK_THEME } from '../../lib/theme.js'
 import { useTheme } from '../../lib/useTheme.js'
 import { NotFoundPage } from '../../pages/NotFoundPage.jsx'
@@ -20,6 +20,7 @@ function navItems(slug) {
 
 export function ProductSiteLayout() {
   const { slug } = useParams()
+  const location = useLocation()
   const [open, setOpen] = useState(false)
   const theme = useTheme()
   const isDark = theme === DARK_THEME
@@ -32,7 +33,12 @@ export function ProductSiteLayout() {
     }
   })
   const site = productSites[slug]
+  const aliasOf = productAliases[slug]
 
+  if (aliasOf) {
+    const rest = location.pathname.slice(`/products/${slug}`.length)
+    return <Navigate replace to={`/products/${aliasOf}${rest}${location.search}${location.hash}`} />
+  }
   if (!site) return <NotFoundPage />
 
   const items = navItems(slug)

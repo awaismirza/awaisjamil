@@ -82,6 +82,8 @@ export const exampleProduct = {
 }
 ```
 
+If a product's slug ever changes, keep each former slug in an optional `aliases` array (for example `aliases: ['old-slug']`). `/products/<alias>` and its privacy, terms, and support pages then redirect to the current slug, so App Store listings, in-app links, and shared URLs keep working. An alias must never match another product's `slug`; `src/data/product-sites/aliases.test.js` checks this. The live site is served by GitHub Pages, so server-side redirects in `vercel.json` do not apply.
+
 The standard overview renderer reads these optional sections when present:
 
 | Field | Purpose |
