@@ -20,3 +20,9 @@ export const productSites = {
   [yusafcut.slug]: yusafcut,
   [voiceAlarmPro.slug]: voiceAlarmPro,
 }
+
+// Former slugs, mapped to the product's current slug. ProductSiteLayout redirects
+// /products/<alias>/* to /products/<slug>/* so old links keep working.
+export const productAliases = Object.fromEntries(
+  Object.values(productSites).flatMap((site) => (site.aliases ?? []).map((alias) => [alias, site.slug])),
+)

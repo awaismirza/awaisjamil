@@ -2,6 +2,8 @@ import { AlarmClock, BellRing, CalendarClock, CirclePlay, ShieldCheck, Volume2 }
 
 export const voiceAlarmPro = {
   slug: 'voice-alarm-pro',
+  // Briefly deployed under this slug before the App Store release; old links redirect here.
+  aliases: ['sayso'],
   name: 'Voice Alarm Pro',
   category: 'Voice reminders and alarms in your own voice, for iPhone',
   icon: '/voice-alarm-pro/icon.svg',

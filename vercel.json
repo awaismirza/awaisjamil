@@ -2,9 +2,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "redirects": [
-    { "source": "/products/sayso", "destination": "/products/voice-alarm-pro", "permanent": true },
-    { "source": "/products/sayso/:path*", "destination": "/products/voice-alarm-pro/:path*", "permanent": true }
-  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
