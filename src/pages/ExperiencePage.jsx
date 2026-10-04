@@ -10,6 +10,11 @@ import { experience } from '../data/experience.js'
 
 const careerSummary = [
   {
+    title: 'Agentic Engineering',
+    description:
+      'LLM agents, agent harnesses and developer tooling that make engineering teams faster and safer.',
+  },
+  {
     title: 'Frontend Architecture',
     description:
       'Angular, React, component systems, design systems, and maintainable UI foundations.',
@@ -36,6 +41,7 @@ const technicalStrengths = [
   { category: 'Mobile', skills: ['Swift', 'SwiftUI', 'iOS', 'React Native', 'Ionic'] },
   { category: 'Backend', skills: ['Node.js', 'ASP.NET Core', 'FastifyJS', 'Java Spring', 'Python Django'] },
   { category: 'Cloud & DevOps', skills: ['AWS', 'Docker', 'CI/CD', 'GitHub Actions', 'Elasticsearch'] },
+  { category: 'AI & Agents', skills: ['LLM Agents', 'Claude Code', 'Codex', 'Cursor', 'MCP', 'Agent Skills', 'Go'] },
 ]
 
 export function ExperiencePage() {
