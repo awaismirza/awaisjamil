@@ -1,11 +1,40 @@
 export const experience = [
   {
     company: 'My Occ Health Record',
+    role: 'AI Lead, Agent Harnesses & Developer Tooling',
+    location: 'Melbourne, Victoria, Australia',
+    workMode: 'Hybrid',
+    period: 'Jun 2026 — Present',
+    type: 'Current role',
+    summary:
+      "Lead the company's move to agentic-first engineering, designing the internal agent platform, shared skills and guardrails that let developers use LLM coding agents consistently and safely.",
+    highlights: [
+      'Designed and built an internal agent-harness platform, a single Go binary that provisions, distributes and syncs one versioned set of engineering workflows across five coding agents including Claude Code, Codex and Cursor.',
+      "Standardised the team's delivery process as a library of 27 reusable skills in the open Agent Skills format, covering planning, implementation, testing, code review, release and deployment triage.",
+      'Introduced risk-tiered permissions and approval gates so agents can read freely but need human sign-off to write to external systems.',
+      'Reduced context and token cost by design with on-demand skill loading, token budgets on always-on rules, and a planner and cheaper-subagent model split.',
+      'Built a local dashboard so product, BA and design colleagues can set up and manage their own agent tooling through a guided UI.',
+    ],
+    tags: [
+      'LLM Agents',
+      'Agent Harnesses',
+      'Claude Code',
+      'Codex',
+      'Cursor',
+      'MCP',
+      'Agent Skills',
+      'Go',
+      'Developer Tooling',
+      'AI Governance',
+    ],
+  },
+  {
+    company: 'My Occ Health Record',
     role: 'Lead Software Engineer',
     location: 'Melbourne, Victoria, Australia',
     workMode: 'Hybrid',
-    period: 'Feb 2023 — Present',
-    type: 'Current role',
+    period: 'Feb 2023 — Jun 2026',
+    type: 'Engineering leadership role',
     summary:
       'Architected and led front-end engineering for a health-tech platform — building an Angular component library, NX monorepo, and company-wide design system while also contributing to the ASP.NET Core backend and DevOps pipeline.',
     highlights: [
