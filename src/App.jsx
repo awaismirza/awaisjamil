@@ -10,6 +10,7 @@ import { ExperiencePage } from './pages/ExperiencePage.jsx'
 import { HomePage } from './pages/HomePage.jsx'
 import { NotFoundPage } from './pages/NotFoundPage.jsx'
 import { ProductsPage } from './pages/ProductsPage.jsx'
+import { ResumePage } from './pages/ResumePage.jsx'
 import { ServicesPage } from './pages/ServicesPage.jsx'
 import { WritingPage } from './pages/WritingPage.jsx'
 
@@ -52,6 +53,7 @@ export default function App() {
         <Route path="services" element={<ServicesPage />} />
         <Route path="writing" element={<WritingPage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="resume" element={<ResumePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
 
