@@ -35,15 +35,6 @@ export function SiteLayout() {
             {site.nav.map((item) =>
               item.label === 'Products' ? (
                 <ProductsNavDropdown key={item.label} />
-              ) : item.download ? (
-                <a
-                  className="focus-ring rounded-sm text-sm font-medium text-slate transition hover:text-ink dark:text-white/70 dark:hover:text-white"
-                  download
-                  href={item.href}
-                  key={item.label}
-                >
-                  {item.label}
-                </a>
               ) : (
                 <NavLink
                   className="focus-ring rounded-sm text-sm font-medium text-slate transition hover:text-ink dark:text-white/70 dark:hover:text-white"
@@ -80,24 +71,13 @@ export function SiteLayout() {
             <div className="section-shell grid gap-2 py-4">
               {site.nav.map((item) => (
                 <div key={item.label}>
-                  {item.download ? (
-                    <a
-                      className="block rounded-md px-2 py-3 text-base font-medium text-slate dark:text-white/75"
-                      download
-                      href={item.href}
-                      onClick={() => setOpen(false)}
-                    >
-                      {item.label}
-                    </a>
-                  ) : (
-                    <NavLink
-                      className="rounded-md px-2 py-3 text-base font-medium text-slate dark:text-white/75"
-                      onClick={() => setOpen(false)}
-                      to={item.href}
-                    >
-                      {item.label}
-                    </NavLink>
-                  )}
+                  <NavLink
+                    className="rounded-md px-2 py-3 text-base font-medium text-slate dark:text-white/75"
+                    onClick={() => setOpen(false)}
+                    to={item.href}
+                  >
+                    {item.label}
+                  </NavLink>
                   {item.label === 'Products' ? (
                     <div className="ml-2 grid gap-1 border-l border-line pb-2 pl-4 dark:border-white/10">
                       {products.map((product) => {
