@@ -57,7 +57,15 @@ export function ExperiencePage() {
         description="A timeline of software engineering, leadership, and product delivery across serious software environments — from health-tech platforms and banking systems to logistics, education, energy management, and creator work."
         label="Experience"
         title="Product-minded engineering across health tech, banking, logistics, education, energy, and modern web platforms."
-      />
+      >
+        <a
+          className="focus-ring inline-flex h-12 items-center justify-center gap-2 rounded-md border border-line bg-white px-5 text-sm font-semibold text-ink transition hover:border-ink dark:!border-white/15 dark:!bg-graphite dark:!text-white dark:hover:!border-white/35 dark:hover:!bg-white/10"
+          download
+          href="/Awais-Jamil-Resume.pdf"
+        >
+          Download resume (PDF)
+        </a>
+      </PageHero>
 
       {/* Career summary cards */}
       <section className="bg-mist py-12">

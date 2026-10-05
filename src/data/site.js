@@ -16,5 +16,6 @@ export const site = {
     { label: 'Services', href: '/services' },
     { label: 'Writing', href: '/writing' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Resume', href: '/Awais-Jamil-Resume.pdf', download: true },
   ],
 }
