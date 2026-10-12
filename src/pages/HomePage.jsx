@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/Button.jsx'
+import { ContractContact } from '../components/ContractContact.jsx'
 import { AnimateIn } from '../components/AnimateIn.jsx'
 import { SocialLinks } from '../components/SocialIcons.jsx'
 import { staggerContainer, staggerItem } from '../lib/animation.js'
@@ -67,6 +68,7 @@ export function HomePage() {
               Start a project
             </Button>
           </motion.div>
+          <ContractContact />
         </motion.div>
         <HeroWorkbench />
       </section>

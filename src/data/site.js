@@ -4,6 +4,8 @@ export const site = {
   location: 'Melbourne, Australia',
   role: 'Senior Software Engineer, Web & Mobile App Developer, Product-Focused Builder',
   email: 'owaesmirza@gmail.com',
+  // Contract-work phone, e.g. '+61 4XX XXX XXX'. The hero contact card shows it only when set.
+  phone: '',
   availability: 'Available for selective product builds and senior engineering partnerships.',
   socials: [
     { label: 'YouTube', href: 'https://www.youtube.com/@AwaisMirza1', platform: 'youtube' },
