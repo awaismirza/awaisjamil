@@ -49,14 +49,14 @@ export function ExperiencePage() {
     <>
       <Seo
         title="Experience"
-        description="Professional software engineering experience across health tech, banking, logistics, education, energy, web platforms, and product engineering."
+        description="AI lead and senior software engineer: agent harnesses, skills and developer tooling, built on experience across health tech, banking, logistics, education, energy, and web platforms."
         path="/experience"
       />
 
       <PageHero
-        description="A timeline of software engineering, leadership, and product delivery across serious software environments — from health-tech platforms and banking systems to logistics, education, energy management, and creator work."
+        description="Today I lead AI and agent-harness work: the agents, skills and guardrails that let engineering teams build with coding agents safely. It rests on a career of software engineering, leadership, and product delivery — from health-tech platforms and banking systems to logistics, education, energy management, and creator work."
         label="Experience"
-        title="Product-minded engineering across health tech, banking, logistics, education, energy, and modern web platforms."
+        title="AI-led engineering, built on product delivery across health tech, banking, logistics, education, and energy."
       >
         <a
           className="focus-ring inline-flex h-12 items-center justify-center gap-2 rounded-md border border-line bg-white px-5 text-sm font-semibold text-ink transition hover:border-ink dark:!border-white/15 dark:!bg-graphite dark:!text-white dark:hover:!border-white/35 dark:hover:!bg-white/10"
@@ -159,7 +159,7 @@ export function ExperiencePage() {
       <CTASection
         buttonHref="/contact"
         buttonText="Get in touch"
-        description="Looking for a senior engineer to lead a product, system, or frontend architecture? Let's talk."
+        description="Need an agent harness, a faster engineering workflow, or a senior engineer to lead a product or system? Let's talk."
         headline="Interested in working together?"
       />
 
