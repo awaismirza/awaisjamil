@@ -1,4 +1,4 @@
-import { Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '../data/site.js'
 import { Button } from './Button.jsx'
 import { SocialLinks } from './SocialIcons.jsx'
@@ -26,8 +26,14 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-3 text-white/75">
             <Mail size={18} />
-            <span>{site.email}</span>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
           </div>
+          {site.phone ? (
+            <div className="flex items-center gap-3 text-white/75">
+              <Phone size={18} />
+              <a href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}>{site.phone}</a>
+            </div>
+          ) : null}
           <Button href={`mailto:${site.email}`} variant="dark">
             Start a project
           </Button>

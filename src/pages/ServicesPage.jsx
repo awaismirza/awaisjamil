@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { ContactLinks } from '../components/ContactLinks.jsx'
 import { CTASection } from '../components/CTASection.jsx'
 import { Footer } from '../components/Footer.jsx'
 import { PageHero } from '../components/PageHero.jsx'
@@ -21,15 +22,17 @@ export function ServicesPage() {
     <>
       <Seo
         title="Services"
-        description="Software development services for web applications, iOS apps, MVPs, AI automation, APIs, cloud integration, and technical consulting."
+        description="AI-first engineering services: agent harnesses, agentic workflows and agent loops, and hands-on AI training for engineering teams, plus web, iOS and product development."
         path="/services"
       />
 
       <PageHero
-        description="I help with web applications, iOS apps, MVPs, AI workflows, API integration, and technical consulting — with a focus on clean interfaces, maintainable systems, and products people can actually use."
+        description="I build the agent harnesses, skills and loops that make engineering teams agent‑first, then train your team to run them. I also design and ship web, iOS and product work."
         label="Services"
-        title="Software development services for practical products, polished interfaces, and reliable delivery."
-      />
+        title="Make your engineering team agent‑first."
+      >
+        <ContactLinks />
+      </PageHero>
 
       {/* Services grid */}
       <section className="bg-white py-12">
@@ -117,8 +120,9 @@ export function ServicesPage() {
       <CTASection
         buttonHref="/contact"
         buttonText="Contact Me"
-        description="Have an app, automation idea, or web product you want to build?"
-        headline="Ready to start a project?"
+        description="Need an agent harness, a faster agentic workflow, or a team that knows how to use AI properly? Email or call, I'll come in and make it work."
+        headline="Let's make your team agent-first."
+        showContact
       />
 
       <Footer />
