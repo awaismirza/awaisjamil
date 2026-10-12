@@ -1,7 +1,8 @@
 import { AnimateIn } from './AnimateIn.jsx'
 import { Button } from './Button.jsx'
+import { ContactLinks } from './ContactLinks.jsx'
 
-export function CTASection({ headline, description, buttonText, buttonHref }) {
+export function CTASection({ headline, description, buttonText, buttonHref, showContact = false }) {
   return (
     <section className="bg-ink py-16 sm:py-20">
       <div className="section-shell">
@@ -15,10 +16,13 @@ export function CTASection({ headline, description, buttonText, buttonHref }) {
           {description ? (
             <p className="mt-5 text-lg leading-8 text-white/70">{description}</p>
           ) : null}
-          <div className="mt-8">
-            <Button href={buttonHref} variant="dark">
-              {buttonText}
-            </Button>
+          <div className="mt-8 flex flex-col gap-4">
+            {showContact ? <ContactLinks variant="dark" /> : null}
+            <div>
+              <Button href={buttonHref} variant="dark">
+                {buttonText}
+              </Button>
+            </div>
           </div>
         </AnimateIn>
       </div>
