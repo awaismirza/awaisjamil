@@ -77,7 +77,7 @@ export function HeroWorkbench() {
               className="flex items-center gap-1.5 rounded-md bg-teal px-2 py-1.5 text-[9px] font-bold leading-tight text-white shadow-soft"
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeOut' }}
             >
-              <Mail size={11} /> New contract enquiry
+              <Mail size={11} /> {site.consulting.notification}
             </motion.div>
           </div>
         </motion.div>
@@ -96,12 +96,16 @@ export function HeroWorkbench() {
             )}
             <span className="relative h-2.5 w-2.5 rounded-full bg-teal" />
           </span>
-          Open for contract work
+          {site.consulting.label}
+        </p>
+        <p className="mt-3 font-display text-lg font-semibold leading-snug text-ink dark:text-white">
+          {site.consulting.punchline}{' '}
+          <span className="font-medium text-slate dark:text-white/70">{site.consulting.pitch}</span>
         </p>
         <div className="mt-3 flex flex-col gap-2 sm:flex-row">
           <motion.a
             className="focus-ring group inline-flex min-h-12 flex-1 items-center justify-between gap-3 rounded-md bg-ink px-4 text-sm font-semibold text-white"
-            href={`mailto:${site.email}?subject=Contract%20work`}
+            href={`mailto:${site.email}?subject=${encodeURIComponent(site.consulting.emailSubject)}`}
             whileHover={reduce ? undefined : { y: -2 }}
             whileTap={reduce ? undefined : { scale: 0.98 }}
           >

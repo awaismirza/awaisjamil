@@ -10,9 +10,17 @@ export const site = {
       'AI Lead in Melbourne, building custom agents, skill libraries, guardrails and developer tooling so teams can use coding agents consistently and safely.',
     alsoLine: 'I also design and ship web and mobile products.',
   },
+  consulting: {
+    label: 'Consulting & team training',
+    punchline: 'Need an agent harness, or a faster engineering workflow?',
+    pitch:
+      "I'll come in, build it with your team, and train your engineers to run it themselves.",
+    emailSubject: 'Consulting enquiry',
+    notification: 'New consulting enquiry',
+  },
   email: 'owaesmirza@gmail.com',
-  // Contract-work phone, e.g. '+61 4XX XXX XXX'. The hero contact card shows it only when set.
-  phone: '',
+  // Consulting phone. The hero contact panel shows the call button only when set.
+  phone: '+61 426 782 255',
   availability: 'Available for selective product builds and senior engineering partnerships.',
   socials: [
     { label: 'YouTube', href: 'https://www.youtube.com/@AwaisMirza1', platform: 'youtube' },
