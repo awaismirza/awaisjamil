@@ -2,11 +2,11 @@ import { Helmet } from 'react-helmet-async'
 import { site } from '../data/site.js'
 
 export function Seo({ title, description, path = '/' }) {
-  const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | Senior Software Engineer`
+  const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tagline}`
   const canonical = new URL(path, site.domain).toString()
   const metaDescription =
     description ||
-    'Awais Jamil is a Melbourne-based senior software engineer building polished web and mobile products.'
+    'Awais Jamil is a Melbourne-based AI lead and senior software engineer building agent harnesses, skills and developer tooling, plus polished web and mobile products.'
 
   return (
     <Helmet>

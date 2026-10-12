@@ -13,6 +13,7 @@ import { Seo } from '../components/Seo.jsx'
 import { products } from '../data/products.js'
 import { posts } from '../data/posts.js'
 import { services } from '../data/services.js'
+import { site } from '../data/site.js'
 
 const PREVIEW_SERVICE_COUNT = 4
 const PREVIEW_POST_COUNT = 3
@@ -35,9 +36,8 @@ export function HomePage() {
           initial={{ opacity: 0, y: 12 }}
           transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <h1 className="max-w-4xl font-display text-5xl font-semibold leading-[1.02] tracking-[-0.03em] text-ink sm:text-6xl lg:text-7xl">
-            I design and ship web and mobile products that feel sharp, useful,
-            and built to last.
+          <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl lg:text-6xl">
+            {site.hero.headline}
           </h1>
           <motion.p
             animate={{ opacity: 1, y: 0 }}
@@ -45,8 +45,15 @@ export function HomePage() {
             initial={{ opacity: 0, y: 12 }}
             transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1], delay: 0.12 }}
           >
-            Senior software engineer in Melbourne, building React, mobile, and
-            product systems for founders and teams.
+            {site.hero.summary}
+          </motion.p>
+          <motion.p
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-3 max-w-2xl text-sm leading-6 text-slate/90"
+            initial={{ opacity: 0, y: 12 }}
+            transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1], delay: 0.18 }}
+          >
+            {site.hero.alsoLine}
           </motion.p>
           <motion.div
             animate={{ opacity: 1, y: 0 }}
