@@ -6,6 +6,7 @@ import { fivePrayers } from './fivePrayers.js'
 import { freezerpal } from './freezerpal.js'
 import { yusafcut } from './yusafcut.js'
 import { voiceAlarmPro } from './voiceAlarmPro.js'
+import { logMyRep } from './logMyRep.js'
 
 // Each product's mini-site (overview, privacy, terms, support) lives in its own
 // file here. To update a product's support email or copy, edit its file — the
@@ -19,6 +20,7 @@ export const productSites = {
   [aussieLoanCalculator.slug]: aussieLoanCalculator,
   [yusafcut.slug]: yusafcut,
   [voiceAlarmPro.slug]: voiceAlarmPro,
+  [logMyRep.slug]: logMyRep,
 }
 
 // Former slugs, mapped to the product's current slug. ProductSiteLayout redirects
