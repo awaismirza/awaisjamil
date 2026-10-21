@@ -4,11 +4,15 @@ The owner wants a paid Mac product sold through awaisjamil.com. No price, billin
 
 ## Smallest launch path
 
-Use the WordsCut product page on awaisjamil.com with a **Buy WordsCut** button linking to a hosted **Lemon Squeezy** checkout. Upload the verified signed DMG as a customer download; include the matching application/dependency sources for the existing AGPL/GPL build. Customers receive a purchase receipt and access to their files. Optional licence keys are available, but generating a key does not make the app enforce activation: that would need a separate app change and explicit privacy/offline-use decisions.
+Keep the website code and release process in this repository. Before turning the informational page into a sales storefront, deploy the same site on hosting that permits commercial storefronts and point awaisjamil.com there; then use a **Buy WordsCut** button linking to a hosted **Lemon Squeezy** checkout. Upload the verified signed DMG as a customer download; include the matching application/dependency sources for the existing AGPL/GPL build. Customers receive a purchase receipt and access to their files. Optional licence keys are available, but generating a key does not make the app enforce activation: that would need a separate app change and explicit privacy/offline-use decisions.
 
 Lemon Squeezy's documentation covers [hosted checkout](https://docs.lemonsqueezy.com/help/checkout), [digital files, receipts and licence keys](https://docs.lemonsqueezy.com/help/products/adding-products), and its role as [merchant of record](https://docs.lemonsqueezy.com/help/payments/merchant-of-record). It handles payment collection and sales-tax/VAT responsibilities described there. Account activation, identity/payout details, current eligibility/fees and contractual acceptance require the owner's participation. No account, fee or contract was accepted by the agent.
 
 The owner chooses the amount/currency, one-time purchase versus subscription, update entitlement, support/refund terms and customer files. A one-time price for an initial release is operationally simpler than a subscription; this is a suggestion, not a published offer. Test checkout, receipt and customer access before switching the site CTA.
+
+## Website hosting before sales
+
+The current personal site is served by GitHub Pages. [GitHub Pages usage limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) prohibit using Pages to run an online business or a site primarily facilitating commercial transactions. A hosted payment link is not a blanket exemption from that rule. Keep the present informational/contact page while choosing commercial hosting; do not enable the checkout CTA on Pages as if storefront readiness were established. The replacement host can deploy this same website repository; app source stays private. No hosting purchase or DNS change was made during consolidation.
 
 ## Stripe alternative
 
