@@ -20,6 +20,8 @@ The first job imports the existing Developer ID certificate into a temporary key
 
 Local equivalent on a Mac:
 
+Apple ticket validation and Gatekeeper checks retry at most three times, with short delays, because the first destination run hit an Apple CloudKit network disconnect (error 68). Every gate still requires a successful response; exhausting retries fails the verification. Signing-credential preflight passed in that first run.
+
 ```sh
 bash distribution/wordscut/verify.sh /absolute/path/to/downloaded-assets 1.0.0
 ```
