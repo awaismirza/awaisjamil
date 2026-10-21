@@ -77,7 +77,7 @@ export const products = [
     slug: 'wordscut',
     type: 'macOS / Local AI tool',
     year: '2026',
-    status: 'In development',
+    status: 'Paid release coming soon',
     summary:
       'Edit words. Shape video. A local transcript-based video editor and recorder for Apple Silicon Macs.',
     impact:

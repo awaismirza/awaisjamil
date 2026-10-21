@@ -36,3 +36,7 @@ npm run build
 The app routes and layouts render these data sources automatically; do not duplicate navigation or page markup for a normal product addition.
 
 **Data-first rule:** add product, portfolio, and experience content to these data files rather than hard-coding it in pages, cards, layouts, or navigation components.
+
+## WordsCut distribution
+
+WordsCut marketing, support and paid-release operations are consolidated in this repository. The private application source is kept separate. See [the distribution runbook](docs/wordscut-distribution.md) and [checkout/delivery options](docs/wordscut-commerce.md). Installers and app-source snapshots must never be committed into this public website repo or its Pages output.
