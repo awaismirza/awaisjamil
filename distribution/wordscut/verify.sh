@@ -5,6 +5,15 @@ assets="${1:?Usage: verify.sh ASSET_DIRECTORY VERSION}"
 version="${2:?Version required}"
 [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit 2
 [[ "$(uname -s)" == Darwin ]] || { echo 'Verification requires macOS.'; exit 1; }
+retry_apple_check() {
+  local attempt status
+  for attempt in 1 2 3; do
+    if "$@"; then return 0; else status=$?; fi
+    if [[ "$attempt" == 3 ]]; then return "$status"; fi
+    echo "Apple validation did not complete successfully; retrying ($attempt/3)."
+    sleep "$((attempt * 5))"
+  done
+}
 cd "$assets"
 python3 - "$version" <<'PY'
 import json, pathlib, re, subprocess, sys
@@ -31,8 +40,8 @@ PY
 shasum -a 256 -c SHA256SUMS.txt
 dmg="WordsCut_${version}_aarch64.dmg"
 codesign --verify --strict --verbose=2 "$dmg"
-xcrun stapler validate "$dmg"
-spctl --assess --type open --context context:primary-signature --verbose=2 "$dmg"
+retry_apple_check xcrun stapler validate "$dmg"
+retry_apple_check spctl --assess --type open --context context:primary-signature --verbose=2 "$dmg"
 mount="$(mktemp -d "${TMPDIR:-/tmp}/wordscut-verify.XXXXXX")"
 mounted=0
 cleanup() {
@@ -45,8 +54,8 @@ mounted=1
 app="$mount/WordsCut.app"
 test -d "$app"
 codesign --verify --deep --strict --verbose=2 "$app"
-xcrun stapler validate "$app"
-spctl --assess --type execute --verbose=2 "$app"
+retry_apple_check xcrun stapler validate "$app"
+retry_apple_check spctl --assess --type execute --verbose=2 "$app"
 signature="$(codesign -dv --verbose=4 "$app" 2>&1)"
 printf '%s\n' "$signature" | grep -Fx 'TeamIdentifier=APFM7SNP9X'
 printf '%s\n' "$signature" | grep '^Authority=Developer ID Application:'
