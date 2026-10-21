@@ -4,6 +4,7 @@ import { productAliases, productSites } from './index.js'
 
 test('former slugs redirect to the current product slug', () => {
   assert.equal(productAliases.sayso, 'voice-alarm-pro')
+  assert.equal(productAliases.yusafcut, 'wordscut')
 })
 
 test('an alias never shadows a live product slug', () => {

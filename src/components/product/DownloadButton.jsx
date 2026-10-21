@@ -47,7 +47,7 @@ export function DownloadButton({ site, download: directDownload, platform = 'ios
   if (download.kind === 'github') {
     return (
       <a
-        className={`${base} ${sizes[size]} bg-[var(--accent)] shadow-[0_4px_24px_var(--accent-soft)]`}
+        className={`${base} ${sizes[size]} bg-[var(--accent-control,var(--accent))] shadow-[0_4px_24px_var(--accent-soft)]`}
         href={download.url}
         rel="noreferrer"
         target="_blank"
@@ -60,7 +60,7 @@ export function DownloadButton({ site, download: directDownload, platform = 'ios
   if (download.kind === 'coming-soon') {
     return (
       <span
-        className={`${base} ${sizes[size]} cursor-default bg-[var(--accent)] opacity-60`}
+        className={`${base} ${sizes[size]} cursor-default bg-[var(--accent-control,var(--accent))] opacity-60`}
         title={download.note}
       >
         <AppleLogo size={size === 'lg' ? 18 : 16} /> {compact ? 'Coming soon' : 'Coming soon to the App Store'}
@@ -70,11 +70,11 @@ export function DownloadButton({ site, download: directDownload, platform = 'ios
 
   return (
     <a
-      className={`${base} ${sizes[size]} bg-[var(--accent)] shadow-[0_4px_24px_var(--accent-soft)]`}
+      className={`${base} ${sizes[size]} bg-[var(--accent-control,var(--accent))] shadow-[0_4px_24px_var(--accent-soft)]`}
       href={download.url ?? '#'}
       {...(download.url ? { rel: 'noreferrer', target: '_blank' } : {})}
     >
-      <AppleLogo size={size === 'lg' ? 18 : 16} /> {compact ? 'Download' : 'Download on the App Store'}
+      <AppleLogo size={size === 'lg' ? 18 : 16} /> {compact ? (download.compactLabel ?? 'Download') : (download.label ?? 'Download on the App Store')}
     </a>
   )
 }

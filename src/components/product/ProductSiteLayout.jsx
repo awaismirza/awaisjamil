@@ -47,8 +47,9 @@ export function ProductSiteLayout() {
     <div
       className="min-h-screen text-ink transition-colors dark:text-white"
       style={{
-        '--accent': site.accent,
+        '--accent': isDark ? (site.accentOnDark ?? site.accent) : site.accent,
         '--accent-dark': site.accentDark,
+        '--accent-control': site.accent,
         '--accent-soft': site.accentSoft,
       }}
     >
