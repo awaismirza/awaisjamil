@@ -91,7 +91,7 @@ The standard overview renderer reads these optional sections when present:
 | `facts` | Short platform/pricing/privacy facts below the hero |
 | `hero` | Eyebrow, two-part heading, product copy, app screenshot, badges, and optional CTAs |
 | `metrics` | Concise proof points |
-| `screenshots` | App/gallery screenshots; use `src`, `alt`, `title`, and `caption` |
+| `screenshots` | App/gallery screenshots; use `src`, `alt`, `title`, and `caption`. Set `screenshotFormat: 'desktop'` for full-width landscape captures. |
 | `features` | Feature cards, each with a `lucide-react` icon, title, and accurate description |
 | `howItWorks` | Three-step explainer |
 | `pricing` | Plan names, prices, features, notes, and one highlighted plan |
@@ -216,3 +216,7 @@ npm run build
 Also inspect `git diff --check` and the final `git status`. For visual changes, run the local site and check the target product page on desktop/mobile widths and in both light and dark themes. Confirm all four internal product URLs load, the product appears on `/products` and in the Products navigation, the support mail link is correct, and screenshots resolve.
 
 When asked to commit or publish, use a focused branch and commit. Never include unrelated working-tree changes.
+
+Download definitions may supply `label` and `compactLabel` for a direct website download destination (`kind: 'website'`); App Store and GitHub defaults remain available.
+
+Use optional `accentOnDark` to increase accent contrast in dark mode without changing the light theme.

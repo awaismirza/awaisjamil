@@ -204,7 +204,7 @@ export function ProductOverviewPage() {
                   ) : (
                     <img
                       alt={shot.alt}
-                      className="w-52 rounded-[2rem] border border-line bg-white shadow-soft ring-1 ring-black/5"
+                      className={site.screenshotFormat === 'desktop' ? 'w-full rounded-md bg-white' : 'w-52 rounded-[2rem] border border-line bg-white shadow-soft ring-1 ring-black/5'}
                       loading="lazy"
                       src={(isDark && shot.srcDark) || shot.src}
                     />

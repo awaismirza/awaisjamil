@@ -73,17 +73,17 @@ export const products = [
     href: '/products/freezerpal',
   },
   {
-    title: 'YusafCut',
-    slug: 'yusafcut',
+    title: 'WordsCut',
+    slug: 'wordscut',
     type: 'macOS / Local AI tool',
     year: '2026',
     status: 'In development',
     summary:
-      'A local AI video editing and transcription tool for creators using Apple Silicon.',
+      'Edit words. Shape video. A local transcript-based video editor and recorder for Apple Silicon Macs.',
     impact:
-      'Focused on privacy-first creator workflows, local transcription, pause detection, and avoiding unnecessary cloud processing.',
+      'Local transcription, transcript cuts, captions, zoom, framing, music, narration and flexible exports. Rebranded from YusafCut with compatible .scribe projects.',
     stack: ['macOS', 'Local AI', 'Transcription', 'Apple Silicon', 'Video Editing'],
-    href: '/products/yusafcut',
+    href: '/products/wordscut',
   },
   {
     title: 'Voice Alarm Pro',
