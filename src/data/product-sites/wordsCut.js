@@ -1,5 +1,13 @@
 import { Cpu, FileVideo, GitBranch, Scissors, ShieldCheck, Type } from 'lucide-react'
 
+const checkoutUrl = import.meta.env?.VITE_WORDSCUT_CHECKOUT_URL?.trim()
+if (checkoutUrl) {
+  const checkout = new URL(checkoutUrl)
+  if (checkout.protocol !== 'https:' || checkout.username || checkout.password) {
+    throw new Error('WordsCut checkout must be a public HTTPS checkout URL, never a secret key.')
+  }
+}
+
 export const wordsCut = {
   slug: 'wordscut',
   aliases: ['yusafcut'],
@@ -7,19 +15,21 @@ export const wordsCut = {
   category: 'Local AI video editor for macOS',
   icon: '/wordscut/icon.svg',
   seoDescription:
-    'WordsCut is a local-first, transcript-based video editor for Apple Silicon Macs. Edit the words; WordsCut edits the video. Open source, no cloud upload, no telemetry.',
+    'WordsCut is a local-first, transcript-based video editor for Apple Silicon Macs. Edit the words; WordsCut edits the video. Local processing, no cloud upload, no telemetry.',
 
   accent: '#7040A0',
   accentOnDark: '#B88DE2',
   accentDark: '#A879D2',
   accentSoft: 'rgba(112, 64, 160, 0.13)',
-  download: { kind: 'website', url: 'https://awaismirza.github.io/wordscut/#download', label: 'Get WordsCut for Mac', compactLabel: 'Get WordsCut' },
+  download: checkoutUrl
+    ? { kind: 'website', url: checkoutUrl, label: 'Buy WordsCut for Mac', compactLabel: 'Buy WordsCut' }
+    : { kind: 'website', url: 'mailto:owaesmirza@gmail.com?subject=WordsCut%20paid%20release', label: 'Ask about the paid release', compactLabel: 'Contact' },
 
   facts: [
     { label: 'Platform', value: 'macOS 13+ · Apple Silicon' },
-    { label: 'License', value: 'AGPL-3.0 · Open source' },
+    { label: 'Availability', value: checkoutUrl ? 'Paid download' : 'Paid release in preparation' },
     { label: 'Data', value: 'Local-first · No telemetry' },
-    { label: 'Version', value: '4.51.0' },
+    { label: 'Latest Mac build', value: '1.0.0' },
   ],
 
   hero: {
@@ -27,18 +37,19 @@ export const wordsCut = {
     headline: 'Edit words.',
     headlineAccent: 'Shape video.',
     sub: 'A local-first desktop editor for cutting talking-head videos, podcasts, interviews, courses, and creator clips by editing their transcript. Delete a word and the matching video disappears — everything runs on your Mac.',
-    ctas: [{ label: 'Source & releases', href: 'https://github.com/awaismirza/wordscut/releases', external: true }],
-    badges: ['Local transcription', 'Apple Silicon · macOS 13+', 'AGPL-3.0-or-later'],
+    ctas: [{ label: 'Purchase and release questions', href: '/products/wordscut/support' }],
+    badges: ['Local transcription', 'Apple Silicon · macOS 13+', checkoutUrl ? 'Paid Mac app' : 'Paid release coming soon'],
   },
 
   closing: {
     title: 'Cut your next video by editing words.',
-    sub: 'WordsCut is the new name for YusafCut. Existing .scribe projects remain compatible. Visit the download site for the latest verified release and corresponding source.',
+    sub: 'WordsCut is the new name for YusafCut. Existing .scribe projects remain compatible. Purchase details and customer download delivery will be available here when checkout is ready.',
   },
 
   screenshotFormat: 'desktop',
   screenshotsTitle: 'Inside WordsCut',
   screenshots: [
+    { src: '/wordscut/recording.png', alt: 'WordsCut recording controls for preparing a screen and microphone recording', title: 'Prepare a recording', caption: 'Choose capture settings in the Mac app before recording.' },
     { src: '/wordscut/editor.png', alt: 'WordsCut editor with a synthetic video, transcript and timeline', title: 'Words and footage together', caption: 'The real Mac editor, using a synthetic sample recording.' },
     { src: '/wordscut/transcript.png', alt: 'WordsCut transcript and cleanup controls', title: 'Keep the words you want', caption: 'Edit the transcript and refine the timing of your cut.' },
     { src: '/wordscut/export.png', alt: 'WordsCut video export settings', title: 'Export on your Mac', caption: 'Choose the format and render from your original media.' },
@@ -68,8 +79,8 @@ export const wordsCut = {
     intro:
       'WordsCut is open source — bug reports and feature requests are best raised on GitHub, or reach out by email.',
     links: [
-      { label: 'GitHub repository', href: 'https://github.com/awaismirza/wordscut' },
-      { label: 'Report an issue', href: 'https://github.com/awaismirza/wordscut/issues' },
+      { label: 'Purchase and release information', href: '/products/wordscut' },
+      { label: 'Licence information', href: '/products/wordscut/terms' },
     ],
     faqs: [
       {
@@ -78,13 +89,13 @@ export const wordsCut = {
       },
       {
         q: 'What do I need to run it?',
-        a: 'An Apple Silicon Mac running macOS 13 Ventura or later. Intel Macs are not supported. Visit the download site for release availability and installation instructions.',
+        a: 'An Apple Silicon Mac running macOS 13 Ventura or later. Intel Macs are not supported. The Mac build has been signed and notarized. A paid release is being prepared; contact support for availability and installation questions.',
       },
       { q: 'Is WordsCut available in the Mac App Store?', a: 'Not yet. A separate store build is being prepared; sandbox, persistent file access, capture and licensing checks remain open.' },
       { q: 'What happened to YusafCut?', a: 'YusafCut is now WordsCut. Existing .scribe projects stay compatible. The old product URLs redirect here.' },
       {
-        q: 'Is it really free?',
-        a: 'Yes — WordsCut is open source under AGPL-3.0. If it helps you, you can support development via [Buy me a coffee](https://buymeacoffee.com/awaismirza).',
+        q: 'Will WordsCut be a paid product?',
+        a: 'Yes. A paid release is being prepared. Pricing, purchase terms and customer delivery will be shown before checkout opens. Existing recipients of the earlier AGPL-licensed 1.0.0 release retain their licence rights; contact support for the matching source files.',
       },
     ],
   },
@@ -142,23 +153,23 @@ export const wordsCut = {
   terms: {
     title: 'Terms & Conditions',
     lastUpdated: '22 October 2026',
-    seoDescription: 'Terms for WordsCut: open-source software under AGPL-3.0, provided as-is.',
+    seoDescription: 'WordsCut release and purchase information, earlier-version licence rights, and support.',
     summary:
-      'WordsCut is open-source software licensed under AGPL-3.0-or-later, provided as-is without warranty.',
+      'WordsCut is preparing a paid release. Checkout, pricing and purchase terms are not yet available. The earlier 1.0.0 release remains subject to its existing licence.',
     sections: [
       {
-        heading: 'License',
+        heading: 'Earlier release licence',
         blocks: [
           {
-            p: 'WordsCut is licensed under [AGPL-3.0-or-later](https://github.com/awaismirza/wordscut/blob/main/LICENSE). Your use, modification, and distribution of the software are governed by that license.',
+            p: 'The earlier WordsCut 1.0.0 release was provided under [AGPL-3.0-or-later](/wordscut/legacy-AGPL-3.0.txt). Removing the former distribution repository does not revoke those rights. Existing recipients can contact [support](mailto:owaesmirza@gmail.com?subject=WordsCut%201.0.0%20source) for the matching application and dependency sources at no additional charge. A paid release does not automatically change earlier licences.',
           },
         ],
       },
       {
-        heading: 'No warranty',
+        heading: 'Purchase availability',
         blocks: [
           {
-            p: 'WordsCut is provided "as is", without warranty of any kind, express or implied, as described in the AGPL license. Keep backups of source media — you are responsible for your own files and exports.',
+            p: 'The paid launch is in preparation. No price, subscription, refund policy, or proprietary licence is being offered by this page yet. Purchase terms and delivery details must be shown before payment. Keep backups of your source media and projects.',
           },
         ],
       },
@@ -174,7 +185,7 @@ export const wordsCut = {
         heading: 'Changes',
         blocks: [
           {
-            p: 'The project is under active development; features may change, and packaging still has rough edges. See the GitHub repository for current status.',
+            p: 'The project is under active development; features may change, and packaging still has rough edges. Contact support for current release status.',
           },
         ],
       },
@@ -182,7 +193,7 @@ export const wordsCut = {
         heading: 'Contact',
         blocks: [
           {
-            p: 'Questions about these terms? Email [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com) or open a discussion on [GitHub](https://github.com/awaismirza/wordscut).',
+            p: 'Questions about these terms or an earlier release? Email [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
           },
         ],
       },
