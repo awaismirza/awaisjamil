@@ -1,5 +1,44 @@
 export const services = [
   {
+    title: 'Agent Harness Engineering',
+    summary:
+      'I design and build the platform your engineers run coding agents on: one versioned set of skills, tools and guardrails, provisioned consistently across Claude Code, Codex, Cursor and more.',
+    features: [
+      'Custom agents and sub-agents',
+      'Shared skill libraries and plugins',
+      'MCP servers and tool integrations',
+      'Risk-tiered permissions and approval gates',
+      'Token and context budgets by design',
+    ],
+    tags: ['Agent Harness', 'Claude Code', 'MCP', 'Guardrails'],
+  },
+  {
+    title: 'Agentic Workflows & Agent Loops',
+    summary:
+      'Turn your delivery process into agent-first workflows: plan, build, test, review and ship loops that agents run and humans approve.',
+    features: [
+      'Plan, implement, test and review loops',
+      'Lifecycle and release skills',
+      'Security and review skills',
+      'Human sign-off where it matters',
+      'Measured, repeatable results',
+    ],
+    tags: ['Agentic Workflow', 'Agent Loops', 'Automation', 'Delivery'],
+  },
+  {
+    title: 'AI Training for Engineering Teams',
+    summary:
+      "I'll come in and train your team to work agent-first: hands-on sessions on the harness, the skills and the habits that make coding agents safe and fast.",
+    features: [
+      'On-site or remote team workshops',
+      'Hands-on agent workflow coaching',
+      'Onboarding for new developers',
+      'Guidance for product, BA and design teams',
+      'Playbooks your team keeps',
+    ],
+    tags: ['Training', 'Enablement', 'Workshops', 'Adoption'],
+  },
+  {
     title: 'Custom Web Application Development',
     summary:
       'Designing and building modern, responsive web applications using React, Angular, JavaScript, APIs, and clean component architecture.',
