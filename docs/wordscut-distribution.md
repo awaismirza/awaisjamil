@@ -18,9 +18,11 @@ In this repository, run **Actions → WordsCut signed distribution → Run workf
 
 The first job imports the existing Developer ID certificate into a temporary keychain, checks that the identity is present and that Apple accepts the notarization API credentials, and removes the private files/keychain afterward. It does not submit a new app or accept agreements. The second job downloads the actual private-draft assets and validates all checksums, application-source/provenance versions, DMG/app Developer ID signatures, stapled tickets, Gatekeeper, Team ID `APFM7SNP9X`, bundle ID `dev.yusafcut.app`, executable and arm64 architecture. The verification record is saved in the same private draft. Both jobs must pass before the migrated setup is described as verified.
 
-Local equivalent on a Mac:
+Destination proof: both credential preflight and exact downloaded-asset verification passed in [run 39689869482](https://github.com/awaismirza/awaisjamil/actions/runs/39689869482). The retained 1.0.0 files are unchanged. Anonymous release metadata and installer requests returned 404. The verification record is attached privately to `wordscut-v1.0.0`.
 
 Apple ticket validation and Gatekeeper checks retry at most three times, with short delays, because the first destination run hit an Apple CloudKit network disconnect (error 68). Every gate still requires a successful response; exhausting retries fails the verification. Signing-credential preflight passed in that first run.
+
+Local equivalent on a Mac:
 
 ```sh
 bash distribution/wordscut/verify.sh /absolute/path/to/downloaded-assets 1.0.0
@@ -37,7 +39,7 @@ gh release create wordscut-input-vVERSION --repo awaismirza/awaisjamil --draft -
 
 Replace `VERSION` with the application version. Keep inputs draft-only. Then run the workflow on `main` with that version and mode `build`. It tests the reviewed snapshot, builds the native media tools/helper, checks arm64/minimum macOS/linkage, builds the app, Developer ID signs every native component, notarizes/staples the app and disk image, verifies locally, and stores a unique **draft** candidate. A separate job downloads that candidate and repeats the full verification. Private compiler/test diagnostics are saved only to a draft build-log release on failure. Signing material is removed even on failure. This workflow never publishes a public release or accepts payment.
 
-The previously hosted Swift engine fixture-creation failure remains a known build gate. It must pass in a new build; do not remove tests to get an installer out. The transferred existing-release verification is independent of that build test. Private-repository Actions also previously had a billing block; no payment/spending changes are authorized here.
+Fresh build [39690042800](https://github.com/awaismirza/awaisjamil/actions/runs/39690042800) passed 1,350 frontend tests and 61 capture tests, then reproduced the old Swift engine fixture-creation failure. Private source PR #67 changes only the fixture feeding schedule and diagnostics: audio and video feed independently and each marks completion. All 17 media and 9 core engine tests pass locally. A committed 1.0.1 input snapshot (`9a3eb28`) is being tested in [run 39691034070](https://github.com/awaismirza/awaisjamil/actions/runs/39691034070); do not claim that fresh build passed until both jobs succeed. The transferred existing-release verification is independent of that build test. Private-repository Actions also previously had a billing block; no payment/spending changes are authorized here.
 
 Local build and signing use exactly the same entry point:
 
@@ -54,6 +56,8 @@ Checkout is not live. The site defaults to a contact CTA. After approving the pr
 See [wordscut-commerce.md](wordscut-commerce.md) for the Lemon Squeezy/Stripe comparison and commercial-licensing gates. Deleting the old repo does not revoke the earlier AGPL release. Keep its source available to existing recipients through support, without an extra charge.
 
 ## Rollback and old repository removal
+
+The old free release is now a draft and the old Pages entry point redirects to the personal product page (browser verified). Permanent deletion is pending the owner’s action-time confirmation required by Computer Use policy.
 
 Before deletion: preserve and checksum every original asset, preserve the Git history and verification record, validate destination credentials, deploy the updated product/support/terms pages, and verify the actual destination download. Confirm anonymous visitors cannot retrieve draft releases or their files. Remove only `awaismirza/wordscut`; do not alter `wordscut-app`, personal-site visibility, or unrelated credentials.
 
