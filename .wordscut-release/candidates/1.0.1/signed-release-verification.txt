@@ -1,0 +1,33 @@
+WordsCut_1.0.1_aarch64.dmg: OK
+WordsCut_1.0.1_source.tar.gz: OK
+WordsCut_dependency_sources.tar.gz: OK
+source-provenance.json: OK
+WordsCut_1.0.1_aarch64.dmg: valid on disk
+WordsCut_1.0.1_aarch64.dmg: satisfies its Designated Requirement
+Processing: /private/tmp/wordscut-local-candidate-1.0.1/WordsCut_1.0.1_aarch64.dmg
+The validate action worked!
+WordsCut_1.0.1_aarch64.dmg: accepted
+source=Notarized Developer ID
+hdiutil: WARNING: 'hdiutil attach -readonly -nobrowse -mountpoint ...' is deprecated. Please use 'diskutil image attach --readOnly --mountOptions nobrowse --mountPoint ...' instead.
+--prepared:/private/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T/wordscut-verify.UI0Tcv/WordsCut.app/Contents/MacOS/ffmpeg
+--validated:/private/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T/wordscut-verify.UI0Tcv/WordsCut.app/Contents/MacOS/ffmpeg
+--prepared:/private/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T/wordscut-verify.UI0Tcv/WordsCut.app/Contents/MacOS/yusafcut-capture
+--validated:/private/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T/wordscut-verify.UI0Tcv/WordsCut.app/Contents/MacOS/yusafcut-capture
+--prepared:/private/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T/wordscut-verify.UI0Tcv/WordsCut.app/Contents/MacOS/whisper-cli
+--validated:/private/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T/wordscut-verify.UI0Tcv/WordsCut.app/Contents/MacOS/whisper-cli
+--prepared:/private/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T/wordscut-verify.UI0Tcv/WordsCut.app/Contents/MacOS/ffprobe
+--validated:/private/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T/wordscut-verify.UI0Tcv/WordsCut.app/Contents/MacOS/ffprobe
+/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T//wordscut-verify.UI0Tcv/WordsCut.app: valid on disk
+/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T//wordscut-verify.UI0Tcv/WordsCut.app: satisfies its Designated Requirement
+Processing: /var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T//wordscut-verify.UI0Tcv/WordsCut.app
+The validate action worked!
+/var/folders/47/t7kj5pms74725q54n_t6ybzw0000gp/T//wordscut-verify.UI0Tcv/WordsCut.app: accepted
+source=Notarized Developer ID
+TeamIdentifier=APFM7SNP9X
+Authority=Developer ID Application: Awais Jamil (APFM7SNP9X)
+dev.yusafcut.app
+1.0.1
+WordsCut
+arm64
+Verified signed and notarized WordsCut 1.0.1 from the staged download.
+Verified candidate is in /private/tmp/wordscut-local-candidate-1.0.1. Deliver through the paid store; do not publish these GitHub assets.

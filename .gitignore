@@ -23,6 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Private WordsCut source snapshots, installers and migration backups
-.wordscut-private-backup/
-.wordscut-release/
