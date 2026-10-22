@@ -39,4 +39,4 @@ The app routes and layouts render these data sources automatically; do not dupli
 
 ## WordsCut distribution
 
-WordsCut marketing, support and paid-release operations are consolidated in this repository. The private application source is kept separate. See [the distribution runbook](docs/wordscut-distribution.md) and [checkout/delivery options](docs/wordscut-commerce.md). Installers and app-source snapshots must never be committed into this public website repo or its Pages output.
+This repository holds the WordsCut product pages only. All application source, builds, signing, releases and installers live in the private `awaismirza/wordscut-app` repository. See [checkout/delivery options](docs/wordscut-commerce.md). Installers, app source and release drafts must never be added to this public website repo or its Pages output.
