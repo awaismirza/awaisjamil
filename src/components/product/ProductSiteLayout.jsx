@@ -1,3 +1,5 @@
+import { ExternalProductRedirect } from './ExternalProductRedirect.jsx'
+import { externalProductDestination } from '../../lib/externalProducts.js'
 import { ArrowLeft, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { Link, Navigate, NavLink, Outlet, useLocation, useParams } from 'react-router-dom'
@@ -34,6 +36,8 @@ export function ProductSiteLayout() {
   })
   const site = productSites[slug]
   const aliasOf = productAliases[slug]
+  const externalDestination = externalProductDestination(location.pathname, location.search, location.hash)
+  if (externalDestination) return <ExternalProductRedirect destination={externalDestination} />
 
   if (aliasOf) {
     const rest = location.pathname.slice(`/products/${slug}`.length)

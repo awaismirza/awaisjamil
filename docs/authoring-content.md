@@ -221,4 +221,8 @@ Download definitions may supply `label` and `compactLabel` for a direct website 
 
 Use optional `accentOnDark` to increase accent contrast in dark mode without changing the light theme.
 
-WordsCut's optional hosted checkout URL comes from `VITE_WORDSCUT_CHECKOUT_URL` (Pages repository variable `WORDSCUT_CHECKOUT_URL`). An unset value renders a contact CTA while the paid release is in preparation. Set it only after pricing, purchase terms, licensing and actual customer delivery have been approved and tested. It is a public HTTPS URL, never an API key. WordsCut builds and releases are handled in the private application repository, not here.
+WordsCut is an external product entry pointing to `https://wordscut.com`.
+Its website, copy, screenshots, legal pages and future checkout configuration live
+in `awaismirza/wordscut-app-web`. Do not re-register it as a local mini-site.
+Legacy WordsCut/YusafCut URLs are handled by `externalProductDestination` and the
+Pages 404 redirect; they preserve legal/support destinations during the move.

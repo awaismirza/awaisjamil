@@ -83,7 +83,7 @@ export const products = [
     impact:
       'Local transcription, transcript cuts, captions, zoom, framing, music, narration and flexible exports. Rebranded from YusafCut with compatible .scribe projects.',
     stack: ['macOS', 'Local AI', 'Transcription', 'Apple Silicon', 'Video Editing'],
-    href: '/products/wordscut',
+    href: 'https://wordscut.com',
   },
   {
     title: 'Voice Alarm Pro',

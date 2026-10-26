@@ -4,7 +4,6 @@ import { driverLogbook } from './driverLogbook.js'
 import { fastingTide } from './fastingTide.js'
 import { fivePrayers } from './fivePrayers.js'
 import { freezerpal } from './freezerpal.js'
-import { wordsCut } from './wordsCut.js'
 import { voiceAlarmPro } from './voiceAlarmPro.js'
 
 // Each product's mini-site (overview, privacy, terms, support) lives in its own
@@ -17,7 +16,6 @@ export const productSites = {
   [fastingTide.slug]: fastingTide,
   [fivePrayers.slug]: fivePrayers,
   [aussieLoanCalculator.slug]: aussieLoanCalculator,
-  [wordsCut.slug]: wordsCut,
   [voiceAlarmPro.slug]: voiceAlarmPro,
 }
 
