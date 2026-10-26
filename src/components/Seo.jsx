@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import { site } from '../data/site.js'
 
-export function Seo({ title, description, path = '/' }) {
+export function Seo({ title, description, path = '/', image, imageAlt }) {
   const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tagline}`
   const canonical = new URL(path, site.domain).toString()
   const metaDescription =
@@ -17,6 +17,10 @@ export function Seo({ title, description, path = '/' }) {
       <meta property="og:description" content={metaDescription} />
       <meta property="og:url" content={canonical} />
       <meta property="og:type" content="website" />
+      {image ? <meta property="og:image" content={new URL(image, site.domain).toString()} /> : null}
+      {imageAlt ? <meta property="og:image:alt" content={imageAlt} /> : null}
+      {image ? <meta name="twitter:image" content={new URL(image, site.domain).toString()} /> : null}
+      {imageAlt ? <meta name="twitter:image:alt" content={imageAlt} /> : null}
       <meta name="twitter:card" content="summary_large_image" />
     </Helmet>
   )

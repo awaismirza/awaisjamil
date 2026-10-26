@@ -222,3 +222,27 @@ Download definitions may supply `label` and `compactLabel` for a direct website 
 Use optional `accentOnDark` to increase accent contrast in dark mode without changing the light theme.
 
 WordsCut's optional hosted checkout URL comes from `VITE_WORDSCUT_CHECKOUT_URL` (Pages repository variable `WORDSCUT_CHECKOUT_URL`). An unset value renders a contact CTA while the paid release is in preparation. Set it only after pricing, purchase terms, licensing and actual customer delivery have been approved and tested. It is a public HTTPS URL, never an API key. WordsCut builds and releases are handled in the private application repository, not here.
+
+### WordsCut editorial overview
+
+WordsCut opts into `overview: 'wordscut'` at the existing overview route. Its
+`marketing` object supplies section copy, workflow screenshot IDs, capability
+rows and FAQs; the generic overview remains the default for all other products.
+`WordsCutLandingPage` and its scoped `wordscut.css` reuse the product shell,
+DownloadButton, aliases, legal routes and theme state. The gallery uses a native
+modal dialog with keyboard focus return and an actual-size viewing mode.
+
+Screenshot entries include `id`, `width` and `height`; optional `detail`,
+`detailWidth` and `detailHeight` provide truthful crops without layout shifts.
+Record provenance and privacy review in `public/wordscut/screenshots/manifest.json`
+before adding images. Never substitute generated interface imagery. The demo's
+authored transcript is not transcription-accuracy evidence. Current captures are
+development UI, explicitly distinguished from the earlier 1.0.0 public release.
+
+`Seo` accepts optional root-relative `image` and `imageAlt` props for Open Graph
+and Twitter cards. Pages that omit them retain their previous metadata. Re-render
+WordsCut's social image with `node scripts/render-wordscut-social.mjs` against the
+local site, and run `node scripts/qa-wordscut.mjs` with Chrome installed and a local
+server on port 5186 (`WORDSCUT_QA_URL` can override it). The browser suite verifies
+five widths in both themes, full-size gallery behavior, keyboard focus, images,
+aliases, metadata and contact fallback. It expects checkout to be unset.

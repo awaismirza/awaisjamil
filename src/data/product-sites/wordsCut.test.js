@@ -6,7 +6,7 @@ import { wordsCut } from './wordsCut.js'
 
 test('WordsCut no longer sends visitors to the retired distribution repository', () => {
   assert.doesNotMatch(JSON.stringify(wordsCut), /github\.io\/wordscut|github\.com\/awaismirza\/wordscut(?:["/])/)
-  assert.equal(wordsCut.facts.find((fact) => fact.label === 'Latest Mac build').value, '1.0.0')
+  assert.equal(wordsCut.facts.find((fact) => fact.label === 'Earlier public release').value, '1.0.0')
 })
 
 test('without a configured checkout, WordsCut offers contact rather than a fake purchase', () => {

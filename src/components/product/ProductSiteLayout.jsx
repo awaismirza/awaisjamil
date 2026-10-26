@@ -45,7 +45,7 @@ export function ProductSiteLayout() {
 
   return (
     <div
-      className="min-h-screen text-ink transition-colors dark:text-white"
+      className={`min-h-screen text-ink transition-colors dark:text-white ${site.overview === 'wordscut' ? 'wc-product' : ''}`}
       style={{
         '--accent': isDark ? (site.accentOnDark ?? site.accent) : site.accent,
         '--accent-dark': site.accentDark,
@@ -114,6 +114,8 @@ export function ProductSiteLayout() {
             <ThemeToggle />
             <button
               aria-label="Toggle navigation"
+              aria-expanded={open}
+              aria-controls="product-mobile-navigation"
               className="focus-ring grid h-10 w-10 place-items-center rounded-md border border-line bg-white text-ink transition dark:border-white/15 dark:bg-graphite dark:text-white"
               onClick={() => setOpen((value) => !value)}
               type="button"
@@ -124,7 +126,7 @@ export function ProductSiteLayout() {
         </nav>
 
         {open ? (
-          <div className="border-t border-line bg-white transition-colors dark:border-white/10 dark:bg-ink md:hidden">
+          <div id="product-mobile-navigation" className="border-t border-line bg-white transition-colors dark:border-white/10 dark:bg-ink md:hidden">
             <div className="section-shell grid gap-1 py-4">
               {items.map((item) => (
                 <NavLink

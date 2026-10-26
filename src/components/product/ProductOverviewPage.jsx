@@ -1,3 +1,4 @@
+import { WordsCutLandingPage } from './WordsCutLandingPage.jsx'
 import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 import { useOutletContext } from 'react-router-dom'
@@ -55,6 +56,10 @@ function ScreenshotPlaceholder({ shot }) {
 
 export function ProductOverviewPage() {
   const site = useOutletContext()
+  return site.overview === 'wordscut' ? <WordsCutLandingPage site={site} /> : <GenericProductOverview site={site} />
+}
+
+function GenericProductOverview({ site }) {
   const { hero, metrics, screenshots, features, howItWorks, pricing, closing, timerShowcase, recordingShowcase } = site
   const theme = useTheme()
   const isDark = theme === DARK_THEME

@@ -27,3 +27,9 @@ They also provide responsive product navigation, current-page highlighting, dark
 - the product card appears on `/products` and in both Products menus;
 - light/dark theme and mobile/desktop navigation are checked;
 - `npm run lint`, `npm run test`, and `npm run build` pass.
+
+WordsCut has an opt-in editorial overview at its existing route. Its content still
+lives in `wordsCut.js`; other products retain the generic overview. Native screenshot
+provenance lives in `public/wordscut/screenshots/manifest.json`. See
+[the marketing handoff](qa/handoff-wordscut-marketing.md) for capture limitations,
+responsive screenshots and reproduction commands.
