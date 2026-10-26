@@ -8,29 +8,40 @@ export function ProductCard({ product }) {
   return (
     <article className="flex h-full flex-col rounded-md border border-line bg-white p-6 shadow-line transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-soft md:p-8">
       <div className="flex items-start justify-between gap-4">
-        <div>
-          <p className="text-sm font-semibold text-coral">{product.type}</p>
-          <h3 className="mt-2 font-display text-2xl font-semibold leading-tight">
-            {isLive ? (
-              isExternal ? (
-                <a
-                  className="hover:text-teal transition-colors"
-                  href={product.href}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  {product.title}
-                </a>
+        <div className="flex items-start gap-4">
+          {product.icon ? (
+            <img
+              alt=""
+              className="mt-0.5 h-11 w-11 shrink-0 rounded-xl border border-line"
+              height={44}
+              src={product.icon}
+              width={44}
+            />
+          ) : null}
+          <div>
+            <p className="text-sm font-semibold text-coral">{product.type}</p>
+            <h3 className="mt-2 font-display text-2xl font-semibold leading-tight">
+              {isLive ? (
+                isExternal ? (
+                  <a
+                    className="hover:text-teal transition-colors"
+                    href={product.href}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {product.title}
+                  </a>
+                ) : (
+                  <Link className="hover:text-teal transition-colors" to={product.href}>
+                    {product.title}
+                  </Link>
+                )
               ) : (
-                <Link className="hover:text-teal transition-colors" to={product.href}>
-                  {product.title}
-                </Link>
-              )
-            ) : (
-              product.title
-            )}
-          </h3>
-          <p className="mt-1 text-sm font-semibold text-teal">{product.year}</p>
+                product.title
+              )}
+            </h3>
+            <p className="mt-1 text-sm font-semibold text-teal">{product.year}</p>
+          </div>
         </div>
         {product.status ? (
           <span className="shrink-0 rounded-md border border-teal/30 bg-teal/10 px-3 py-1 text-xs font-semibold text-teal">

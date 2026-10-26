@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import test from 'node:test'
 import { wordsCut } from './wordsCut.js'
+import { products } from '../products.js'
 
 test('WordsCut no longer sends visitors to the retired distribution repository', () => {
   assert.doesNotMatch(JSON.stringify(wordsCut), /github\.io\/wordscut|github\.com\/awaismirza\/wordscut(?:["/])/)
@@ -38,4 +39,10 @@ test('WordsCut uses the restrained indigo/lavender accent system with WCAG contr
   assert.equal(wordsCut.accentSoft, 'rgba(79, 94, 232, 0.12)')
   assert.equal(wordsCut.socialPreview, '/wordscut/social-preview.png')
   assert.doesNotMatch(JSON.stringify(wordsCut), /#7040A0|#B88DE2|#A879D2/i, 'superseded purples removed')
+})
+
+test('WordsCut portfolio card metadata registers the master icon', () => {
+  const card = products.find((p) => p.slug === 'wordscut')
+  assert.ok(card, 'wordscut card exists in products.js')
+  assert.equal(card.icon, '/wordscut/icon.svg')
 })

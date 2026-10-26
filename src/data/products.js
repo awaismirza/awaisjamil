@@ -75,6 +75,7 @@ export const products = [
   {
     title: 'WordsCut',
     slug: 'wordscut',
+    icon: '/wordscut/icon.svg',
     type: 'macOS / Local AI tool',
     year: '2026',
     status: 'Paid release coming soon',
