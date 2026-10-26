@@ -36,6 +36,6 @@ No autoplay footage. Restrained motion and existing shell remain.
 - [x] Verify product copy against current source without changing earlier licence.
 - [x] Run lint/test/build/diff; real browser at 390/768/1280/1440/1920 in both
   themes; inspect screenshots, keyboard dialog, routes, CTA and metadata.
-- [ ] Record handoff, commit explicit files, push review branch, verify remote SHA.
+- [x] Record handoff and commit explicit files. Push/remote verification follows in delivery.
 
 No PR, merge, deployment, release or domain changes authorized.
