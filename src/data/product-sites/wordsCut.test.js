@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import test from 'node:test'
 import { wordsCut } from './wordsCut.js'
@@ -18,4 +18,15 @@ test('without a configured checkout, WordsCut offers contact rather than a fake 
 test('migrated WordsCut screenshots and earlier-release licence remain available', () => {
   for (const shot of wordsCut.screenshots) assert.ok(existsSync(resolve('public', `.${shot.src}`)), shot.src)
   assert.ok(existsSync('public/wordscut/legacy-AGPL-3.0.txt'))
+})
+
+test('WordsCut app icon uses the master graphite/indigo identity and exists', () => {
+  assert.equal(wordsCut.icon, '/wordscut/icon.svg')
+  const iconPath = resolve('public', `.${wordsCut.icon}`)
+  assert.ok(existsSync(iconPath), 'icon file exists')
+  const content = readFileSync(iconPath, 'utf8')
+  assert.doesNotMatch(content, /#7040a0/i, 'must not use superseded purple')
+  assert.match(content, /#232A3E|#161B2B|#0C1020/i, 'uses graphite background stops')
+  assert.match(content, /#5C6EF0|#8092FF/i, 'uses master violet/indigo gradient stops')
+  assert.match(content, /<title[^>]*>WordsCut<\/title>/i, 'contains title')
 })
