@@ -11,6 +11,7 @@ export function ProductSupportPage() {
     <>
       <Seo
         description={`Get help with ${site.name} — frequently asked questions and support contact.`}
+        image={site.socialPreview ?? site.icon}
         path={`/products/${site.slug}/support`}
         title={`${site.name} — Support`}
       />

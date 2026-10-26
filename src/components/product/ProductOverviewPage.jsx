@@ -62,7 +62,12 @@ export function ProductOverviewPage() {
 
   return (
     <>
-      <Seo description={site.seoDescription} path={`/products/${site.slug}`} title={site.name} />
+      <Seo
+        description={site.seoDescription}
+        image={site.socialPreview ?? site.icon}
+        path={`/products/${site.slug}`}
+        title={site.name}
+      />
 
       {/* Hero */}
       <section className="relative overflow-hidden">

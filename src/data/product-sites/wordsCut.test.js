@@ -63,3 +63,11 @@ test('WordsCut social preview artwork exists and has valid dimensions', () => {
   assert.equal(width, 1200)
   assert.equal(height, 630)
 })
+
+test('WordsCut SEO and social metadata are configured', () => {
+  assert.equal(wordsCut.socialPreview, '/wordscut/social-preview.png')
+  assert.ok(wordsCut.seoDescription.includes('WordsCut'))
+  const seoSource = readFileSync(resolve('src/components/Seo.jsx'), 'utf8')
+  assert.match(seoSource, /property="og:image"/, 'Seo component supports og:image')
+  assert.match(seoSource, /name="twitter:image"/, 'Seo component supports twitter:image')
+})

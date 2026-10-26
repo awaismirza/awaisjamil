@@ -39,7 +39,12 @@ export function ProductDocPage({ kind }) {
 
   return (
     <>
-      <Seo description={doc.seoDescription} path={path} title={`${site.name} — ${doc.title}`} />
+      <Seo
+        description={doc.seoDescription}
+        image={site.socialPreview ?? site.icon}
+        path={path}
+        title={`${site.name} — ${doc.title}`}
+      />
 
       <section className="section-shell py-14 sm:py-20">
         <span className="inline-flex items-center rounded-full border border-[var(--accent)]/25 bg-[var(--accent-soft)] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
