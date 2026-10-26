@@ -46,3 +46,20 @@ test('WordsCut portfolio card metadata registers the master icon', () => {
   assert.ok(card, 'wordscut card exists in products.js')
   assert.equal(card.icon, '/wordscut/icon.svg')
 })
+
+test('WordsCut social preview artwork exists and has valid dimensions', () => {
+  const previewPath = resolve('public', `.${wordsCut.socialPreview}`)
+  assert.ok(existsSync(previewPath), 'social preview file exists')
+  const stats = readFileSync(previewPath)
+  assert.ok(stats.length > 50000, 'social preview is substantial image')
+  // Check PNG signature
+  assert.equal(stats[0], 0x89)
+  assert.equal(stats[1], 0x50) // 'P'
+  assert.equal(stats[2], 0x4e) // 'N'
+  assert.equal(stats[3], 0x47) // 'G'
+  // PNG IHDR width and height are at byte offsets 16-23
+  const width = stats.readUInt32BE(16)
+  const height = stats.readUInt32BE(20)
+  assert.equal(width, 1200)
+  assert.equal(height, 630)
+})
