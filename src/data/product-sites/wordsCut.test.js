@@ -30,3 +30,12 @@ test('WordsCut app icon uses the master graphite/indigo identity and exists', ()
   assert.match(content, /#5C6EF0|#8092FF/i, 'uses master violet/indigo gradient stops')
   assert.match(content, /<title[^>]*>WordsCut<\/title>/i, 'contains title')
 })
+
+test('WordsCut uses the restrained indigo/lavender accent system with WCAG contrast', () => {
+  assert.equal(wordsCut.accent, '#4F5EE8')
+  assert.equal(wordsCut.accentDark, '#3644B8')
+  assert.equal(wordsCut.accentOnDark, '#9AA8FF')
+  assert.equal(wordsCut.accentSoft, 'rgba(79, 94, 232, 0.12)')
+  assert.equal(wordsCut.socialPreview, '/wordscut/social-preview.png')
+  assert.doesNotMatch(JSON.stringify(wordsCut), /#7040A0|#B88DE2|#A879D2/i, 'superseded purples removed')
+})

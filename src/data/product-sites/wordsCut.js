@@ -14,13 +14,14 @@ export const wordsCut = {
   name: 'WordsCut',
   category: 'Local AI video editor for macOS',
   icon: '/wordscut/icon.svg',
+  socialPreview: '/wordscut/social-preview.png',
   seoDescription:
     'WordsCut is a local-first, transcript-based video editor for Apple Silicon Macs. Edit the words; WordsCut edits the video. Local processing, no cloud upload, no telemetry.',
 
-  accent: '#7040A0',
-  accentOnDark: '#B88DE2',
-  accentDark: '#A879D2',
-  accentSoft: 'rgba(112, 64, 160, 0.13)',
+  accent: '#4F5EE8',
+  accentOnDark: '#9AA8FF',
+  accentDark: '#3644B8',
+  accentSoft: 'rgba(79, 94, 232, 0.12)',
   download: checkoutUrl
     ? { kind: 'website', url: checkoutUrl, label: 'Buy WordsCut for Mac', compactLabel: 'Buy WordsCut' }
     : { kind: 'website', url: 'mailto:owaesmirza@gmail.com?subject=WordsCut%20paid%20release', label: 'Ask about the paid release', compactLabel: 'Contact' },
