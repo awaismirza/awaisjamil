@@ -1,20 +1,53 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll, useSpring } from 'framer-motion'
+import { useRef } from 'react'
 import { CTASection } from '../components/CTASection.jsx'
 import { Footer } from '../components/Footer.jsx'
-import { PageHero } from '../components/PageHero.jsx'
+import { Marquee } from '../components/fx/Marquee.jsx'
+import { PageHero, SectionHeading } from '../components/PageHero.jsx'
 import { ServiceCard } from '../components/ServiceCard.jsx'
 import { Seo } from '../components/Seo.jsx'
-import { AnimateIn } from '../components/AnimateIn.jsx'
-import { staggerContainer, staggerItem } from '../lib/animation.js'
-import { services, processSteps } from '../data/services.js'
+import { techStack } from '../data/expertise.js'
+import { processSteps, services } from '../data/services.js'
+import { ease, inViewOnce, staggerContainer, staggerItem } from '../lib/animation.js'
 
-const techStack = [
-  'React', 'Angular', 'TypeScript', 'JavaScript', 'Node.js',
-  'Swift', 'SwiftUI', 'iOS', 'macOS',
-  'ASP.NET Core', 'FastifyJS', 'REST APIs',
-  'AWS', 'Docker', 'CI/CD',
-  'NX Monorepo', 'Design Systems', 'PostgreSQL',
-]
+function Process() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 75%', 'end 55%'] })
+  const fill = useSpring(scrollYProgress, { stiffness: 120, damping: 30 })
+
+  return (
+    <section className="border-t border-line bg-surface/40 py-24 sm:py-32">
+      <div className="section-shell grid gap-14 lg:grid-cols-[0.85fr_1fr]">
+        <div className="lg:sticky lg:top-32 lg:self-start">
+          <SectionHeading label="How I work" title="A practical, focused process from problem to launch." />
+        </div>
+        <ol className="relative grid gap-6" ref={ref}>
+          <div aria-hidden="true" className="absolute bottom-6 left-7 top-6 w-px bg-line">
+            <motion.div className="h-full origin-top bg-gradient-to-b from-accent to-violet" style={{ scaleY: fill }} />
+          </div>
+          {processSteps.map((step, index) => (
+            <motion.li
+              className="relative grid grid-cols-[3.5rem_1fr] gap-6"
+              initial={{ opacity: 0, x: 30 }}
+              key={step.title}
+              transition={{ duration: 0.8, ease }}
+              viewport={{ once: true, margin: '-80px' }}
+              whileInView={{ opacity: 1, x: 0 }}
+            >
+              <span className="relative z-10 grid h-14 w-14 place-items-center rounded-2xl border border-line bg-canvas font-mono text-sm font-semibold text-accent-ink shadow-soft">
+                0{index + 1}
+              </span>
+              <div className="card p-6">
+                <p className="font-display text-xl font-semibold tracking-tight">{step.title}</p>
+                <p className="mt-2 text-sm leading-6 text-slate">{step.description}</p>
+              </div>
+            </motion.li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}
 
 export function ServicesPage() {
   return (
@@ -31,86 +64,48 @@ export function ServicesPage() {
         title="Software development services for practical products, polished interfaces, and reliable delivery."
       />
 
-      {/* Services grid */}
-      <section className="bg-white py-12">
-        <div className="section-shell">
-          <motion.div
-            className="grid gap-5 md:grid-cols-2 lg:grid-cols-3"
-            initial="hidden"
-            variants={staggerContainer}
-            viewport={{ once: true, margin: '-60px' }}
-            whileInView="show"
-          >
-            {services.map((service) => (
-              <motion.div className="h-full" key={service.title} variants={staggerItem}>
-                <ServiceCard service={service} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+      <section className="pb-24">
+        <motion.div
+          className="section-shell grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+          initial="hidden"
+          variants={staggerContainer}
+          viewport={inViewOnce}
+          whileInView="show"
+        >
+          {services.map((service, index) => (
+            <motion.div className="h-full" key={service.title} variants={staggerItem}>
+              <ServiceCard index={index} service={service} />
+            </motion.div>
+          ))}
+        </motion.div>
       </section>
 
-      {/* Process */}
-      <section className="border-t border-line bg-mist py-16 sm:py-20">
-        <div className="section-shell grid gap-12 lg:grid-cols-[0.8fr_1fr]">
-          <AnimateIn>
-            <p className="section-label">How I work</p>
-            <h2 className="mt-4 font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
-              A practical, focused process from problem to launch.
-            </h2>
-          </AnimateIn>
-          <motion.ol
-            className="grid gap-5"
-            initial="hidden"
-            variants={staggerContainer}
-            viewport={{ once: true, margin: '-60px' }}
-            whileInView="show"
-          >
-            {processSteps.map((step, index) => (
-              <motion.li
-                className="grid grid-cols-[3rem_1fr] gap-5 border-b border-line pb-5 last:border-0 last:pb-0"
-                key={step.title}
-                variants={staggerItem}
-              >
-                <span className="font-display text-3xl font-semibold text-coral">
-                  0{index + 1}
-                </span>
-                <div>
-                  <p className="font-semibold text-ink">{step.title}</p>
-                  <p className="mt-1 text-sm leading-6 text-slate">{step.description}</p>
-                </div>
-              </motion.li>
-            ))}
-          </motion.ol>
-        </div>
-      </section>
+      <Process />
 
-      {/* Tech stack */}
-      <section className="border-t border-line bg-white py-16 sm:py-20">
+      <section className="py-24 sm:py-32">
         <div className="section-shell">
-          <AnimateIn>
-            <p className="section-label">Technologies</p>
-            <h2 className="mt-4 font-display text-3xl font-semibold tracking-[-0.02em]">
-              Tools and technologies I work with
-            </h2>
-          </AnimateIn>
-          <motion.div
-            className="mt-8 flex flex-wrap gap-3"
-            initial="hidden"
-            variants={staggerContainer}
-            viewport={{ once: true, margin: '-40px' }}
-            whileInView="show"
-          >
-            {techStack.map((tech) => (
-              <motion.span
-                className="rounded-md border border-line bg-mist px-4 py-2 text-sm font-semibold text-ink"
-                key={tech}
-                variants={staggerItem}
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </motion.div>
+          <SectionHeading align="center" label="Technologies" title="Tools and technologies I work with" />
+        </div>
+        <div className="mt-14 grid gap-4">
+          <Marquee
+            duration={45}
+            items={techStack}
+            renderItem={(tech) => (
+              <span className="font-display text-4xl font-semibold tracking-tight text-ink/80 sm:text-6xl">
+                {tech} <span className="px-4 text-accent">/</span>
+              </span>
+            )}
+          />
+          <Marquee
+            duration={55}
+            items={[...techStack].reverse()}
+            renderItem={(tech) => (
+              <span className="font-serif text-4xl italic text-slate/60 sm:text-6xl">
+                {tech} <span className="px-4 text-violet">✦</span>
+              </span>
+            )}
+            reverse
+          />
         </div>
       </section>
 

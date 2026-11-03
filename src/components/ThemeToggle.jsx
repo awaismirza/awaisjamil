@@ -1,68 +1,86 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import { Moon, Sun } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import {
   DARK_THEME,
   LIGHT_THEME,
   applyTheme,
-  getInitialTheme,
   getNextTheme,
   getStoredTheme,
-  getSystemPrefersDark,
   getThemeLabel,
   storeTheme,
 } from '../lib/theme.js'
+import { useTheme } from '../lib/useTheme.js'
 
-function getCurrentTheme() {
-  return getInitialTheme({
-    storedTheme: getStoredTheme(),
-    systemPrefersDark: getSystemPrefersDark(),
-  })
+function prefersReducedMotion() {
+  return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState(getCurrentTheme)
+  // Read the applied theme from the root element so every toggle on the page
+  // (desktop and mobile headers) stays in sync.
+  const theme = useTheme()
   const label = getThemeLabel(theme)
-  const Icon = theme === DARK_THEME ? Sun : Moon
-
-  useEffect(() => {
-    applyTheme(theme)
-  }, [theme])
 
   useEffect(() => {
     const media = window.matchMedia?.('(prefers-color-scheme: dark)')
-
-    if (!media) {
-      return undefined
-    }
+    if (!media) return undefined
 
     function syncSystemTheme(event) {
-      if (!getStoredTheme()) {
-        setTheme(event.matches ? DARK_THEME : LIGHT_THEME)
-      }
+      if (!getStoredTheme()) applyTheme(event.matches ? DARK_THEME : LIGHT_THEME)
     }
 
     media.addEventListener('change', syncSystemTheme)
-
     return () => media.removeEventListener('change', syncSystemTheme)
   }, [])
 
-  function handleToggle() {
-    setTheme((currentTheme) => {
-      const nextTheme = getNextTheme(currentTheme)
+  function handleToggle(event) {
+    const nextTheme = getNextTheme(theme)
+    const commit = () => {
+      applyTheme(nextTheme)
       storeTheme(nextTheme)
-      return nextTheme
-    })
+    }
+
+    if (!document.startViewTransition || prefersReducedMotion()) {
+      commit()
+      return
+    }
+
+    // Expand the new theme as a circle from the toggle button.
+    const x = event.clientX || window.innerWidth - 40
+    const y = event.clientY || 40
+    const radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y))
+    const transition = document.startViewTransition(commit)
+
+    transition.ready
+      .then(() => {
+        document.documentElement.animate(
+          { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+          { duration: 650, easing: 'cubic-bezier(0.65, 0, 0.35, 1)', pseudoElement: '::view-transition-new(root)' },
+        )
+      })
+      .catch(() => {})
   }
 
   return (
     <button
       aria-label={label}
-      className="focus-ring grid h-10 w-10 place-items-center rounded-md border border-line bg-white text-ink transition hover:border-ink hover:bg-mist dark:border-white/15 dark:bg-graphite dark:text-white dark:hover:border-white/35 dark:hover:bg-white/10"
+      className="focus-ring relative grid h-10 w-10 cursor-pointer place-items-center overflow-hidden rounded-full border border-line bg-surface/60 text-ink transition hover:border-ink/30 hover:bg-mist"
       onClick={handleToggle}
       title={label}
       type="button"
     >
-      <Icon size={18} strokeWidth={2.25} />
+      <AnimatePresence initial={false} mode="wait">
+        <motion.span
+          animate={{ rotate: 0, scale: 1, opacity: 1 }}
+          exit={{ rotate: 90, scale: 0.4, opacity: 0 }}
+          initial={{ rotate: -90, scale: 0.4, opacity: 0 }}
+          key={theme}
+          transition={{ duration: 0.25 }}
+        >
+          {theme === DARK_THEME ? <Sun size={17} strokeWidth={2.25} /> : <Moon size={17} strokeWidth={2.25} />}
+        </motion.span>
+      </AnimatePresence>
     </button>
   )
 }

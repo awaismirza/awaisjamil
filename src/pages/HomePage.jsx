@@ -1,217 +1,318 @@
-import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Button } from '../components/Button.jsx'
 import { AnimateIn } from '../components/AnimateIn.jsx'
-import { SocialLinks } from '../components/SocialIcons.jsx'
-import { staggerContainer, staggerItem } from '../lib/animation.js'
+import { Button } from '../components/Button.jsx'
+import { CTASection } from '../components/CTASection.jsx'
 import { ExperienceSection } from '../components/ExperienceSection.jsx'
 import { Footer } from '../components/Footer.jsx'
-import { HeroWorkbench } from '../components/HeroWorkbench.jsx'
+import { Backdrop } from '../components/fx/Backdrop.jsx'
+import { Counter } from '../components/fx/Counter.jsx'
+import { HorizontalScroll } from '../components/fx/HorizontalScroll.jsx'
+import { Marquee } from '../components/fx/Marquee.jsx'
+import { SplitWords } from '../components/fx/SplitWords.jsx'
+import { HeroConsole } from '../components/HeroConsole.jsx'
+import { SectionHeading } from '../components/PageHero.jsx'
 import { ProductCard } from '../components/ProductCard.jsx'
 import { Seo } from '../components/Seo.jsx'
-import { products } from '../data/products.js'
+import { ServiceCard } from '../components/ServiceCard.jsx'
+import { SocialLinks } from '../components/SocialIcons.jsx'
+import { experience } from '../data/experience.js'
+import { technicalStrengths, techStack, yearsOfExperience } from '../data/expertise.js'
 import { posts } from '../data/posts.js'
+import { products } from '../data/products.js'
 import { services } from '../data/services.js'
 import { site } from '../data/site.js'
+import { ease, inViewOnce, staggerContainer, staggerItem } from '../lib/animation.js'
+import { isLiveProduct } from '../lib/productMeta.js'
 
 const PREVIEW_SERVICE_COUNT = 4
 const PREVIEW_POST_COUNT = 3
+const agentTools = technicalStrengths.find((group) => group.category === 'AI & Agents')?.skills ?? []
 
-export function HomePage() {
-  const previewProducts = products
-    .filter((p) => p.href && p.href !== '#')
-    .slice(0, 4)
-  const previewServices = services.slice(0, PREVIEW_SERVICE_COUNT)
-  const previewPosts = posts.slice(0, PREVIEW_POST_COUNT)
-
+function Hero() {
   return (
-    <>
-      <Seo />
+    <section className="relative isolate overflow-hidden pb-20 pt-32 sm:pt-40 lg:pb-28">
+      <Backdrop />
+      <div className="section-shell grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+        <div>
+          <motion.div
+            animate={{ opacity: 1, y: 0 }}
+            className="glass inline-flex items-center gap-2.5 rounded-full py-1.5 pl-1.5 pr-4 text-xs font-medium text-slate"
+            initial={{ opacity: 0, y: 12 }}
+            transition={{ duration: 0.7, ease }}
+          >
+            <span className="rounded-full bg-ink px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-canvas">
+              {site.tagline.split(' & ')[0]}
+            </span>
+            {site.location}
+          </motion.div>
 
-      {/* Hero */}
-      <section className="section-shell grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1fr_0.86fr] lg:py-24">
-        <motion.div
-          animate={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 12 }}
-          transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
-        >
-          <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl lg:text-6xl">
-            {site.hero.headline}
-          </h1>
+          <SplitWords
+            className="mt-8 max-w-4xl text-balance font-display text-[2.75rem] font-semibold leading-[1] tracking-[-0.045em] text-ink sm:text-6xl lg:text-[4.6rem]"
+            delay={0.15}
+            highlight={site.hero.highlight}
+            text={site.hero.headline}
+          />
+
           <motion.p
             animate={{ opacity: 1, y: 0 }}
-            className="mt-7 max-w-2xl text-lg leading-8 text-slate"
-            initial={{ opacity: 0, y: 12 }}
-            transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1], delay: 0.12 }}
+            className="mt-8 max-w-xl text-pretty text-lg leading-8 text-slate"
+            initial={{ opacity: 0, y: 16 }}
+            transition={{ duration: 0.9, delay: 0.6, ease }}
           >
             {site.hero.summary}
           </motion.p>
           <motion.p
             animate={{ opacity: 1, y: 0 }}
-            className="mt-3 max-w-2xl text-sm leading-6 text-slate/90"
-            initial={{ opacity: 0, y: 12 }}
-            transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1], delay: 0.18 }}
+            className="mt-3 max-w-xl text-sm leading-6 text-slate/90"
+            initial={{ opacity: 0, y: 16 }}
+            transition={{ duration: 0.9, delay: 0.7, ease }}
           >
             {site.hero.alsoLine}
           </motion.p>
+
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            className="mt-7 sm:hidden"
-            initial={{ opacity: 0, y: 12 }}
-            transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1], delay: 0.22 }}
-          >
-            <SocialLinks fullRow variant="nav" />
-          </motion.div>
-          <motion.div
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-6 flex flex-col gap-3 sm:mt-9 sm:flex-row"
-            initial={{ opacity: 0, y: 12 }}
-            transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
+            className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
+            initial={{ opacity: 0, y: 16 }}
+            transition={{ duration: 0.9, delay: 0.8, ease }}
           >
             <Button href="/experience">View experience</Button>
             <Button href="/contact" variant="secondary">
               Start a project
             </Button>
           </motion.div>
-        </motion.div>
-        <HeroWorkbench />
-      </section>
 
-      {/* Experience preview */}
-      <ExperienceSection limit={6} />
+          <motion.div
+            animate={{ opacity: 1 }}
+            className="mt-8 hidden items-center gap-4 sm:flex"
+            initial={{ opacity: 0 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            <SocialLinks variant="nav" />
+            <span className="h-px w-12 bg-line" />
+            <span className="font-mono text-xs text-slate">{site.socials.map((s) => s.label).join(' / ')}</span>
+          </motion.div>
+          <motion.div
+            animate={{ opacity: 1 }}
+            className="mt-8 sm:hidden"
+            initial={{ opacity: 0 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            <SocialLinks fullRow />
+          </motion.div>
+        </div>
 
-      {/* Products preview */}
-      <section id="products" className="bg-white py-16 sm:py-20">
-        <div className="section-shell">
-          <AnimateIn className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-            <div>
-              <p className="section-label">Personal products</p>
-              <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
-                iOS apps, open-source tools, and practical products built outside
-                client work.
-              </h2>
-            </div>
-            <Link
-              className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-teal"
-              to="/products"
-            >
-              View all products <ArrowRight size={16} />
-            </Link>
-          </AnimateIn>
+        <HeroConsole />
+      </div>
 
-          <div className="mt-12">
-            <motion.div
-              className="grid gap-5 md:grid-cols-2"
-              initial="hidden"
-              variants={staggerContainer}
-              viewport={{ once: true, margin: '-60px' }}
-              whileInView="show"
-            >
-              {previewProducts.map((product) => (
-                <motion.div className="h-full" key={product.title} variants={staggerItem}>
-                  <ProductCard product={product} />
-                </motion.div>
-              ))}
+      {/* Scroll cue */}
+      <motion.div
+        animate={{ opacity: 1 }}
+        aria-hidden="true"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex"
+        initial={{ opacity: 0 }}
+        transition={{ delay: 1.6 }}
+      >
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-slate">Scroll</span>
+        <span className="relative h-10 w-px overflow-hidden bg-line">
+          <motion.span
+            animate={{ y: ['-100%', '100%'] }}
+            className="absolute inset-x-0 h-1/2 bg-accent"
+            transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        </span>
+      </motion.div>
+    </section>
+  )
+}
+
+function Ticker() {
+  const pill = (item) => (
+    <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/70 px-4 py-2 text-sm font-medium text-ink/80">
+      <span className="h-1 w-1 rounded-full bg-accent" />
+      {item}
+    </span>
+  )
+
+  return (
+    <section aria-label="Technologies" className="border-y border-line bg-surface/40 py-6">
+      <div className="grid gap-3">
+        <Marquee duration={50} items={techStack} renderItem={pill} />
+        <Marquee duration={36} items={[...agentTools, ...agentTools]} renderItem={pill} reverse />
+      </div>
+    </section>
+  )
+}
+
+function Stats() {
+  const stats = [
+    { value: yearsOfExperience(experience), suffix: '+', label: 'years building software' },
+    { value: products.length, label: 'products built outside client work' },
+    { value: experience.length, label: 'roles on the timeline' },
+    { value: posts.length, label: 'notes on building software' },
+  ]
+
+  return (
+    <section className="section-shell py-20 sm:py-24">
+      <motion.dl
+        className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-line bg-line lg:grid-cols-4"
+        initial="hidden"
+        variants={staggerContainer}
+        viewport={inViewOnce}
+        whileInView="show"
+      >
+        {stats.map((stat) => (
+          <div className="bg-canvas p-6 sm:p-8" key={stat.label}>
+            <motion.dt className="text-sm leading-6 text-slate" variants={staggerItem}>
+              {stat.label}
+            </motion.dt>
+            <motion.dd className="mt-3 font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl" variants={staggerItem}>
+              <Counter suffix={stat.suffix} value={stat.value} />
+            </motion.dd>
+          </div>
+        ))}
+      </motion.dl>
+    </section>
+  )
+}
+
+function ProductsPreview() {
+  const previewProducts = products.filter(isLiveProduct).slice(0, 4)
+
+  return (
+    <section className="relative py-24 sm:py-32" id="products">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[40rem] bg-gradient-to-b from-violet/[0.06] to-transparent" />
+      <div className="section-shell">
+        <SectionHeading
+          action={
+            <Button href="/products" variant="secondary">
+              All products
+            </Button>
+          }
+          label="Personal products"
+          title="iOS apps, open-source tools, and practical products built outside client work."
+        />
+        <motion.div
+          className="mt-16 grid gap-5 md:grid-cols-2"
+          initial="hidden"
+          variants={staggerContainer}
+          viewport={inViewOnce}
+          whileInView="show"
+        >
+          {previewProducts.map((product) => (
+            <motion.div className="h-full" key={product.title} variants={staggerItem}>
+              <ProductCard product={product} />
             </motion.div>
-          </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
 
-          <div className="mt-12 flex justify-center">
-            <Link
-              className="focus-ring inline-flex items-center gap-2 rounded-full border border-line bg-white px-7 py-3.5 text-sm font-semibold text-ink transition hover:border-ink dark:border-white/20 dark:bg-graphite dark:text-white dark:hover:border-white/50"
-              to="/products"
-            >
-              View all products <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
+function ServicesPreview() {
+  const previewServices = services.slice(0, PREVIEW_SERVICE_COUNT)
 
-      {/* Services preview */}
-      <section id="services" className="bg-mist py-16 sm:py-20">
-        <div className="section-shell">
-          <AnimateIn className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-            <div>
-              <p className="section-label">Services</p>
-              <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
-                Software development services for products people can actually use.
-              </h2>
-            </div>
-            <Link
-              className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-teal"
-              to="/services"
-            >
-              View all services <ArrowRight size={16} />
-            </Link>
+  return (
+    <section className="py-24 sm:py-32 lg:py-0" id="services">
+      <HorizontalScroll
+        fallbackClassName="mt-14 grid gap-5 md:grid-cols-2"
+        header={
+          <SectionHeading
+            action={
+              <Button href="/services" variant="secondary">
+                All services
+              </Button>
+            }
+            label="Services"
+            title="Software development services for products people can actually use."
+          />
+        }
+      >
+        {previewServices.map((service, index) => (
+          <div className="h-full lg:w-[420px] lg:shrink-0" key={service.title}>
+            <ServiceCard index={index} service={service} />
+          </div>
+        ))}
+      </HorizontalScroll>
+    </section>
+  )
+}
+
+function WritingPreview() {
+  const previewPosts = posts.slice(0, PREVIEW_POST_COUNT)
+
+  return (
+    <section className="py-24 sm:py-32" id="writing">
+      <div className="section-shell grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <SectionHeading label="Writing" title="Notes on product quality, speed, and software craft." />
+          <AnimateIn className="mt-8" delay={0.2}>
+            <Button href="/writing" variant="secondary">
+              Read all articles
+            </Button>
           </AnimateIn>
-
-          <motion.div
-            className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4"
-            initial="hidden"
-            variants={staggerContainer}
-            viewport={{ once: true, margin: '-60px' }}
-            whileInView="show"
-          >
-            {previewServices.map((service) => (
-              <motion.div
-                className="rounded-md border border-line bg-white p-6 shadow-line"
-                key={service.title}
-                variants={staggerItem}
+        </div>
+        <motion.div
+          className="border-t border-line"
+          initial="hidden"
+          variants={staggerContainer}
+          viewport={inViewOnce}
+          whileInView="show"
+        >
+          {previewPosts.map((post, index) => (
+            <motion.div key={post.id} variants={staggerItem}>
+              <Link
+                className="focus-ring group relative grid gap-3 overflow-hidden border-b border-line py-8 sm:grid-cols-[3rem_1fr_auto] sm:items-start sm:gap-6"
+                to={`/writing#post-${post.id}`}
               >
-                <h3 className="font-display text-lg font-semibold leading-snug">
-                  {service.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-slate">{service.summary}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Writing preview */}
-      <section id="writing" className="border-t border-line bg-white py-16 sm:py-20">
-        <div className="section-shell grid gap-10 lg:grid-cols-[0.75fr_1fr]">
-          <AnimateIn>
-            <p className="section-label">Writing</p>
-            <h2 className="mt-4 font-display text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
-              Notes on product quality, speed, and software craft.
-            </h2>
-            <Link
-              className="focus-ring mt-8 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-teal"
-              to="/writing"
-            >
-              Read all articles <ArrowRight size={16} />
-            </Link>
-          </AnimateIn>
-          <motion.div
-            className="grid gap-4"
-            initial="hidden"
-            variants={staggerContainer}
-            viewport={{ once: true, margin: '-60px' }}
-            whileInView="show"
-          >
-            {previewPosts.map((post) => (
-              <motion.div key={post.id} variants={staggerItem}>
-                <Link
-                  className="group block rounded-md border border-line bg-mist p-6 transition hover:border-ink hover:bg-white"
-                  to="/writing"
-                >
-                  <p className="text-sm font-semibold text-coral">{post.date}</p>
-                  <h3 className="mt-3 flex items-center justify-between gap-4 font-display text-xl font-semibold">
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 -z-10 origin-left scale-x-0 bg-gradient-to-r from-accent/10 to-transparent transition-transform duration-700 ease-out group-hover:scale-x-100"
+                />
+                <span className="font-mono text-xs text-slate">0{index + 1}</span>
+                <span>
+                  <span className="flex flex-wrap items-center gap-3 text-xs text-slate">
+                    <span className="font-mono text-coral">{post.date}</span>
+                    {post.category ? <span className="chip">{post.category}</span> : null}
+                  </span>
+                  <span className="mt-3 block font-display text-2xl font-semibold leading-tight tracking-tight transition-transform duration-500 group-hover:translate-x-2 sm:text-3xl">
                     {post.title}
-                    <ArrowRight
-                      className="shrink-0 transition group-hover:translate-x-1"
-                      size={18}
-                    />
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate">{post.description}</p>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+                  </span>
+                  <span className="mt-2 block text-sm leading-6 text-slate">{post.description}</span>
+                </span>
+                <span className="hidden h-11 w-11 place-items-center rounded-full border border-line transition-all duration-500 group-hover:rotate-45 group-hover:bg-ink group-hover:text-canvas sm:grid">
+                  <ArrowUpRight size={18} />
+                </span>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
 
+export function HomePage() {
+  return (
+    <>
+      <Seo />
+      <Hero />
+      <Ticker />
+      <Stats />
+      <ExperienceSection limit={6} />
+      <ProductsPreview />
+      <ServicesPreview />
+      <WritingPreview />
+      <CTASection
+        buttonHref="/contact"
+        buttonText="Start a project"
+        description={site.consulting.pitch}
+        headline={site.consulting.punchline}
+        label={site.consulting.label}
+      />
       <Footer />
     </>
   )

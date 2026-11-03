@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 function GithubLogo({ size = 16 }) {
   return (
     <svg aria-hidden="true" fill="currentColor" height={size} viewBox="0 0 24 24" width={size}>
@@ -23,36 +25,47 @@ function AndroidLogo({ size = 16 }) {
 }
 
 const base =
-  'focus-ring inline-flex items-center justify-center gap-2 rounded-full font-semibold text-white transition hover:brightness-110'
+  'focus-ring group/dl relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110'
 const sizes = {
-  md: 'h-11 px-6 text-sm',
-  lg: 'px-7 py-3.5 text-base',
+  md: 'h-10 px-5 text-sm',
+  lg: 'h-14 px-7 text-base',
+}
+const filled =
+  'bg-[var(--accent-control,var(--accent))] shadow-[0_10px_30px_-8px_var(--accent-glow,var(--accent-soft))]'
+
+function Sheen() {
+  return (
+    <span
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover/dl:translate-x-full"
+    />
+  )
 }
 
 export function DownloadButton({ site, download: directDownload, platform = 'ios', size = 'md', compact = false }) {
   const download = directDownload || (platform === 'android' ? site?.androidDownload : site?.download)
   if (!download) return null
+  const iconSize = size === 'lg' ? 18 : 16
 
   if (platform === 'android') {
     return (
       <span
-        className={`focus-ring inline-flex items-center justify-center gap-2 rounded-full font-semibold transition cursor-default border border-slate/30 text-slate dark:border-white/20 dark:text-white/80 bg-transparent ${sizes[size]} opacity-70`}
+        className={clsx(
+          'inline-flex cursor-default items-center justify-center gap-2 rounded-full border border-line bg-transparent font-semibold text-slate opacity-80',
+          sizes[size],
+        )}
         title="Android app is currently in development"
       >
-        <AndroidLogo size={size === 'lg' ? 18 : 16} /> {compact ? 'Android' : 'Android coming soon'}
+        <AndroidLogo size={iconSize} /> {compact ? 'Android' : 'Android coming soon'}
       </span>
     )
   }
 
   if (download.kind === 'github') {
     return (
-      <a
-        className={`${base} ${sizes[size]} bg-[var(--accent-control,var(--accent))] shadow-[0_4px_24px_var(--accent-soft)]`}
-        href={download.url}
-        rel="noreferrer"
-        target="_blank"
-      >
-        <GithubLogo size={size === 'lg' ? 18 : 16} /> {compact ? 'GitHub' : 'View on GitHub'}
+      <a className={clsx(base, sizes[size], filled)} href={download.url} rel="noreferrer" target="_blank">
+        <Sheen />
+        <GithubLogo size={iconSize} /> <span className="relative">{compact ? 'GitHub' : 'View on GitHub'}</span>
       </a>
     )
   }
@@ -60,21 +73,28 @@ export function DownloadButton({ site, download: directDownload, platform = 'ios
   if (download.kind === 'coming-soon') {
     return (
       <span
-        className={`${base} ${sizes[size]} cursor-default bg-[var(--accent-control,var(--accent))] opacity-60`}
+        className={clsx(
+          'inline-flex cursor-default items-center justify-center gap-2 rounded-full bg-[var(--accent-control,var(--accent))] font-semibold text-white opacity-70',
+          sizes[size],
+        )}
         title={download.note}
       >
-        <AppleLogo size={size === 'lg' ? 18 : 16} /> {compact ? 'Coming soon' : 'Coming soon to the App Store'}
+        <AppleLogo size={iconSize} /> {compact ? 'Coming soon' : 'Coming soon to the App Store'}
       </span>
     )
   }
 
   return (
     <a
-      className={`${base} ${sizes[size]} bg-[var(--accent-control,var(--accent))] shadow-[0_4px_24px_var(--accent-soft)]`}
+      className={clsx(base, sizes[size], filled)}
       href={download.url ?? '#'}
       {...(download.url ? { rel: 'noreferrer', target: '_blank' } : {})}
     >
-      <AppleLogo size={size === 'lg' ? 18 : 16} /> {compact ? (download.compactLabel ?? 'Download') : (download.label ?? 'Download on the App Store')}
+      <Sheen />
+      <AppleLogo size={iconSize} />
+      <span className="relative">
+        {compact ? (download.compactLabel ?? 'Download') : (download.label ?? 'Download on the App Store')}
+      </span>
     </a>
   )
 }

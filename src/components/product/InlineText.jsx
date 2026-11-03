@@ -11,7 +11,7 @@ export function InlineText({ text }) {
 
     if (match[1]) {
       const href = match[2]
-      const linkClass = 'font-semibold text-teal hover:underline'
+      const linkClass = 'font-semibold text-[var(--accent,rgb(var(--c-accent-ink)))] underline-offset-4 hover:underline'
       nodes.push(
         href.startsWith('/') ? (
           <Link className={linkClass} key={match.index} to={href}>

@@ -1,5 +1,8 @@
+import { AppWindow, Rocket, SearchCode, Server, Smartphone, Sparkles } from 'lucide-react'
+
 export const services = [
   {
+    icon: AppWindow,
     title: 'Custom Web Application Development',
     summary:
       'Designing and building modern, responsive web applications using React, Angular, JavaScript, APIs, and clean component architecture.',
@@ -13,6 +16,7 @@ export const services = [
     tags: ['React', 'Angular', 'JavaScript', 'Frontend'],
   },
   {
+    icon: Smartphone,
     title: 'iOS App Development',
     summary:
       'Building practical native iOS applications with clean SwiftUI interfaces, local storage, privacy-first flows, and App Store-ready structure.',
@@ -26,6 +30,7 @@ export const services = [
     tags: ['iOS', 'SwiftUI', 'Mobile Apps', 'Privacy'],
   },
   {
+    icon: Rocket,
     title: 'Product MVP Development',
     summary:
       'Helping turn an idea into a usable first version with clear scope, strong UX, clean engineering, and practical product decisions.',
@@ -39,6 +44,7 @@ export const services = [
     tags: ['MVP', 'Product', 'UX', 'Launch'],
   },
   {
+    icon: Sparkles,
     title: 'AI & Automation Tools',
     summary:
       'Building AI-assisted workflows, local AI tools, automation systems, and productivity features that save time without making products feel complicated.',
@@ -52,6 +58,7 @@ export const services = [
     tags: ['AI', 'Automation', 'LLMs', 'Workflow'],
   },
   {
+    icon: Server,
     title: 'Backend APIs & Cloud Integration',
     summary:
       'Creating and integrating backend APIs, authentication flows, cloud services, and reliable data handling for modern applications.',
@@ -65,6 +72,7 @@ export const services = [
     tags: ['APIs', 'AWS', 'Backend', 'Cloud'],
   },
   {
+    icon: SearchCode,
     title: 'Technical Consulting & Code Review',
     summary:
       'Reviewing existing applications, improving architecture, cleaning up frontend structure, and helping teams make better engineering decisions.',

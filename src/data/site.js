@@ -8,6 +8,8 @@ export const site = {
     headline: 'I build the agent harnesses and skills that make engineering teams agentic-first.',
     summary:
       'AI Lead in Melbourne, building custom agents, skill libraries, guardrails and developer tooling so teams can use coding agents consistently and safely.',
+    // Trailing phrase of `headline` rendered with the accent serif treatment.
+    highlight: 'agentic-first.',
     alsoLine: 'I also design and ship web and mobile products.',
   },
   consulting: {

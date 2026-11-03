@@ -196,12 +196,15 @@ Entries render on the full `/experience` timeline and the home-page preview, whi
 
 ## Design and accessibility rules
 
-- Use established shared components, Tailwind tokens/classes, `section-shell`, `section-label`, and `focus-ring` instead of ad-hoc page systems.
-- Reuse the card rhythm: `rounded-md` or `rounded-2xl`, `border-line`, `bg-white`/`bg-mist`, `shadow-line`/`shadow-soft`, and responsive `sm:`/`md:`/`lg:` variants as used by neighboring components.
-- All changes must remain legible in dark mode. The global `.dark` rules adapt the common background, text, border, and shadow classes; check any custom colors, gradients, images, and inline styles separately.
+- Colours are CSS-variable tokens defined in `src/index.css` (`--c-*`) and exposed as Tailwind colours in `tailwind.config.js`: `canvas`, `surface`, `mist`, `line`, `ink`, `slate`, `accent`, `accent-ink`, `violet`, and `coral`. Light and dark values swap under `.dark`, so use these tokens rather than raw hex or `dark:` overrides. Use `accent-ink` for accent-coloured text (it meets contrast); `accent` is for fills and glows.
+- Typography: Geist (`font-sans`/`font-display`), Geist Mono (`font-mono`) for labels and metadata, and Instrument Serif italic (`font-serif`) only for short accent phrases. Fonts are self-hosted through `@fontsource` packages imported in `src/main.jsx`.
+- Use the shared building blocks instead of ad-hoc page systems: `section-shell`, `section-label`, `focus-ring`, `card`, `chip`, `glass`, `PageHero`/`SectionHeading`, `Button`, `CTASection`, and the motion primitives in `src/components/fx/` (`Spotlight`, `SplitWords`, `Backdrop`, `Marquee`, `Counter`, `Magnetic`, `HorizontalScroll`, `ScrollProgress`).
+- Product mini-sites are tinted through `--accent`, `--accent-dark`, `--accent-soft`, `--accent-line`, and `--accent-glow`, which `ProductSiteLayout` derives from the product definition. Use those variables (for example `text-[var(--accent)]`) inside product components.
+- Portfolio cards and menus read a registered product's icon, accent, and App Store availability from its mini-site definition through `src/lib/productMeta.js`; only set `icon` in `src/data/products.js` when a card needs to override it.
+- Motion uses Framer Motion with the shared easing and variants in `src/lib/animation.js`. `MotionConfig reducedMotion="user"` in `src/main.jsx` disables transform animation for reduced-motion users, and `index.css` stops CSS animations; any new looping or scroll-driven effect must still render a complete, readable final state without motion. Decorative motion graphics are `aria-hidden`.
+- All changes must remain legible in both themes. Check custom colours, gradients, images, and inline styles in light and dark mode.
 - Preserve keyboard-visible focus, semantic headings, readable contrast, image `alt` text, and accessible labels.
-- Motion should use existing Framer Motion patterns and honor reduced-motion preferences whenever it is more than a simple entrance effect.
-- Keep copy direct and human. Claims in product marketing, pricing, privacy, terms, and support must agree with one another.
+- Keep copy direct and human. Claims in product marketing, pricing, privacy, terms, and support must agree with one another, and decorative motion graphics must not invent product claims or metrics.
 
 ## Validation and handoff
 

@@ -1,4 +1,7 @@
-const ease = [0.25, 0.1, 0.25, 1]
+// Shared motion vocabulary. Entrances use an expo-out curve; exits and hovers are
+// quicker. MotionConfig in main.jsx disables transforms for reduced-motion users.
+export const ease = [0.16, 1, 0.3, 1]
+export const easeInOut = [0.65, 0, 0.35, 1]
 
 export const staggerContainer = {
   hidden: {},
@@ -6,6 +9,13 @@ export const staggerContainer = {
 }
 
 export const staggerItem = {
-  hidden: { opacity: 0, y: 14 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease } },
+  hidden: { opacity: 0, y: 24, filter: 'blur(6px)' },
+  show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease } },
 }
+
+export const fadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
+}
+
+export const inViewOnce = { once: true, margin: '-60px' }

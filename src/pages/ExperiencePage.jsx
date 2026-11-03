@@ -1,48 +1,39 @@
 import { motion } from 'framer-motion'
-import { AnimateIn } from '../components/AnimateIn.jsx'
+import { Download } from 'lucide-react'
 import { CTASection } from '../components/CTASection.jsx'
-import { ExperienceCard } from '../components/ExperienceSection.jsx'
+import { ExperienceTimeline } from '../components/ExperienceSection.jsx'
 import { Footer } from '../components/Footer.jsx'
-import { PageHero } from '../components/PageHero.jsx'
+import { Spotlight } from '../components/fx/Spotlight.jsx'
+import { Counter } from '../components/fx/Counter.jsx'
+import { Magnetic } from '../components/fx/Magnetic.jsx'
+import { PageHero, SectionHeading } from '../components/PageHero.jsx'
 import { Seo } from '../components/Seo.jsx'
-import { staggerContainer, staggerItem } from '../lib/animation.js'
 import { experience } from '../data/experience.js'
+import { careerSummary, technicalStrengths, yearsOfExperience } from '../data/expertise.js'
+import { inViewOnce, staggerContainer, staggerItem } from '../lib/animation.js'
 
-const careerSummary = [
-  {
-    title: 'Agentic Engineering',
-    description:
-      'LLM agents, agent harnesses and developer tooling that make engineering teams faster and safer.',
-  },
-  {
-    title: 'Frontend Architecture',
-    description:
-      'Angular, React, component systems, design systems, and maintainable UI foundations.',
-  },
-  {
-    title: 'Product Engineering',
-    description:
-      'Turning user needs and business requirements into polished, production-ready software.',
-  },
-  {
-    title: 'Enterprise Systems',
-    description:
-      'Experience across banking, health tech, logistics, education, and energy platforms.',
-  },
-  {
-    title: 'Full-Stack Delivery',
-    description:
-      'Comfortable across frontend, APIs, cloud infrastructure, CI/CD, and practical backend work.',
-  },
-]
-
-const technicalStrengths = [
-  { category: 'Frontend', skills: ['React', 'Angular', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'NX Monorepo'] },
-  { category: 'Mobile', skills: ['Swift', 'SwiftUI', 'iOS', 'React Native', 'Ionic'] },
-  { category: 'Backend', skills: ['Node.js', 'ASP.NET Core', 'FastifyJS', 'Java Spring', 'Python Django'] },
-  { category: 'Cloud & DevOps', skills: ['AWS', 'Docker', 'CI/CD', 'GitHub Actions', 'Elasticsearch'] },
-  { category: 'AI & Agents', skills: ['LLM Agents', 'Claude Code', 'Codex', 'Cursor', 'MCP', 'Agent Skills', 'Go'] },
-]
+function YearsBadge() {
+  return (
+    <div className="relative grid h-44 w-44 place-items-center">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 animate-spin-slow rounded-full"
+        style={{
+          background:
+            'conic-gradient(from 0deg, rgb(var(--c-accent)), rgb(var(--c-violet)), rgb(var(--c-coral)), rgb(var(--c-accent)))',
+          mask: 'radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px))',
+          WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px))',
+        }}
+      />
+      <div className="text-center">
+        <p className="font-display text-6xl font-semibold tracking-tight">
+          <Counter suffix="+" value={yearsOfExperience(experience)} />
+        </p>
+        <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-slate">years shipping</p>
+      </div>
+    </div>
+  )
+}
 
 export function ExperiencePage() {
   return (
@@ -54,102 +45,89 @@ export function ExperiencePage() {
       />
 
       <PageHero
+        aside={<YearsBadge />}
         description="Today I lead AI and agent-harness work: the agents, skills and guardrails that let engineering teams build with coding agents safely. It rests on a career of software engineering, leadership, and product delivery — from health-tech platforms and banking systems to logistics, education, energy management, and creator work."
         label="Experience"
         title="AI-led engineering, built on product delivery across health tech, banking, logistics, education, and energy."
       >
-        <a
-          className="focus-ring inline-flex h-12 items-center justify-center gap-2 rounded-md border border-line bg-white px-5 text-sm font-semibold text-ink transition hover:border-ink dark:!border-white/15 dark:!bg-graphite dark:!text-white dark:hover:!border-white/35 dark:hover:!bg-white/10"
-          download
-          href="/Awais-Jamil-Resume.pdf"
-        >
-          Download resume (PDF)
-        </a>
+        <Magnetic>
+          <a
+            className="focus-ring group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-line bg-surface/70 px-6 text-sm font-semibold text-ink backdrop-blur transition hover:bg-mist"
+            download
+            href="/Awais-Jamil-Resume.pdf"
+          >
+            <Download className="transition-transform group-hover:translate-y-0.5" size={16} />
+            Download resume (PDF)
+          </a>
+        </Magnetic>
       </PageHero>
 
-      {/* Career summary cards */}
-      <section className="bg-mist py-12">
-        <div className="section-shell">
-          <motion.div
-            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
-            initial="hidden"
-            variants={staggerContainer}
-            viewport={{ once: true, margin: '-40px' }}
-            whileInView="show"
-          >
-            {careerSummary.map((card) => (
-              <motion.div
-                className="rounded-md border border-line bg-white p-6 shadow-line"
-                key={card.title}
-                variants={staggerItem}
-              >
-                <h3 className="font-display text-base font-semibold text-ink">{card.title}</h3>
+      {/* Focus areas */}
+      <section className="pb-20">
+        <motion.div
+          className="section-shell grid gap-4 sm:grid-cols-2 lg:grid-cols-5"
+          initial="hidden"
+          variants={staggerContainer}
+          viewport={inViewOnce}
+          whileInView="show"
+        >
+          {careerSummary.map((card, index) => (
+            <motion.div className="h-full" key={card.title} variants={staggerItem}>
+              <Spotlight className="h-full p-6">
+                <div className="flex items-center justify-between">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent-ink transition-transform duration-500 group-hover/spot:rotate-12">
+                    <card.icon size={19} />
+                  </span>
+                  <span className="font-mono text-xs text-slate">0{index + 1}</span>
+                </div>
+                <h3 className="mt-5 font-display text-lg font-semibold tracking-tight">{card.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate">{card.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+              </Spotlight>
+            </motion.div>
+          ))}
+        </motion.div>
       </section>
 
-      {/* Experience timeline */}
-      <section id="timeline" className="scroll-mt-28 border-t border-line bg-white py-16 sm:py-20">
+      {/* Timeline */}
+      <section className="scroll-mt-28 border-t border-line py-24 sm:py-32" id="timeline">
         <div className="section-shell">
-          <AnimateIn>
-            <p className="section-label">Timeline</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold">
-              Roles and career history
-            </h2>
-          </AnimateIn>
-
-          <motion.div
-            className="mt-10 grid gap-5"
-            initial="hidden"
-            variants={staggerContainer}
-            viewport={{ once: true, margin: '-60px' }}
-            whileInView="show"
-          >
-            {experience.map((item) => (
-              <motion.div key={`${item.company}-${item.role}`} variants={staggerItem}>
-                <ExperienceCard item={item} />
-              </motion.div>
-            ))}
-          </motion.div>
+          <SectionHeading label="Timeline" title="Roles and career history" />
+          <div className="mt-16">
+            <ExperienceTimeline items={experience} />
+          </div>
         </div>
       </section>
 
       {/* Technical strengths */}
-      <section className="border-t border-line bg-mist py-16 sm:py-20">
+      <section className="border-t border-line bg-surface/40 py-24 sm:py-32">
         <div className="section-shell">
-          <AnimateIn>
-            <p className="section-label">Technical strengths</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold">
-              Tools and technologies
-            </h2>
-          </AnimateIn>
-
+          <SectionHeading label="Technical strengths" title="Tools and technologies" />
           <motion.div
-            className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+            className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5"
             initial="hidden"
             variants={staggerContainer}
-            viewport={{ once: true, margin: '-40px' }}
+            viewport={inViewOnce}
             whileInView="show"
           >
             {technicalStrengths.map((group) => (
-              <motion.div
-                className="rounded-md border border-line bg-white p-6 shadow-line"
-                key={group.category}
-                variants={staggerItem}
-              >
-                <p className="text-xs font-semibold uppercase tracking-wider text-coral">
-                  {group.category}
-                </p>
-                <ul className="mt-4 grid gap-2">
-                  {group.skills.map((skill) => (
-                    <li className="text-sm font-medium text-ink" key={skill}>
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
+              <motion.div className="h-full" key={group.category} variants={staggerItem}>
+                <Spotlight className="h-full p-6">
+                  <p className="font-mono text-xs uppercase tracking-[0.14em] text-coral">{group.category}</p>
+                  <ul className="mt-5 flex flex-wrap gap-1.5">
+                    {group.skills.map((skill, index) => (
+                      <motion.li
+                        className="chip text-ink/80"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        key={skill}
+                        transition={{ delay: 0.3 + index * 0.05 }}
+                        viewport={{ once: true }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                      >
+                        {skill}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </Spotlight>
               </motion.div>
             ))}
           </motion.div>
