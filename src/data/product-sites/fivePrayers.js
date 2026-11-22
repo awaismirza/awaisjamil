@@ -168,7 +168,7 @@ export const fivePrayers = {
   ],
 
   support: {
-    email: 'owaesmirza@gmail.com',
+    email: 'awais@awaisjamil.com',
     intro:
       'Need help with Five Prayers? Support, privacy questions, and App Store enquiries can be sent by email.',
     faqs: [
@@ -312,7 +312,7 @@ export const fivePrayers = {
         heading: 'Contact',
         blocks: [
           {
-            p: 'If you have questions about this Privacy Policy, contact us at [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
+            p: 'If you have questions about this Privacy Policy, contact us at [awais@awaisjamil.com](mailto:awais@awaisjamil.com).',
           },
         ],
       },
@@ -423,7 +423,7 @@ export const fivePrayers = {
         heading: 'Contact',
         blocks: [
           {
-            p: 'If you have questions about these Terms, contact us at [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
+            p: 'If you have questions about these Terms, contact us at [awais@awaisjamil.com](mailto:awais@awaisjamil.com).',
           },
         ],
       },

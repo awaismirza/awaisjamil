@@ -24,7 +24,7 @@ export const wordsCut = {
   accentSoft: 'rgba(79, 94, 232, 0.12)',
   download: checkoutUrl
     ? { kind: 'website', url: checkoutUrl, label: 'Buy WordsCut for Mac', compactLabel: 'Buy WordsCut' }
-    : { kind: 'website', url: 'mailto:owaesmirza@gmail.com?subject=WordsCut%20paid%20release', label: 'Ask about the paid release', compactLabel: 'Contact' },
+    : { kind: 'website', url: 'mailto:awais@awaisjamil.com?subject=WordsCut%20paid%20release', label: 'Ask about the paid release', compactLabel: 'Contact' },
 
   facts: [
     { label: 'Platform', value: 'macOS 13+ · Apple Silicon' },
@@ -76,7 +76,7 @@ export const wordsCut = {
   ],
 
   support: {
-    email: 'owaesmirza@gmail.com',
+    email: 'awais@awaisjamil.com',
     intro:
       'WordsCut is open source — bug reports and feature requests are best raised on GitHub, or reach out by email.',
     links: [
@@ -136,7 +136,7 @@ export const wordsCut = {
         heading: 'Security reporting',
         blocks: [
           {
-            p: 'Please do not open public issues for vulnerabilities. Email [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com) privately with vulnerability details; do not include private recordings or credentials.',
+            p: 'Please do not open public issues for vulnerabilities. Email [awais@awaisjamil.com](mailto:awais@awaisjamil.com) privately with vulnerability details; do not include private recordings or credentials.',
           },
         ],
       },
@@ -144,7 +144,7 @@ export const wordsCut = {
         heading: 'Contact',
         blocks: [
           {
-            p: 'Questions about privacy? Email [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
+            p: 'Questions about privacy? Email [awais@awaisjamil.com](mailto:awais@awaisjamil.com).',
           },
         ],
       },
@@ -162,7 +162,7 @@ export const wordsCut = {
         heading: 'Earlier release licence',
         blocks: [
           {
-            p: 'The earlier WordsCut 1.0.0 release was provided under [AGPL-3.0-or-later](/wordscut/legacy-AGPL-3.0.txt). Removing the former distribution repository does not revoke those rights. Existing recipients can contact [support](mailto:owaesmirza@gmail.com?subject=WordsCut%201.0.0%20source) for the matching application and dependency sources at no additional charge. A paid release does not automatically change earlier licences.',
+            p: 'The earlier WordsCut 1.0.0 release was provided under [AGPL-3.0-or-later](/wordscut/legacy-AGPL-3.0.txt). Removing the former distribution repository does not revoke those rights. Existing recipients can contact [support](mailto:awais@awaisjamil.com?subject=WordsCut%201.0.0%20source) for the matching application and dependency sources at no additional charge. A paid release does not automatically change earlier licences.',
           },
         ],
       },
@@ -194,7 +194,7 @@ export const wordsCut = {
         heading: 'Contact',
         blocks: [
           {
-            p: 'Questions about these terms or an earlier release? Email [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
+            p: 'Questions about these terms or an earlier release? Email [awais@awaisjamil.com](mailto:awais@awaisjamil.com).',
           },
         ],
       },
