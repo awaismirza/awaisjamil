@@ -203,7 +203,7 @@ export const driverLogbook = {
   },
 
   support: {
-    email: 'owaesmirza@gmail.com',
+    email: 'support@awaisjamil.com',
     intro:
       'Questions about Driver Logbook, Premium subscriptions, or your data? Support is handled directly by the developer.',
     checklist: ['App version', 'Device model and iOS version', 'A short description of the issue'],
@@ -238,7 +238,7 @@ export const driverLogbook = {
         heading: '1. Who we are',
         blocks: [
           {
-            p: 'Driver Logbook ("the App", "we", "us", "our") is an iOS application developed and published by Awais Jamil, an individual developer. Our contact email is [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
+            p: 'Driver Logbook ("the App", "we", "us", "our") is an iOS application developed and published by Awais Jamil, an individual developer. Our contact email is [support@awaisjamil.com](mailto:support@awaisjamil.com).',
           },
           {
             p: 'This Privacy Policy explains how we handle information in connection with your use of Driver Logbook on iPhone. By downloading or using the App you agree to the practices described in this policy.',
@@ -399,7 +399,7 @@ export const driverLogbook = {
             p: 'Because all data is stored locally on your device and we have no access to it, you are in full control. You can view, export, and delete your data entirely within the App at any time.',
           },
           {
-            p: 'If you are located in the European Economic Area, United Kingdom, or Australia, you may have additional rights under applicable privacy law (GDPR, UK GDPR, or the Privacy Act 1988 respectively). Since we do not process your personal data on our own servers, most of these rights are exercised directly through the App. For any questions, contact us at [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
+            p: 'If you are located in the European Economic Area, United Kingdom, or Australia, you may have additional rights under applicable privacy law (GDPR, UK GDPR, or the Privacy Act 1988 respectively). Since we do not process your personal data on our own servers, most of these rights are exercised directly through the App. For any questions, contact us at [support@awaisjamil.com](mailto:support@awaisjamil.com).',
           },
         ],
       },
@@ -418,7 +418,7 @@ export const driverLogbook = {
           {
             ul: [
               '**Developer:** Awais Jamil',
-              '**Email:** [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com)',
+              '**Email:** [support@awaisjamil.com](mailto:support@awaisjamil.com)',
               '**Support:** [github.com/awaismirza/driver-logbook-web/issues](https://github.com/awaismirza/driver-logbook-web/issues)',
             ],
           },
@@ -689,7 +689,7 @@ export const driverLogbook = {
           {
             ul: [
               '**Developer:** Awais Jamil',
-              '**Email:** [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com)',
+              '**Email:** [support@awaisjamil.com](mailto:support@awaisjamil.com)',
               '**Support:** [github.com/awaismirza/driver-logbook-web/issues](https://github.com/awaismirza/driver-logbook-web/issues)',
             ],
           },

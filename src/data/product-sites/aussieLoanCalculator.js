@@ -68,7 +68,7 @@ export const aussieLoanCalculator = {
   ],
 
   support: {
-    email: 'owaesmirza@gmail.com',
+    email: 'support@awaisjamil.com',
     intro: 'Need help or found an issue with Aussie Loan Calculator? Contact us by email.',
     checklist: ['App version', 'Device model and iOS version', 'A short description of the issue'],
     faqs: [
@@ -198,7 +198,7 @@ export const aussieLoanCalculator = {
         heading: 'Contact',
         blocks: [
           {
-            p: 'If you have questions about privacy, please contact us at [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
+            p: 'If you have questions about privacy, please contact us at [support@awaisjamil.com](mailto:support@awaisjamil.com).',
           },
         ],
       },
@@ -276,7 +276,7 @@ export const aussieLoanCalculator = {
         heading: 'Contact',
         blocks: [
           {
-            p: 'If you have questions about these Terms, contact us at [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).',
+            p: 'If you have questions about these Terms, contact us at [support@awaisjamil.com](mailto:support@awaisjamil.com).',
           },
         ],
       },

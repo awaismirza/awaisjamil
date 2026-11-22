@@ -1,5 +1,5 @@
 export const contact = {
-  email: 'owaesmirza@gmail.com',
+  email: 'awais@awaisjamil.com',
   location: 'Melbourne, Australia',
   // IANA zone for the live local-time readout on /contact.
   timeZone: 'Australia/Melbourne',

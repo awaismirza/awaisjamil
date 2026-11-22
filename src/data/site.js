@@ -20,7 +20,7 @@ export const site = {
     emailSubject: 'Consulting enquiry',
     notification: 'New consulting enquiry',
   },
-  email: 'owaesmirza@gmail.com',
+  email: 'awais@awaisjamil.com',
   // Consulting phone. The hero contact panel shows the call button only when set.
   phone: '+61 426 782 255',
   availability: 'Available for selective product builds and senior engineering partnerships.',

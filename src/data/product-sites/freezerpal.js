@@ -121,7 +121,7 @@ export const freezerpal = {
   },
 
   support: {
-    email: 'owaesmirza@gmail.com',
+    email: 'support@awaisjamil.com',
     intro: "Need help with FreezerPal? Send an email and we'll get back to you.",
     faqs: [
       {
@@ -206,7 +206,7 @@ export const freezerpal = {
       {
         heading: 'Contact',
         blocks: [
-          { p: 'Questions about privacy? Email [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).' },
+          { p: 'Questions about privacy? Email [support@awaisjamil.com](mailto:support@awaisjamil.com).' },
         ],
       },
     ],
@@ -263,7 +263,7 @@ export const freezerpal = {
       {
         heading: 'Contact',
         blocks: [
-          { p: 'Questions about these terms? Email [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).' },
+          { p: 'Questions about these terms? Email [support@awaisjamil.com](mailto:support@awaisjamil.com).' },
         ],
       },
     ],

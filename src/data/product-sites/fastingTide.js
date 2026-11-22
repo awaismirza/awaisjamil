@@ -142,7 +142,7 @@ export const fastingTide = {
   },
 
   support: {
-    email: 'owaesmirza@gmail.com',
+    email: 'support@awaisjamil.com',
     intro: 'Need help with Fasting Tide? Send an email and we’ll get back to you.',
     checklist: ['Your device and OS version', 'A short description of what happened', 'A screenshot, if it helps explain the issue'],
     faqs: [
@@ -240,7 +240,7 @@ export const fastingTide = {
       {
         heading: 'Contact',
         blocks: [
-          { p: 'Questions about privacy? Email [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).' },
+          { p: 'Questions about privacy? Email [support@awaisjamil.com](mailto:support@awaisjamil.com).' },
         ],
       },
     ],
@@ -305,7 +305,7 @@ export const fastingTide = {
       {
         heading: 'Contact',
         blocks: [
-          { p: 'Questions about these terms? Email [owaesmirza@gmail.com](mailto:owaesmirza@gmail.com).' },
+          { p: 'Questions about these terms? Email [support@awaisjamil.com](mailto:support@awaisjamil.com).' },
           { p: '© 2026 Awais Jamil. All rights reserved.' },
         ],
       },
