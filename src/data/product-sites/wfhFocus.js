@@ -194,7 +194,7 @@ export const wfhFocus = {
   },
 
   support: {
-    email: 'awais@awaisjamil.com',
+    email: 'support@awaisjamil.com',
     intro:
       'Questions about WFH Focus, the free trial, or the Pro unlock? Support is handled directly by the developer.',
     checklist: ['App version (Settings → About)', 'iPhone model and iOS version', 'A short description of the issue'],
@@ -238,7 +238,7 @@ export const wfhFocus = {
         heading: '1. Who we are',
         blocks: [
           {
-            p: 'WFH Focus ("the App", "we", "us", "our") is an iOS application developed and published by Awais Jamil, an individual developer. Our contact email is [awais@awaisjamil.com](mailto:awais@awaisjamil.com).',
+            p: 'WFH Focus ("the App", "we", "us", "our") is an iOS application developed and published by Awais Jamil, an individual developer. Our contact email is [support@awaisjamil.com](mailto:support@awaisjamil.com).',
           },
           {
             p: 'This Privacy Policy explains how we handle information in connection with your use of WFH Focus on iPhone. By downloading or using the App you agree to the practices described in this policy.',
@@ -340,7 +340,7 @@ export const wfhFocus = {
             p: 'Because all data is stored locally on your device and we have no access to it, you are in full control. You can view, export (via CSV, a Pro feature), and delete your data entirely within the App at any time.',
           },
           {
-            p: 'If you are located in the European Economic Area, United Kingdom, or Australia, you may have additional rights under applicable privacy law (GDPR, UK GDPR, or the Privacy Act 1988 respectively). Since we do not process your personal data on our own servers, most of these rights are exercised directly through the App. For any questions, contact us at [awais@awaisjamil.com](mailto:awais@awaisjamil.com).',
+            p: 'If you are located in the European Economic Area, United Kingdom, or Australia, you may have additional rights under applicable privacy law (GDPR, UK GDPR, or the Privacy Act 1988 respectively). Since we do not process your personal data on our own servers, most of these rights are exercised directly through the App. For any questions, contact us at [support@awaisjamil.com](mailto:support@awaisjamil.com).',
           },
         ],
       },
@@ -359,7 +359,7 @@ export const wfhFocus = {
           {
             ul: [
               '**Developer:** Awais Jamil',
-              '**Email:** [awais@awaisjamil.com](mailto:awais@awaisjamil.com)',
+              '**Email:** [support@awaisjamil.com](mailto:support@awaisjamil.com)',
             ],
           },
         ],
@@ -607,7 +607,7 @@ export const wfhFocus = {
           {
             ul: [
               '**Developer:** Awais Jamil',
-              '**Email:** [awais@awaisjamil.com](mailto:awais@awaisjamil.com)',
+              '**Email:** [support@awaisjamil.com](mailto:support@awaisjamil.com)',
             ],
           },
         ],

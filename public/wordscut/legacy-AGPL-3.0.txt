@@ -35,4 +35,4 @@ If you distribute this program or derivative works, you must:
    provide access to the source code
 
 For licensing questions or alternative arrangements, contact:
-awais@awaisjamil.com
+support@awaisjamil.com
