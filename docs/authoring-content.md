@@ -97,6 +97,7 @@ The standard overview renderer reads these optional sections when present:
 | `pricing` | Plan names, prices, features, notes, and one highlighted plan |
 | `closing` | Final CTA copy |
 | `timerShowcase` or `recordingShowcase` | Optional hero animation supported by `ProductOverviewPage` |
+| `directPages` | Set to `true` when a product needs direct GitHub Pages URLs without the 404 redirect. The Vite build writes a directory index for each product route with a text fallback from the same product data. |
 
 If a new visual treatment is necessary, make it a reusable component in `src/components/product/` and add only an opt-in data field. It must be decorative when it does not convey essential information, respect `prefers-reduced-motion`, and work in both themes.
 
