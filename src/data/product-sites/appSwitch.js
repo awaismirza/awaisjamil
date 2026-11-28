@@ -22,7 +22,7 @@ export const appSwitch = {
   accentSoft: 'rgba(71, 99, 202, 0.12)',
   download: {
     kind: 'website',
-    url: '/app-switch/downloads/App-Switch-1.5-arm64.dmg',
+    url: '/app-switch/downloads/App-Switch-1.5.1-arm64.dmg',
     label: 'Download and try free',
     compactLabel: 'Download and try free',
   },
@@ -31,7 +31,7 @@ export const appSwitch = {
     headline: 'Left ⌘ for Calendar.',
     headlineAccent: 'Right ⌘ for Notes.',
     sub: `Give each side of your keyboard its own app shortcuts. Try unlimited shortcuts free for 15 days, then keep three free. ${checkout ? 'Unlock Unlimited for a one-time US$4.99 (A$4.99 in Australia).' : 'Unlimited will cost US$4.99 once (A$4.99 in Australia). Paid upgrades are coming soon.'}`,
-    ctaNote: 'Version 1.5 · Apple silicon · macOS 13 or later. Signed by Awais Jamil and notarized by Apple.',
+    ctaNote: 'Version 1.5.1 · Apple silicon · macOS 13 or later. Signed by Awais Jamil and notarized by Apple.',
     heroShot: '/app-switch/editor.png',
     heroShotAlt: 'App Switch shortcut editor with Right Command and K assigned to Notes',
   },
@@ -64,7 +64,7 @@ export const appSwitch = {
     checklist: ['Your macOS and App Switch versions', 'For shortcut problems, the app and keys you assigned', 'For purchase problems, the checkout email and purchase date. Keep your activation code and card details private.'],
     faqs: [
       { q: 'How do I install App Switch?', a: 'Download the disk image on an Apple silicon Mac running macOS 13 or later. Open the image, drag App Switch into Applications, then launch it from Applications.' },
-      { q: 'How do I update App Switch?', a: 'If you have version 1.4 or earlier, download version 1.5 from the [App Switch overview](/app-switch/), quit App Switch and replace the existing copy in Applications. Your shortcuts and license carry over. From version 1.5, the app checks for updates at launch and daily while running. Choose Check for Updates… from its menu bar icon to check manually. When a newer compatible release is available, choose Download and Relaunch or Later.' },
+      { q: 'How do I update App Switch?', a: 'If you have version 1.4 or earlier, download the current version from the [App Switch overview](/app-switch/), quit App Switch and replace the existing copy in Applications. Your shortcuts and license carry over. From version 1.5, the app checks for updates at launch and daily while running. Choose Check for Updates… from its menu bar icon to check manually. When a newer compatible release is available, choose Download and Relaunch or Later.' },
       { q: 'How do I set up my first shortcut?', a: 'Allow App Switch in System Settings → Privacy & Security → Accessibility. In App Switch, choose a running or installed app and select Set Shortcut. Click the modifier buttons for a tap shortcut, or select Record and press a combination. Save and try it from another app.' },
       { q: 'Why is my shortcut passing through?', a: 'Check that App Switch is running and Accessibility is enabled for the copy in Applications. Relaunch it if macOS asks. A modifier-only shortcut fires when you release a short tap. In running-only mode the target must already be open. If another app or macOS reserves a combination, try a different one.' },
       { q: 'What changes at the end of the trial?', a: 'After 15 days your first three shortcuts stay active. Extra assignments remain saved and become active again when you unlock Unlimited. You can keep the free version without purchasing.' },

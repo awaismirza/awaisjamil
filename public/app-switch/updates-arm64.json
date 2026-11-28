@@ -1,8 +1,8 @@
 {
-  "version": "1.5",
-  "build": 7,
+  "version": "1.5.1",
+  "build": 8,
   "architecture": "arm64",
-  "sha256": "cf984f2a7cc9f3d159465cf62c1d36526e5e5b708025394ccbe5a224e2b63691",
+  "sha256": "00cacd4a59eaf780fe12041a5c657a7b8ec065071f22ba5a3be81fe5bc8f92f6",
   "minimumSystemVersion": "13.0",
-  "download": "https://awaisjamil.com/app-switch/downloads/App-Switch-1.5-arm64.dmg"
+  "download": "https://awaisjamil.com/app-switch/downloads/App-Switch-1.5.1-arm64.dmg"
 }
