@@ -15,7 +15,6 @@ export const products = [
     slug: 'pastemango',
     type: 'Native macOS app',
     year: '2026',
-    status: 'Coming soon',
     summary: 'Search and reuse the text and images you copy on your Mac, with local history, pins, and global shortcuts.',
     impact: 'Built with SwiftUI and SwiftData, with a searchable menu-bar view and clipboard monitoring you can pause.',
     stack: ['Swift', 'SwiftUI', 'SwiftData', 'macOS'],
