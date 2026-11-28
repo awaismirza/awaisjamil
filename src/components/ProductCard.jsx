@@ -21,7 +21,7 @@ export function ProductCard({ product, featured = false }) {
         {product.title}
       </a>
     ) : (
-      <Link className={stretched} to={product.href}>
+      <Link className={stretched} reloadDocument={product.reloadDocument} to={product.href}>
         {product.title}
       </Link>
     )

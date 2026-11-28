@@ -113,7 +113,7 @@ export function ProductsNavDropdown({ className }) {
                           {content}
                         </a>
                       ) : (
-                        <Link className={rowClasses} onClick={() => setOpen(false)} to={product.href}>
+                        <Link className={rowClasses} onClick={() => setOpen(false)} reloadDocument={product.reloadDocument} to={product.href}>
                           {content}
                         </Link>
                       )}

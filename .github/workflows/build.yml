@@ -41,6 +41,7 @@ jobs:
 
       - name: Build
         env:
+          VITE_APP_SWITCH_CHECKOUT_URL: ${{ vars.APP_SWITCH_CHECKOUT_URL }}
           VITE_WORDSCUT_CHECKOUT_URL: ${{ vars.WORDSCUT_CHECKOUT_URL }}
         run: npm run build
 

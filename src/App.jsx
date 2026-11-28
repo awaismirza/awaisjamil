@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { productSites } from './data/product-sites/index.js'
 import { SiteLayout } from './components/SiteLayout.jsx'
 import { ProductDocPage } from './components/product/ProductDocPage.jsx'
 import { ProductSiteLayout } from './components/product/ProductSiteLayout.jsx'
@@ -58,12 +59,18 @@ export default function App() {
       </Route>
 
       {/* Product mini-sites use their own standalone layout, not the portfolio shell */}
-      <Route path="products/:slug" element={<ProductSiteLayout />}>
-        <Route index element={<ProductOverviewPage />} />
-        <Route path="privacy" element={<ProductDocPage kind="privacy" />} />
-        <Route path="terms" element={<ProductDocPage kind="terms" />} />
-        <Route path="support" element={<ProductSupportPage />} />
-      </Route>
+      {[
+        { path: 'products/:slug' },
+        ...Object.values(productSites).filter((product) => product.publicPath)
+          .map((product) => ({ path: product.publicPath, slug: product.slug })),
+      ].map(({ path, slug }) => (
+        <Route key={path} path={path} element={<ProductSiteLayout productSlug={slug} />}>
+          <Route index element={<ProductOverviewPage />} />
+          <Route path="privacy" element={<ProductDocPage kind="privacy" />} />
+          <Route path="terms" element={<ProductDocPage kind="terms" />} />
+          <Route path="support" element={<ProductSupportPage />} />
+        </Route>
+      ))}
       </Routes>
     </>
   )

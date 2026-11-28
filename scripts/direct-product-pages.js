@@ -47,7 +47,7 @@ export function directProductPages() {
     writeBundle({ dir }, bundle) {
       const shell = bundle['index.html'].source
       for (const product of Object.values(productSites).filter((item) => item.directPages)) {
-        const base = `/products/${product.slug}`
+        const base = product.publicPath ?? `/products/${product.slug}`
         const entries = pages(product)
         const pathFor = (route) => route ? `${base}/${route}` : base
         const nav = entries.map(({ route, label }) => `<a class="mr-4 underline" href="${pathFor(route)}">${escape(label)}</a>`).join('')
@@ -63,7 +63,11 @@ export function directProductPages() {
   ${page.body}
   ${page.route === 'support' ? `<p class="mt-6"><a class="underline" href="mailto:${email}">${email}</a></p>` : ''}
 </main>`
-          const html = shell
+          // Standalone product documents only need the bundled first-party app.
+          const productShell = product.publicPath
+            ? shell.replace(/<script\b(?=[^>]*\bsrc=["']https?:\/\/)[^>]*>[\s\S]*?<\/script>/gi, '')
+            : shell
+          const html = productShell
             .replace(/<title>[^<]*<\/title>/, () => `<title>${title} | ${escape(site.name)}</title>`)
             .replace(/<meta name="description"\s+content="[^"]*"\s*\/>/, () =>
               `<meta data-rh="true" name="description" content="${escape(page.description)}" />\n  <link data-rh="true" rel="canonical" href="${canonical}" />`,

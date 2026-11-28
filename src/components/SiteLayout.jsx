@@ -127,7 +127,7 @@ function MobileMenu({ onClose }) {
                         {content}
                       </a>
                     ) : (
-                      <Link className={classes} key={product.title} onClick={onClose} to={product.href}>
+                      <Link className={classes} key={product.title} onClick={onClose} reloadDocument={product.reloadDocument} to={product.href}>
                         {content}
                       </Link>
                     )

@@ -70,7 +70,7 @@ export function Footer() {
                       {product.title}
                     </a>
                   ) : (
-                    <Link className={columnLink} to={product.href}>
+                    <Link className={columnLink} reloadDocument={product.reloadDocument} to={product.href}>
                       {product.title}
                     </Link>
                   )}

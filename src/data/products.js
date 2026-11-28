@@ -1,5 +1,16 @@
 export const products = [
   {
+    title: 'App Switch',
+    slug: 'app-switch',
+    type: 'Native macOS app',
+    year: '2026',
+    summary: 'Give each side of your keyboard its own shortcuts to launch, focus or hide Mac apps.',
+    impact: 'Matches left and right modifier keys locally, with portable shortcut backups and per-app behaviour.',
+    stack: ['Swift', 'SwiftUI', 'AppKit', 'Core Graphics'],
+    href: '/app-switch',
+    reloadDocument: true,
+  },
+  {
     title: 'PasteMango',
     slug: 'pastemango',
     type: 'Native macOS app',

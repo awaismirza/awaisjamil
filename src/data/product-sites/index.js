@@ -1,3 +1,4 @@
+import { appSwitch } from './appSwitch.js'
 import { aussieLoanCalculator } from './aussieLoanCalculator.js'
 import { wfhFocus } from './wfhFocus.js'
 import { driverLogbook } from './driverLogbook.js'
@@ -12,6 +13,7 @@ import { pasteMango } from './pasteMango.js'
 // file here. To update a product's support email or copy, edit its file — the
 // layout, routes, and pages pick the change up automatically.
 export const productSites = {
+  [appSwitch.slug]: appSwitch,
   [wfhFocus.slug]: wfhFocus,
   [freezerpal.slug]: freezerpal,
   [driverLogbook.slug]: driverLogbook,

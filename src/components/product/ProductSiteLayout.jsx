@@ -13,12 +13,12 @@ import { SocialLinks } from '../SocialIcons.jsx'
 import { ThemeToggle } from '../ThemeToggle.jsx'
 import { DownloadButton } from './DownloadButton.jsx'
 
-function navItems(slug) {
+function navItems(base) {
   return [
-    { label: 'Overview', to: `/products/${slug}`, end: true },
-    { label: 'Privacy', to: `/products/${slug}/privacy` },
-    { label: 'Terms', to: `/products/${slug}/terms` },
-    { label: 'Support', to: `/products/${slug}/support` },
+    { label: 'Overview', to: base, end: true },
+    { label: 'Privacy', to: `${base}/privacy` },
+    { label: 'Terms', to: `${base}/terms` },
+    { label: 'Support', to: `${base}/support` },
   ]
 }
 
@@ -52,8 +52,9 @@ function ProductNav({ items }) {
   )
 }
 
-export function ProductSiteLayout() {
-  const { slug } = useParams()
+export function ProductSiteLayout({ productSlug }) {
+  const { slug: routeSlug } = useParams()
+  const slug = productSlug ?? routeSlug
   const location = useLocation()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -95,7 +96,8 @@ export function ProductSiteLayout() {
   }
   if (!site) return <NotFoundPage />
 
-  const items = navItems(slug)
+  const base = site.publicPath ?? `/products/${slug}`
+  const items = navItems(base)
   const icon = (isDark && site.iconDark) || site.icon
 
   return (
@@ -135,7 +137,7 @@ export function ProductSiteLayout() {
           )}
         >
           <nav className="section-shell flex h-16 items-center justify-between gap-4">
-            <Link className="focus-ring group flex items-center gap-3 rounded-xl" to={`/products/${slug}`}>
+            <Link className="focus-ring group flex items-center gap-3 rounded-xl" to={base}>
               <img
                 alt=""
                 className="h-9 w-9 rounded-[28%] border border-line shadow-line transition-transform duration-500 group-hover:-rotate-6"
@@ -236,13 +238,13 @@ export function ProductSiteLayout() {
               </div>
             </div>
             <nav aria-label={`${site.name} links`} className="grid grid-cols-2 gap-x-12 gap-y-3 text-sm sm:grid-cols-3">
-              <Link className="focus-ring rounded-sm text-slate transition hover:text-ink" to={`/products/${slug}/privacy`}>
+              <Link className="focus-ring rounded-sm text-slate transition hover:text-ink" to={`${base}/privacy`}>
                 Privacy Policy
               </Link>
-              <Link className="focus-ring rounded-sm text-slate transition hover:text-ink" to={`/products/${slug}/terms`}>
+              <Link className="focus-ring rounded-sm text-slate transition hover:text-ink" to={`${base}/terms`}>
                 Terms &amp; Conditions
               </Link>
-              <Link className="focus-ring rounded-sm text-slate transition hover:text-ink" to={`/products/${slug}/support`}>
+              <Link className="focus-ring rounded-sm text-slate transition hover:text-ink" to={`${base}/support`}>
                 Support
               </Link>
               <Link className="focus-ring rounded-sm text-slate transition hover:text-ink" to="/products">

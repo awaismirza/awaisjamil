@@ -69,7 +69,7 @@ function Block({ block }) {
 export function ProductDocPage({ kind }) {
   const site = useOutletContext()
   const doc = site[kind]
-  const path = `/products/${site.slug}/${kind}`
+  const path = `${site.publicPath ?? `/products/${site.slug}`}/${kind}`
   const showContents = doc.sections.length >= 4
   const active = useActiveSection(doc.sections.length)
 

@@ -122,6 +122,9 @@ function HeroVisual({ site, isDark }) {
   if (timerShowcase) {
     return <AnimatedTimerDial label={timerShowcase.label} totalMinutes={timerShowcase.totalMinutes} />
   }
+  if (hero.heroShot && site.screenshotFormat === 'desktop') {
+    return <img alt={hero.heroShotAlt} className="h-auto w-full max-w-[28rem] rounded-2xl border border-line shadow-soft" src={(isDark && hero.heroShotDark) || hero.heroShot} />
+  }
   if (hero.heroShot) {
     return (
       <PhoneMockup
@@ -522,6 +525,10 @@ function Pricing({ pricing }) {
                     </li>
                   ))}
                 </ul>
+                {plan.cta ? (
+                  <a className="focus-ring mt-6 inline-flex rounded-full bg-[var(--accent-control)] px-5 py-3 font-semibold text-white"
+                    href={plan.cta.href} rel="noreferrer">{plan.cta.label}</a>
+                ) : null}
                 {plan.note ? <p className="mt-6 text-xs leading-5 text-slate/90">{plan.note}</p> : null}
               </div>
             </motion.div>
@@ -569,7 +576,7 @@ export function ProductOverviewPage() {
       <Seo
         description={site.seoDescription}
         image={site.socialPreview ?? site.icon}
-        path={`/products/${site.slug}`}
+        path={site.publicPath ?? `/products/${site.slug}`}
         title={site.name}
       />
 
