@@ -24,8 +24,12 @@ function pages(product) {
   const faqs = product.support.faqs.map(({ q, a }) =>
     `<h2 class="mt-6 text-xl font-semibold">${escape(q)}</h2><p class="mt-3">${inline(a)}</p>`,
   ).join('')
+  const download = product.download
+  const downloadLink = download?.label && download.url
+    ? `<p class="mt-6"><a class="underline" href="${escape(download.url)}">${escape(download.label)}</a></p>`
+    : ''
   return [
-    { route: '', label: 'Overview', title: product.name, description: product.seoDescription, body: `<p class="mt-3">${escape(product.hero.sub)}</p>` },
+    { route: '', label: 'Overview', title: product.name, description: product.seoDescription, body: `<p class="mt-3">${escape(product.hero.sub)}</p>${downloadLink}` },
     ...['privacy', 'terms'].map((route) => {
       const document = product[route]
       return {

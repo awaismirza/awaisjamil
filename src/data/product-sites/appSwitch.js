@@ -23,14 +23,14 @@ export const appSwitch = {
   download: {
     kind: 'website',
     url: '/app-switch/downloads/App-Switch-1.4-arm64.dmg',
-    label: 'Download the Mac preview',
-    compactLabel: 'Download',
+    label: 'Download and try free',
+    compactLabel: 'Download and try free',
   },
   hero: {
     eyebrow: 'App Switch for Mac',
     headline: 'Left ⌘ for Calendar.',
     headlineAccent: 'Right ⌘ for Notes.',
-    sub: 'Give each side of your keyboard its own shortcuts. Left Command + K can bring up Calendar while Right Command + K opens Notes. Or give an app a modifier key all to itself.',
+    sub: `Give each side of your keyboard its own app shortcuts. Try unlimited shortcuts free for 15 days, then keep three free. ${checkout ? 'Unlock Unlimited for a one-time US$4.99 (A$4.99 in Australia).' : 'Unlimited will cost US$4.99 once (A$4.99 in Australia). Paid upgrades are coming soon.'}`,
     ctaNote: 'Version 1.4 · Apple silicon · macOS 13 or later. Signed by Awais Jamil and notarized by Apple.',
     heroShot: '/app-switch/editor.png',
     heroShotAlt: 'App Switch shortcut editor with Right Command and K assigned to Notes',
