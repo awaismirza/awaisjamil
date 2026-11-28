@@ -1,8 +1,8 @@
 import { ClipboardList, Keyboard, Search, ShieldCheck } from 'lucide-react'
 
 const supportEmail = 'support@awaisjamil.com'
-const downloadUrl = 'https://github.com/awaismirza/PasteMango/releases/download/v1.1/PasteMango-1.1-universal.dmg'
-const coffeeUrl = 'https://buymeacoffee.com/awaismirza'
+const releaseVersion = '1.1'
+const downloadUrl = `/pastemango/downloads/PasteMango-${releaseVersion}-universal.dmg`
 
 export const pasteMango = {
   slug: 'pastemango',
@@ -32,8 +32,7 @@ export const pasteMango = {
     eyebrow: 'Clipboard history for Mac',
     headline: 'Find what you copied.',
     sub: 'Search your full clipboard history, pin what you use often, and reuse saved text and images. PasteMango is free and keeps your clips on your Mac.',
-    ctas: [{ label: 'Buy Me a Coffee', href: coffeeUrl, external: true }],
-    ctaNote: 'Version 1.1 · macOS 14 or later · Apple silicon and Intel. Open the DMG and drag PasteMango into Applications.',
+    ctaNote: `Version ${releaseVersion} · macOS 14 or later · Apple silicon and Intel. Open the DMG and drag PasteMango into Applications.`,
   },
 
   screenshotFormat: 'desktop',
@@ -58,7 +57,7 @@ export const pasteMango = {
     intro: 'Get help with clipboard capture, keyboard shortcuts, or history in PasteMango for Mac.',
     checklist: ['Your macOS version and PasteMango version', 'What you expected and what happened', 'Steps to reproduce the issue using sample text'],
     faqs: [
-      { q: 'How do I install PasteMango?', a: `[Download the free PasteMango 1.1 disk image](${downloadUrl}), open it, and drag PasteMango into Applications. Then open PasteMango from Applications. It runs on Apple silicon and Intel Macs with macOS 14 or later.` },
+      { q: 'How do I install PasteMango?', a: `[Download the free PasteMango ${releaseVersion} disk image](${downloadUrl}), open it, and drag PasteMango into Applications. Then open PasteMango from Applications. It runs on Apple silicon and Intel Macs with macOS 14 or later.` },
       { q: 'How do I update my direct download?', a: 'Quit PasteMango, then open the new disk image and replace PasteMango in Applications. Your saved history and preferences stay on your Mac.' },
       { q: 'How do I reuse a saved clip?', a: 'Click the PasteMango icon in the menu bar. Find a clip and click it to copy it back to the clipboard. Switch to the app where you want to use it and paste.' },
       { q: 'Why is a clip missing?', a: 'In Settings → General, check that Monitor clipboard automatically is enabled. Copy a new line of plain text. If macOS prompts for clipboard access, allow it if you want automatic monitoring. PasteMango skips items their source marks as concealed, transient, or automatically generated.' },
@@ -71,7 +70,7 @@ export const pasteMango = {
   privacy: {
     title: 'Privacy Policy',
     lastUpdated: '28 November 2026',
-    seoDescription: 'How PasteMango for Mac handles local clipboard history, settings, and its optional contribution link.',
+    seoDescription: 'How PasteMango for Mac handles local clipboard history, settings, and external links.',
     summary: 'PasteMango for Mac keeps clipboard history and settings on your Mac. The app keeps clipboard content and usage data out of the publisher’s systems.',
     sections: [
       {
@@ -86,7 +85,7 @@ export const pasteMango = {
         blocks: [
           { p: 'PasteMango uses clipboard history to help you find and reuse clips. The app stores history and preferences locally. It has no cloud sync, PasteMango account, advertising, or analytics.' },
           { p: 'Copying a saved clip puts it back on the macOS clipboard. If you open a saved link or share a clip, macOS passes the item to the app or service you choose.' },
-          { p: `GitHub hosts the Mac download. The optional [Buy Me a Coffee](${coffeeUrl}) link opens an external page in your browser. Buy Me a Coffee handles any contribution you choose to make.` },
+          { p: 'AwaisJamil.com hosts the Mac download. Optional external links open in your browser. The site you visit handles any information or payment you choose to submit.' },
         ],
       },
       {
@@ -108,14 +107,11 @@ export const pasteMango = {
     title: 'Terms & Conditions',
     lastUpdated: '28 November 2026',
     seoDescription: 'Release information and terms for PasteMango for Mac.',
-    summary: 'These terms describe the free PasteMango Mac download, voluntary contributions, and local clipboard history.',
+    summary: 'These terms describe the free PasteMango Mac download and local clipboard history.',
     sections: [
       {
-        heading: 'Free download and contributions',
-        blocks: [
-          { p: 'The Mac download is free and includes all features and access to your full local clipboard history.' },
-          { p: `Contributions through [Buy Me a Coffee](${coffeeUrl}) are voluntary. Buy Me a Coffee handles contributions on its website.` },
-        ],
+        heading: 'Free download',
+        blocks: [{ p: 'The Mac download is free and includes all features and access to your full local clipboard history.' }],
       },
       {
         heading: 'Local history',
