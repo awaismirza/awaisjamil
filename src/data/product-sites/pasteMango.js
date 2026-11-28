@@ -1,7 +1,7 @@
 import { ClipboardList, Keyboard, Search, ShieldCheck } from 'lucide-react'
 
 const supportEmail = 'support@awaisjamil.com'
-const releaseVersion = '1.1'
+const releaseVersion = '1.1.1'
 const downloadUrl = `/pastemango/downloads/PasteMango-${releaseVersion}-universal.dmg`
 
 export const pasteMango = {
