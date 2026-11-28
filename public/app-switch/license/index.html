@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' https://app-switch-commerce.app-switch-commerce-worker.workers.dev; base-uri 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/app-switch/icon.png">
+  <link rel="stylesheet" href="/app-switch/license/license.css">
+  <title>License Manager · App Switch</title>
+  <script src="/app-switch/license/license.js" defer></script>
+</head>
+<body>
+  <main>
+    <a class="brand" href="/app-switch/"><img src="/app-switch/icon.png" alt="" width="36" height="36">App Switch</a>
+    <h1>Manage your license</h1>
+    <p class="intro">Check an Unlimited purchase or recover the code you need to activate App Switch on your Mac.</p>
+    <noscript><p>Enable JavaScript to use these forms, or contact App Switch support below.</p></noscript>
+    <section aria-labelledby="check-title">
+      <h2 id="check-title">Check license status</h2>
+      <form id="status-form" method="post" autocomplete="off">
+        <label for="code">Activation code</label>
+        <input id="code" type="password" required minlength="24" maxlength="208" pattern="cs_live_[A-Za-z0-9]{16,200}" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="code-help" placeholder="cs_live_…">
+        <p id="code-help" class="hint">Use the code from your checkout confirmation.</p>
+        <button type="submit" disabled>Check status</button>
+        <p role="status" class="result"></p>
+      </form>
+    </section>
+    <section id="recovery" data-email-recovery="disabled" aria-labelledby="recover-title">
+      <h2 id="recover-title">Recover your activation code</h2>
+      <p id="manual-recovery">Automatic recovery emails are currently unavailable. <a href="mailto:support@awaisjamil.com?subject=App%20Switch%20license%20recovery">Email App Switch support</a> from your checkout address with the purchase date. Support will verify the purchase manually. Keep card details and activation codes out of your message.</p>
+      <form id="recovery-form" method="post" autocomplete="off" hidden>
+        <p>Enter the email you used at checkout. For an active purchase, we’ll send its code to that address.</p>
+        <label for="email">Checkout email</label>
+        <input id="email" type="email" required maxlength="254" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <button type="submit" disabled>Request recovery email</button>
+        <p role="status" class="result"></p>
+      </form>
+    </section>
+    <footer><a class="support" href="/app-switch/support/">App Switch support</a><a href="/app-switch/privacy/">Privacy policy</a></footer>
+  </main>
+</body>
+</html>

@@ -56,6 +56,7 @@ export function directProductPages() {
         const pathFor = (route) => route ? `${base}/${route}` : base
         const nav = entries.map(({ route, label }) => `<a class="mr-4 underline" href="${pathFor(route)}">${escape(label)}</a>`).join('')
         const email = escape(product.support.email)
+        const supportLink = product.support.primaryLink
 
         for (const page of entries) {
           const title = escape(page.route ? `${product.name} — ${page.title}` : product.name)
@@ -65,6 +66,7 @@ export function directProductPages() {
   <nav class="mb-6" aria-label="${escape(product.name)}">${nav}</nav>
   <h1 class="text-4xl font-semibold">${title}</h1>
   ${page.body}
+  ${page.route === 'support' && supportLink ? `<a href="${escape(supportLink.href)}">${escape(supportLink.label)}</a>` : ''}
   ${page.route === 'support' ? `<p class="mt-6"><a class="underline" href="mailto:${email}">${email}</a></p>` : ''}
 </main>`
           // Standalone product documents only need the bundled first-party app.

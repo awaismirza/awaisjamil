@@ -92,6 +92,10 @@ export function ProductSupportPage() {
               initial={{ opacity: 0, y: 14 }}
               transition={{ duration: 0.8, delay: 0.45, ease }}
             >
+              {support.primaryLink ? (
+                <a className="focus-ring mb-6 inline-flex items-center rounded-full bg-[var(--accent-control)] px-6 py-3 font-semibold text-white"
+                  href={support.primaryLink.href}>{support.primaryLink.label}</a>
+              ) : null}
               <Spotlight className="p-7" color="var(--accent-line)">
                 <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-slate">Email support</p>
                 <a
