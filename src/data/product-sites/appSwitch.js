@@ -31,7 +31,7 @@ export const appSwitch = {
     headline: 'Left ⌘ for Calendar.',
     headlineAccent: 'Right ⌘ for Notes.',
     sub: 'Give each side of your keyboard its own shortcuts. Left Command + K can bring up Calendar while Right Command + K opens Notes. Or give an app a modifier key all to itself.',
-    ctaNote: 'Version 1.4 · Apple silicon · macOS 13 or later. Developer ID signed preview. Apple notarization is pending.',
+    ctaNote: 'Version 1.4 · Apple silicon · macOS 13 or later. Signed by Awais Jamil and notarized by Apple.',
     heroShot: '/app-switch/editor.png',
     heroShotAlt: 'App Switch shortcut editor with Right Command and K assigned to Notes',
   },
@@ -62,7 +62,7 @@ export const appSwitch = {
     intro: 'Get help setting up your first shortcut, moving your library or activating a purchase.',
     checklist: ['Your macOS and App Switch versions', 'For shortcut problems, the app and keys you assigned', 'For purchase problems, the checkout email and purchase date. Keep your activation code and card details private.'],
     faqs: [
-      { q: 'How do I install App Switch?', a: 'Download the disk image on an Apple silicon Mac running macOS 13 or later. Open the image, drag App Switch into Applications, then launch it from Applications. This Developer ID signed preview is awaiting Apple notarization. If Gatekeeper blocks it, you can wait for the notarized release.' },
+      { q: 'How do I install App Switch?', a: 'Download the disk image on an Apple silicon Mac running macOS 13 or later. Open the image, drag App Switch into Applications, then launch it from Applications.' },
       { q: 'How do I set up my first shortcut?', a: 'Allow App Switch in System Settings → Privacy & Security → Accessibility. In App Switch, choose a running or installed app and select Set Shortcut. Click the modifier buttons for a tap shortcut, or select Record and press a combination. Save and try it from another app.' },
       { q: 'Why is my shortcut passing through?', a: 'Check that App Switch is running and Accessibility is enabled for the copy in Applications. Relaunch it if macOS asks. A modifier-only shortcut fires when you release a short tap. In running-only mode the target must already be open. If another app or macOS reserves a combination, try a different one.' },
       { q: 'What changes at the end of the trial?', a: 'After 15 days your first three shortcuts stay active. Extra assignments remain saved and become active again when you unlock Unlimited. You can keep the free version without purchasing.' },
